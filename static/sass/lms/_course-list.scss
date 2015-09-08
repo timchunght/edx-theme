@@ -1,0 +1,95 @@
+.course-list-view {
+	padding: 30px;
+	border-top: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+}
+
+.course-list-item {
+	@include display(flex);
+	margin-bottom: 30px;
+	@include transition(all 0.3s ease-in-out);
+	opacity: 1;
+
+	&.opaque {
+		opacity: 0.5;
+	}
+
+	&__body {
+		border: 1px solid tint($base-text-color, 80%);
+		background-color: #fff;
+	}
+
+	&__image {
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center center;
+		width: 30%;
+		border: 1px solid #ddd;
+		@include flex-grow(0);
+		@include flex-shrink(0);
+	}
+
+	&__info {
+		padding: 20px 20px;
+		@include flex-grow(1);
+		@include flex-shrink(1);
+	}
+
+	&__date {
+		@include sans-serif-bold;
+		color: tint($base-text-color, 40%);
+		font-size: 14px;
+		display: block;
+		margin-bottom: 2px;
+	}
+
+	&__name {
+		@include sans-serif-bold;
+		color: $base-text-color;
+		font-size: 18px;
+		line-height: 130%;
+		display: block;
+
+		& a {
+			color: $base-text-color;
+			text-decoration: none;
+
+			&:hover, &:focus {
+				color: tint($base-text-color, 20%);
+			}
+		}
+	}
+
+	&__instructor {
+		@include sans-serif;
+		color: tint($base-text-color, 30%);
+		font-size: 12px;
+		display: block;
+	}
+
+	&__separator {
+		width: 100px;
+		height: 4px;
+		margin: 15px 0;
+		background-color: $brand-primary-color;
+	}
+
+	& p {
+
+	}
+
+	&__cta, &__cta:link, &__cta:visited {
+		@include sans-serif-semibold;
+		font-size: 16px;
+		color: $brand-primary-color;
+
+		&:hover, &:focus {
+			text-decoration: none;
+			color: shade($brand-primary-color, 10%);
+		}
+	}
+
+	&:hover, &:focus {
+		@include transform(scale(1.02));
+	}
+}

@@ -1,0 +1,75 @@
+
+
+
+//  Header variables
+//
+//  ================
+
+$navbar-height: 80px;
+$header-li-font-size: 16px;
+$header-li-padding-hor: 15px;
+$header-li-hover-expand: 10px;
+$header-logo-height: 60px;
+$header-logo-margin: 4px 0 0;
+$navbar-links-top-offset: 0;
+$header-bottom-border: none;
+$navbar-vert-padding: 15px;
+
+// calculations
+
+$navbar-bg-color: calcNavbarBg($navbar-style, $brand-primary-color);
+$navbar-text-color: calcNavbarTextColor($navbar-style, $base-text-color);
+$navbar-button-text-color: #fff;
+$navbar-button-border: calcNavbarButtonBorder($navbar-style);
+$navbar-button-bg: calcNavbarButtonBg($navbar-style, $brand-primary-color);
+$display-navbar-logo-positive: calcDisplayLogoPositive($navbar-style);
+$display-navbar-logo-negative: calcDisplayLogoNegative($navbar-style);
+
+
+
+//  Landing page hero portion
+//
+//  =========================
+
+$landing-hero-bg-image: $hero-bg-image;
+$landing-hero-padding-ver: 90px;
+$landing-hero-text-color: #fff;
+
+
+//  Footer section
+
+$footer-text-color: #fff;
+$footer-menu-text-size: 14px;
+$footer-menu-link-padding: 0 10px;
+$footer-menu-font-weight: 400;
+$footer-menu-text-color: #fff;
+$footer-logo-height: 28px;
+
+
+
+$pages-photo-hero-padding-ver: 50px;
+
+
+//  Single course
+
+$course-header-bg-color: rgba(#000, 0.02);
+$course-header-title-color: $brand-primary-color;
+$course-enroll-button-bg-color: $brand-primary-color;
+$course-enroll-button-bg-color-unavailable: #BBB;
+
+
+//	Color scheme
+
+$alert-color: #e67e22;
+$error-color: #e74c3c;
+$ok-color: #27ae60;
+$greyish-background: #f5f5f6;
+$standard-line-separator-color: #ddd;
+$standard-image-border-color: #ddd;
+
+
+
+//	Forms
+
+$form-button-border-radius: 0;
+$form-input-border-radius: 0;

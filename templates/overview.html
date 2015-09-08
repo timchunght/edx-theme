@@ -1,0 +1,247 @@
+<%! from django.utils.translation import ugettext as _ %>
+<%!
+  from django.core.urlresolvers import reverse
+  from courseware.courses import course_image_url, get_course_about_section
+  from django.conf import settings
+  from edxmako.shortcuts import marketing_link
+
+  if settings.FEATURES.get('ENABLE_SHOPPING_CART'):
+      cart_link = reverse('shoppingcart.views.show_cart')
+  else:
+      cart_link = ""
+%>
+<%namespace name='static' file='../static_content.html'/>
+<%! from microsite_configuration import microsite %>
+
+<%inherit file="../main.html" />
+<%block name="headextra">
+
+  <%
+    if self.theme_enabled():
+      google_analytics_file = u'../{ga}'.format(
+        ga=microsite.get_value('google_analytics_file', 'theme-google-analytics.html')
+      )
+    else:
+      google_analytics_file = '../google_analytics.html'
+  %>
+
+  <%include file="${google_analytics_file}" />
+
+  ## OG (Open Graph) title and description added below to give social media info to display
+  ## (https://developers.facebook.com/docs/opengraph/howtos/maximizing-distribution-media-content#tags)
+  <meta property="og:title" content="${get_course_about_section(course, 'title')}" />
+  <meta property="og:description" content="${get_course_about_section(course, 'short_description')}" />
+</%block>
+
+<%block name="js_extra">
+
+  <script type="text/javascript">
+  (function() {
+    $(".register").click(function(event) {
+      $("#class_enroll_form").submit();
+      event.preventDefault();
+    });
+
+    % if settings.FEATURES.get('ENABLE_SHOPPING_CART') and settings.FEATURES.get('ENABLE_PAID_COURSE_REGISTRATION'):
+      add_course_complete_handler = function(jqXHR, textStatus) {
+        if (jqXHR.status == 200) {
+          location.href = "${cart_link}";
+        }
+        if (jqXHR.status == 400) {
+          $("#register_error")
+            .html(jqXHR.responseText ? jqXHR.responseText : "${_('An error occurred. Please try again later.')}")
+            .css("display", "block");
+        }
+        else if (jqXHR.status == 403) {
+            location.href = "${reg_then_add_to_cart_link}";
+        }
+      };
+      $("#add_to_cart_post").click(function(event){
+        $.ajax({
+          url: "${reverse('add_course_to_cart', args=[course.id.to_deprecated_string()])}",
+          type: "POST",
+          /* Rant: HAD TO USE COMPLETE B/C PROMISE.DONE FOR SOME REASON DOES NOT WORK ON THIS PAGE. */
+          complete: add_course_complete_handler
+        })
+        event.preventDefault();
+      });
+    % endif
+
+    ## making the conditional around this entire JS block for sanity
+    %if settings.FEATURES.get('RESTRICT_ENROLL_BY_REG_METHOD') and course.enrollment_domain:
+      <%
+        perms_error = _('The currently logged-in user account does not have permission to enroll in this course. '
+                        'You may need to {start_logout_tag}log out{end_tag} then try the register button again. '
+                        'Please visit the {start_help_tag}help page{end_tag} for a possible solution.').format(
+                          start_help_tag="<a href='{url}'>".format(url=marketing_link('FAQ')), end_tag='</a>',
+                          start_logout_tag="<a href='{url}'>".format(url=reverse('logout'))
+                          )
+      %>
+    $('#class_enroll_form').on('ajax:complete', function(event, xhr) {
+      if(xhr.status == 200) {
+        location.href = "${reverse('dashboard')}";
+      } else if (xhr.status == 403) {
+        location.href = "${reverse('course-specific-register', args=[course.id.to_deprecated_string()])}?course_id=${course.id.to_deprecated_string()}&enrollment_action=enroll";
+      } else if (xhr.status == 400) { //This means the user did not have permission
+        $('#register_error').html("${perms_error}").css("display", "block");
+      } else {
+        $('#register_error').html(
+            (xhr.responseText ? xhr.responseText : "${_("An error occurred. Please try again later.")}")
+        ).css("display", "block");
+      }
+    });
+
+    %else:
+
+    $('#class_enroll_form').on('ajax:complete', function(event, xhr) {
+      if(xhr.status == 200) {
+        if (xhr.responseText == "") {
+          location.href = "${reverse('dashboard')}";
+        }
+        else {
+          location.href = xhr.responseText;
+        }
+      } else if (xhr.status == 403) {
+        location.href = "${reverse('register_user')}?course_id=${course.id.to_deprecated_string()}&enrollment_action=enroll";
+      } else {
+        $('#register_error').html(
+            (xhr.responseText ? xhr.responseText : 'An error occurred. Please try again later.')
+        ).css("display", "block");
+      }
+    });
+
+    %endif
+
+  })(this)
+  </script>
+
+  <script src="${static.url('js/course_info.js')}"></script>
+</%block>
+
+<%block name="pagetitle">${get_course_about_section(course, "title")}</%block>
+
+
+
+
+<section class="course-header">
+  <div class="container-bs">
+    <div class="row course-header__container">
+      <div class="col-xs-12 col-sm-4 course-header__image">
+        <img src="${course_image_url(course)}" alt="${course.display_number_with_default | h} ${get_course_about_section(course, 'title')} Cover Image">
+        %if course.is_newish:
+          <div class="course-ribbon"><span>NEW</span></div>
+        %endif  
+      </div>
+      <div class="col-xs-12 col-sm-8 course-header__info">
+        <h1 class="course-header__title">${get_course_about_section(course, "title")}</h1>
+        <p class="course-header__short-info">${get_course_about_section(course, 'short_description')}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="course-body container-bs">
+  <div class="col-xs-12 col-sm-4 col-sm-push-8 course-meta">
+    % if not course.start_date_is_still_default:
+      <p class="course-meta__start-date">${course.start_date_text}</p>
+      <p class="course-meta__end-date">${course.end_date_text}</p>
+    % endif  
+    <div class="course-meta__enroll-button__container">
+      %if user.is_authenticated() and registered:
+
+        <p class="course-meta__end-date">${_("You are registered for this course")}</p>
+
+        %if show_courseware_link:
+          <a href="${course_target}" class="course-meta__enroll-button">${_("View Courseware")}</a>
+        %endif  
+
+      %elif in_cart:
+      
+        <p class="course-meta__end-date">${_("This course is already in your cart")}</p>  
+
+      %elif settings.FEATURES.get('ENABLE_PAID_COURSE_REGISTRATION') and registration_price:
+      
+        <%
+          if user.is_authenticated():
+            reg_href = "#"
+            reg_element_id = "add_to_cart_post"
+          else:
+            reg_href = reg_then_add_to_cart_link
+            reg_element_id = "reg_then_add_to_cart"
+        %>
+
+        <a href="${reg_href}" id="${reg_element_id}" class="course-meta__enroll-button unavailable">${_("Add {course.display_number_with_default} to Cart ({currency_symbol}{cost})")\
+              .format(course=course, currency_symbol=settings.PAID_COURSE_REGISTRATION_CURRENCY[1],
+                      cost=registration_price)}</a>
+        <div id="register_error"></div>
+
+      % elif is_course_full:
+
+        <span class="course-meta__enroll-button unavailable">${_("Course is full")}</span>
+
+      % elif invitation_only and not can_enroll:
+
+        <span class="course-meta__enroll-button unavailable">${_("Invitation only")}</span>
+
+      % elif not is_shib_course and not can_enroll:
+      
+        <span class="course-meta__enroll-button unavailable">${_("Enrollment closed")}</span>
+
+      %else:
+
+        <a href="${course_target}" class="course-meta__enroll-button register">${_("Register")}</a>
+        <div id="register_error"></div>
+
+      % endif
+    </div>
+    <p class="course-meta__number"><span>Course number:</span> A1232</p>
+    <div class="course-meta__share__container">
+      <a href="#" class="course-meta__share twitter"><i class="fa fa-twitter"></i></a>
+      <a href="#" class="course-meta__share facebook"><i class="fa fa-facebook"></i></a>
+      <a href="#" class="course-meta__share email"><i class="fa fa-envelope"></i></a>
+      <span class="share-helper-text">Share this course!</span>
+    </div>
+  </div>
+  <div class="col-xs-12 col-sm-8 col-sm-pull-4 course-information">
+    <div class="course-information__group">
+      <h2 class="course-information__title">About this course</h2>
+      <p>China, one of the world’s oldest countries, is currently undergoing massive political, social and economic changes. The rapid emergence of China as a key player in the global political and economic landscape has led many to question how China’s decision makers perceive today’s world. What are their views on major global affairs? How does Chinese history and philosophy shape their outlook of the world? What are the prospects for China’s future economic growth?</p>
+      <p>This course helps learners understand the rise of modern China from an insiders’ perspective with insight from three of China’s leading social philosophy, international relations and economic experts</p>
+    </div>
+    <div class="course-information__group">
+      <h2 class="course-information__title">Course prerequisites</h2>
+      <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
+    </div>
+    <div class="course-information__group">
+      <h2 class="course-information__title">What you'll learn</h2>
+      <ul>
+        <li>Part 1: China’s worldview, what makes China unique, challenges China is facing and how the country may overcome these issues.</li>
+        <li>Part 2: History of China’s development over the past 100 years, political issues that China is facing, and self-corrective mechanisms in China’s political system.</li>
+        <li>Part 3: History of China’s foreign policy, how China’s diplomacy has evolved and factors that determine China’s current foreign policy strategy.</li>
+      </ul>
+    </div>
+    <div class="course-information__group">
+      <h2 class="course-information__title">Course staff</h2>
+      <div class="course-information__instructors">
+        <div class="course-information__instructor">
+          <div class="course-information__instructor__image" style="background-image: url('images/instructor-images/misty.jpg');">
+          </div>
+          <div class="course-information__instructor__info">
+            <h4 class="course-information__instructor__name">Misty Mendoza</h4>
+            <span class="course-information__instructor__title">CEO of Something ltd</span>
+            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
+          </div>
+        </div>
+        <div class="course-information__instructor">
+          <div class="course-information__instructor__image" style="background-image: url('images/instructor-images/herbert.jpg');">
+          </div>
+          <div class="course-information__instructor__info">
+            <h4 class="course-information__instructor__name">Herbert Hansen</h4>
+            <span class="course-information__instructor__title">Master of Universe</span>
+            <p>Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>  
+</section>

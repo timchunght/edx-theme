@@ -1,0 +1,73 @@
+.page-header-arrow {
+	padding: 40px 30px 50px;
+	@include linear-gradient(to top, $brand-primary-color, tint($brand-primary-color, 10%), $fallback: $brand-primary-color);
+	color: #fff;
+	text-align: center;
+	position: relative;
+
+	& h1 {
+		@include sans-serif-black;
+		font-size: 64px;
+		margin: 0 0 10px;
+	}
+
+	& p {
+		@include sans-serif;	
+		font-size: 20px;
+	}
+
+	&:after {
+		bottom: 0;
+		left: 50%;
+		border: solid transparent;
+		content: " ";
+		height: 0;
+		width: 0;
+		position: absolute;
+		pointer-events: none;
+		border-color: rgba(255, 255, 255, 0);
+		border-bottom-color: #ffffff;
+		border-width: 30px;
+		margin-left: -30px;
+	}
+}
+
+.bg-photo-hero {
+	padding: $pages-photo-hero-padding-ver 30px;
+	background-image: $landing-hero-bg-image;
+	background-position: center center;
+	background-size: cover;
+	text-align: center;
+	color: $landing-hero-text-color;
+
+	&__content {
+		max-width: 880px;
+		margin: 0 auto;
+
+		&__text {
+
+			& h1 {
+				@include sans-serif-black;
+				font-size: 64px;
+				margin: 0 0 10px;
+			}
+
+			& p {
+				@include sans-serif;
+				font-size: 20px;
+				line-height: 130%;
+				color: #fff;
+			}
+		}
+
+		&__button, &__button:visited, &__button:link {
+			padding: 15px 40px;
+			@include button-negative;
+			@include expanding-button(40px, 15px);
+			font-size: 20px;
+			margin-top: 20px;
+			color: #fff;
+			text-decoration: none;
+		}
+	}
+}

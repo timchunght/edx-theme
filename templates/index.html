@@ -1,0 +1,216 @@
+<%! from django.utils.translation import ugettext as _ %>
+
+<%! from django.core.urlresolvers import reverse %>
+<%inherit file="main.html" />
+<%namespace name='static' file='static_content.html'/>
+
+<%! from microsite_configuration import microsite %>
+
+<%
+  homepage_overlay_html = microsite.get_value('homepage_overlay_html')
+
+  #show_homepage_promo_video = microsite.get_value('show_homepage_promo_video', True)
+  #homepage_promo_video_youtube_id = microsite.get_value('homepage_promo_video_youtube_id', "_LOgBWIf4Wo")
+  show_homepage_promo_video = True
+  homepage_promo_video_youtube_id = "_LOgBWIf4Wo"
+
+  show_partners = microsite.get_value('show_partners', True)
+
+  from django.utils.translation import ugettext as _
+  from django.core.urlresolvers import reverse
+  from courseware.courses import course_image_url, get_course_about_section
+%>
+
+
+% if show_homepage_promo_video:
+
+<!-- Video modal -->
+<div class="modal fade modal__video-fullscreen__wrapper" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal__video-fullscreen">
+    <div class="modal__video-fullscreen__container">
+      <iframe src='https://www.youtube.com/embed/${homepage_promo_video_youtube_id}?rel=0&controls=0&showinfo=0' frameborder="0" allowfullscreen></iframe>
+    </div>
+    <div class="modal__video-fullscreen__close">
+      <a href="#" data-dismiss="modal" aria-label="Close"><i class="fa fa-remove"></i></a>
+    </div>
+  </div>
+</div>
+
+% endif
+
+
+<!-- LMS landing page hero portion -->
+  <section class="landing-hero">
+    <div class="container-bs">
+      <div class="landing-hero__content">
+        <div class="landing-hero__content__text">
+          <h1>Appsembler Open edX</h1>
+          <p>Well hello there! Welcome to our <b>Open edX based</b> e-learning platform!</p>
+        </div>
+
+        % if show_homepage_promo_video:
+
+          <a href="#" data-toggle="modal" data-target="#videoModal" class="landing-hero__content__button">View our video</a>
+
+        % endif  
+      </div>
+    </div>
+  </section>
+
+  <section class="landing-additional-text">
+    <div class="container-bs">
+      <div class="landing-additional-text__content">
+        <h2>The Open edX Enterprise Experts</h2>
+          <div class="landing-additional-text__separator"></div>
+          <p>Appsembler is a leader in delivering educational technology solutions. We are a full-service Open edX solutions provider offering hosting, support, expert assistance and custom development services.<br>edX is a nonprofit online initiative created by founding partners Harvard and MIT and composed of dozens of leading global institutions, the xConsortium. EdX offers interactive online courses and MOOCs from the world’s best universities and institutions.<br>Open edX is the open source platform that powers edX courses. Through our commitment to the open source vision, edX code is freely available to the community. Institutions can host their own instances of Open edX and offer their own classes. Educators can extend the platform to build learning tools that precisely meet their needs. And developers can contribute new features to the Open edX platform.</p>
+      </div>
+    </div>
+  </section>
+
+<!-- Search section is currently hidden until fully implemented -->
+<%doc>
+  <section class="landing-search">
+    <div class="container-bs landing-search">
+      <div class="hidden-xs col-sm-2 col-md-3 landing-search__filler">
+      </div>
+      <div class="col-xs-12 col-sm-8 col-md-6 landing-search__field">
+        <i class="fa fa-search"></i>
+        <input type="text" name="landing-search" placeholder="Search our courses">
+      </div>
+      <div class="hidden-xs col-sm-2 col-md-3 landing-search__filler">
+      </div>
+    </div>
+  </section>
+</%doc>
+
+% if settings.FEATURES.get('COURSES_ARE_BROWSABLE'):
+  <section class="landing-courses">
+    <div class="container-bs">
+      <h2>Featured / newest courses</h2>
+    </div>
+
+<%doc>
+    <div class="course-list-view container-bs">
+      <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-lg-8 col-lg-offset-2">
+        %for course in courses:
+          <div class="course-list-item">
+            <div class="course-list-item__image" style="background-image: url('${course_image_url(course)}');"></div>
+            <div class="course-list-item__info">
+              % if not course.start_date_is_still_default:
+                <span class="course-list-item__date">${course.start_datetime_text()}</span>
+              % endif
+              <span class="course-list-item__name"><a href="${reverse('about_course', args=[course.id.to_deprecated_string()])}">${get_course_about_section(course, 'title')}</a></span>
+              <span class="course-list-item__instructor">${get_course_about_section(course, 'university')}</span>
+              <div class="course-list-item__separator"></div>
+              <p class="course-list-item__description">${get_course_about_section(course, 'short_description')}</p>
+              <a class="course-list-item__cta" href="${reverse('about_course', args=[course.id.to_deprecated_string()])}">Learn more...</a>
+            </div>
+          </div>
+        %endfor
+      </div>
+    </div>
+</%doc>
+    
+    <div class="landing-courses__container">
+      <div class="container-bs">
+        <div class="row">
+          <div class="landing-courses__logo"><img src="${static.url('themes/matej-test/images/icon-black.svg')}"></div>
+        </div>
+        <div class="row">
+          %for course in courses:
+            <div class="col-xs-12 col-sm-6 col-md-4 course-tile">
+              <div class="course-tile__body">
+                <div class="course-tile__image"><img src="${course_image_url(course)}"></div>
+                <div class="course-tile__info">
+                  <span class="course-tile__date">${course.start_datetime_text()}</span>
+                  <span class="course-tile__name"><a href="${reverse('about_course', args=[course.id.to_deprecated_string()])}">${get_course_about_section(course, 'title')}</a></span>
+                  <span class="course-tile__instructor">${get_course_about_section(course, 'university')}</span>
+                  <div class="course-tile__separator"></div>
+                  <p class="course-tile__description">${get_course_about_section(course, 'short_description')}</p>
+                  <a class="course-tile__cta" href="${reverse('about_course', args=[course.id.to_deprecated_string()])}">Learn more...</a>
+                </div>
+              </div>
+            </div>
+          %endfor
+        </div>
+      </div>
+    </div>
+  </section>      
+% endif
+
+  <section class="landing-additional-text">
+    <div class="container-bs">
+      <div class="landing-additional-text__content">
+        <h2>Does the client want another paragraph?</h2>
+        <div class="landing-additional-text__separator"></div>
+        <p>Sure as hell he can! This fancypants theme allows them to add another section of text where they can (if they want) lead visitors to their main site, products or something else! <b>Well ain’t that great?</b></p>
+        <a class="landing-additional-text__button" href="#">Link to whatever</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="instructors-marketing container-bs">
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 col-md-7 col-lg-8">
+        <div class="instructors-marketing__text">
+          <h2 class="instructors-marketing__text__title">
+            Only the best Teachers
+          </h2>
+          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat. Mirum est notare quam littera gothica, quam nunc putamus parum claram.</p>
+        </div>
+        <div class="instructors-marketing__list">
+          <div class="instructors-marketing__list__single">
+            <img class="instructors-marketing__list__single__image" src="https://randomuser.me/api/portraits/women/12.jpg" alt="Name Surname">
+            <h4 class="instructors-marketing__list__single__name">Misty Mendoza</h4>
+            <span class="instructors-marketing__list__single__title">CEO of Something ltd</span>
+          </div>
+          <div class="instructors-marketing__list__single">
+            <img class="instructors-marketing__list__single__image" src="https://randomuser.me/api/portraits/men/36.jpg" alt="Name Surname">
+            <h4 class="instructors-marketing__list__single__name">Herbert Hansen</h4>
+            <span class="instructors-marketing__list__single__title">Master of Universe</span>
+          </div>
+          <div class="instructors-marketing__list__single">
+            <img class="instructors-marketing__list__single__image" src="https://randomuser.me/api/portraits/women/36.jpg" alt="Name Surname">
+            <h4 class="instructors-marketing__list__single__name">Lynn Thompson</h4>
+            <span class="instructors-marketing__list__single__title">Original Power Ranger</span>
+          </div>
+          <div class="instructors-marketing__list__single">
+            <img class="instructors-marketing__list__single__image" src="https://randomuser.me/api/portraits/men/29.jpg" alt="Name Surname">
+            <h4 class="instructors-marketing__list__single__name">Francis Russell</h4>
+            <span class="instructors-marketing__list__single__title">College dropout turned billionare</span>
+          </div>
+          <div class="instructors-marketing__list__single">
+            <img class="instructors-marketing__list__single__image" src="https://randomuser.me/api/portraits/men/47.jpg" alt="Name Surname">
+            <h4 class="instructors-marketing__list__single__name">Edwin Owens</h4>
+            <span class="instructors-marketing__list__single__title">Expert in education</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-6 col-md-5 col-lg-4 instructors-marketing__cta">
+        <div class="instructors-marketing__cta__content">
+          <h3 class="instructors-marketing__cta__title">Join in on open education!</h3>
+          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
+          <a class="instructors-marketing__cta__button" href="#">Sign up!</a>
+        </div>
+      </div>
+    </div>  
+  </section>
+
+
+<%block name="js_extra">
+   <script type="text/javascript">
+      $(window).load(function() {
+         if(getParameterByName('next')) {
+              $('#login').trigger("click");
+         }
+      })
+   </script>
+</%block>
+
+% if show_signup_immediately is not UNDEFINED:
+  ## NOTE: This won't work in production, because anonymous views are cached, so it will
+  ## show either with or without this extra js for 3 minutes at a time.
+<script type="text/javascript">
+  $(window).load(function() {$('#signup_action').trigger("click");});
+</script>
+% endif

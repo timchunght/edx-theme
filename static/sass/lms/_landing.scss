@@ -1,0 +1,214 @@
+.landing-hero {
+	padding: $landing-hero-padding-ver 30px;
+	background-image: $landing-hero-bg-image;
+	background-position: center center;
+	background-size: cover;
+	text-align: center;
+	color: $landing-hero-text-color;
+
+	&__content {
+		max-width: 880px;
+		margin: 0 auto;
+
+		&__text {
+
+			& h1 {
+				@include sans-serif-black;
+				font-size: 64px;
+				margin: 0 0 10px;
+
+				@media(max-width:$screen-sm-min) {
+					font-size: 42px;
+				}
+			}
+
+			& p {
+				@include sans-serif;
+				font-size: 20px;
+				line-height: 130%;
+				color: #fff;
+			}
+		}
+
+		&__button, &__button:visited, &__button:link {
+			padding: 15px 40px;
+			@include button-negative;
+			@include expanding-button(40px, 15px);
+			font-size: 20px;
+			margin-top: 20px;
+			color: #fff;
+			text-decoration: none;
+		}
+	}
+}
+
+
+.landing-featured-points {
+	padding: 60px 30px;
+
+	&__point {
+
+		& h3 {
+			@include sans-serif;
+			color: $brand-primary-color;
+			margin: 0 0 20px;
+		}
+
+		& p {
+			text-align: justify;
+			margin-bottom: 30px;
+		}
+	}
+}
+
+.landing-search {
+	@include display(flex);
+	@include align-items(center);
+	@include flex-wrap(nowrap);
+	padding: 0 0 40px;
+
+	@media (max-width:$screen-sm-max) {
+		padding: 0 15px 40px;
+	}
+
+	&__filler {
+		height: 2px;
+		background-color: $brand-primary-color;
+	}
+
+	&__field {
+		border: 2px solid $brand-primary-color;
+		padding: 15px;
+		@include display(flex);
+		@include align-items(center);
+		@include flex-wrap(nowrap);
+
+		& i {
+			font-size: 22px;
+			opacity: 0.35;
+			margin: 0 5px;
+			@include flex-shrink(0);
+		}
+
+		& input {
+			@include sans-serif-light;
+			line-height: normal;
+			font-size: 24px;
+			border: none;
+			outline: none;
+			box-shadow: none;
+			width: 100%;
+			@include flex-shrink(1);
+			@include transition(all 0.3s ease-in-out);
+			padding: 0 10px;
+			margin: 0;
+
+			&:hover, &:focus {
+				border: none;
+				outline: none;
+				padding: 0 20px;
+				box-shadow: none;
+			}
+		}
+	}
+}
+
+
+.landing-courses {
+
+	& h2 {
+		@include sans-serif-bold;
+		font-size: 32px;
+		color: tint($base-text-color, 50%);
+		margin: 0 0 30px;
+		text-align: center;
+	}
+
+	&__container {
+		border-top: 2px solid tint($base-text-color, 80%);
+		border-bottom: 2px solid tint($base-text-color, 80%);
+		background-color: tint($base-text-color, 90%);
+	}
+
+	&__logo {
+		padding: 10px 20px;
+		background-color: tint($base-text-color, 80%);
+		display: inline-block;
+		margin: 0 auto 30px;
+
+		& img {
+			max-width: 42px;
+			max-height: 42px;
+			width: auto;
+			height: auto;
+			opacity: 0.4;
+		}
+	}
+
+	& .row {
+		@include display(flex);
+		@include flex-wrap(wrap);
+
+		&:before, &:after {
+			display: none;
+		}
+	}
+
+	&__more-link {
+		@include sans-serif;
+		font-size: 18px;
+		padding: 10px 20px;
+		background-color: tint($base-text-color, 80%);
+		display: inline-block;
+		margin: 20px auto 0;
+		color: tint($base-text-color, 60%);
+		@include transition (all 0.3s ease-in-out);
+
+		& i {
+			@include transition (all 0.3s ease-in-out);
+		}
+
+		&:hover, &:focus {
+			color: tint($base-text-color, 40%);
+			text-decoration: none;
+			padding: 10px 30px;
+
+			& i {
+				@include transform(rotate(360deg));
+				margin-left: 10px;
+			}
+		}
+	}
+}
+
+.landing-additional-text {
+	padding: 90px 30px;
+	text-align: center;
+
+	&__content {
+		max-width: 880px;
+		margin: 0 auto;
+	}
+
+	& h2 {
+		@include sans-serif-bold;
+		font-size: 36px;
+		margin: 0 0 30px;
+		color: $brand-primary-color;
+	}
+
+	&__separator {
+		width: 100px;
+		height: 2px;
+		background-color: $brand-primary-color;
+		margin: 0 auto 25px;
+	}
+
+	&__button, &__button:link, &__button:visited {
+		padding: 12px 30px;
+		@include button-positive($brand-primary-color);
+		@include expanding-button(30px, 15px);
+		font-size: 16px;
+		margin-top: 15px;
+	}
+}

@@ -1,0 +1,41 @@
+@mixin sans-serif-light {
+	font-family: 'Lato', sans-serif;
+	font-weight: 300;
+	font-style: normal;
+}
+
+@mixin sans-serif {
+	font-family: 'Lato', sans-serif;
+	font-weight: 400;
+	font-style: normal;
+}
+
+@mixin sans-serif-semibold {
+	font-family: 'Lato', sans-serif;
+	font-weight: 600;
+	font-style: normal;
+}
+
+@mixin sans-serif-bold {
+	font-family: 'Lato', sans-serif;
+	font-weight: 700;
+	font-style: normal;
+}
+
+@mixin sans-serif-black {
+	font-family: 'Lato', sans-serif;
+	font-weight: 800;
+	font-style: normal;
+}
+
+@mixin sans-serif-italic {
+	font-family: 'Lato', sans-serif;
+	font-weight: 400;
+	font-style: italic;
+}
+
+@mixin sans-serif-bold-italic {
+	font-family: 'Lato', sans-serif;
+	font-weight: 700;
+	font-style: italic;
+}

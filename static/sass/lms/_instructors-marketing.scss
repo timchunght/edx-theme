@@ -1,0 +1,102 @@
+.instructors-marketing {
+	padding: 50px 10px;
+	border-top: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+
+	@media(max-width:$screen-sm-min) {
+		padding: 50px 30px;
+	}
+	
+	&>.row {
+		@include display(flex);
+		@include flex-wrap(wrap);
+		@include align-items(center);
+
+		&:before, &:after {
+			display: none;
+		}
+	}
+
+	&__text {
+		margin-bottom: 30px;
+		text-align: justify;
+
+		&__title {
+			@include sans-serif-bold;
+			font-size: 36px;
+			margin: 0 0 15px;
+			color: $brand-primary-color;
+			text-align: left;
+		}
+	}
+
+	&__list {
+		border-top: #ddd;
+		padding-top: 20px;
+		@include display(flex);
+		@include flex-wrap(wrap);
+
+		&__single {
+			width: 20%;
+			display: inline-block;
+
+			@media (max-width: $screen-sm-max) {
+				width: 25%;
+			}
+
+			@media (max-width: $screen-xs-max) {
+				width: 50%;
+			}
+
+			padding: 10px;
+
+			&__image {
+				width: 100%;
+				height: auto;
+				border: 1px solid #ddd;
+				display: block;
+				margin-bottom: 10px;
+			}
+
+			&__name {
+				font-size: 14px;
+				@include sans-serif-bold;
+				margin: 0 0 2px;
+			}
+
+			&__title {
+				font-size: 12px;
+				display: block;
+				margin: 0;
+			}
+		}
+	}
+
+	&__cta {
+		padding: 0 30px;
+
+		@media(max-width:$screen-sm-max) {
+			margin-top: 30px;
+		}
+
+		&__content {
+			background-color: #efefef;
+			padding: 30px;
+			text-align: center;
+		}
+
+		&__title {
+			@include sans-serif-black;
+			font-size: 24px;
+			margin: 0 0 20px;
+		}
+
+		&__button, &__button:link, &__button:visited {
+			@include button-positive($brand-primary-color);
+			@include expanding-button(50px, 10px);
+			margin: 15px 0 0;
+			font-size: 16px;
+			@include sans-serif-bold;
+		}
+	}
+}

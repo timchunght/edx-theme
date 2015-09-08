@@ -1,0 +1,91 @@
+html {
+	font-size: 14px;
+}
+
+body {
+	@include sans-serif;
+	font-size: 14px;
+	color: $base-text-color;
+}
+
+p {
+	@include sans-serif;
+	font-size: 14px;
+	line-height: 130%;
+}
+
+a {
+	@include transition(all 0.25s ease-in-out);
+	color: $brand-primary-color;
+
+	&:hover, &:focus {
+		text-decoration: none;
+	}
+}
+
+img {
+	max-width: none;
+}
+
+h1, h2, h3, h4, p, a, a:link, a:link:hover, a:link:focus {
+	color: inherit;
+	text-transform: none;
+	text-decoration: none;
+}
+
+.content-wrapper {
+	padding-bottom: 0;
+}
+
+.course-info header.course-profile {
+	padding: 40px 0;
+	margin: 0;
+	height: auto;
+}
+
+.dashboard .my-courses .course .cover, .dashboard .my-courses .course a.fade-cover {
+	margin-right: 20px;
+}
+
+.container-bs {
+  @include container-fixed();
+
+	  @media (min-width: $screen-sm-min) {
+	    width: $container-sm;
+	  }
+	  @media (min-width: $screen-md-min) {
+	    width: $container-md;
+	  }
+	  @media (min-width: $screen-lg-min) {
+	    width: $container-lg;
+	  }
+  }
+
+  .nav-skip {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: -600px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    background: #fff;
+    border-bottom: 1px solid #fcfcfc;
+    padding: 15px 10px
+}
+
+.nav-skip:focus,.nav-skip:active {
+    position: static;
+    width: auto;
+    height: auto
+}
+
+.window-wrap {
+	min-height: 100vh;
+	@include display(flex);
+	@include flex-direction(column);
+}
+
+.content-wrapper {
+	flex: 1;
+}
