@@ -1,0 +1,75 @@
+/*
+Syntax error: File to import not found or unreadable: bourbon.
+              Load paths:
+                /edx/app/edxapp/edx-platform (DEPRECATED)
+                /edx/app/edxapp/edx-platform/common/static
+                /edx/app/edxapp/edx-platform/common/static/sass
+                /edx/app/edxapp/edx-platform/lms/static/sass
+                /edx/app/edxapp/edx-platform/lms/static/certificates/sass
+                /edx/app/edxapp/themes/appsembler-cypress/static/sass
+                /edx/app/edxapp/edx-platform/cms/static/sass
+                /edx/app/edxapp/edx-platform/common/static/sass
+                /edx/app/edxapp/edx-platform/lms/static/sass
+                /edx/app/edxapp/edx-platform/lms/static/certificates/sass
+                /edx/app/edxapp/themes/appsembler-cypress/static/sass
+                /edx/app/edxapp/edx-platform/cms/static/sass
+                /edx/app/edxapp/edx-platform/common/static/sass
+        on line 5 of /edx/app/edxapp/themes/appsembler-cypress/static/sass/appsembler-cypress.scss
+
+1: // Import Bootstrap Defaults
+2: @import "bootstrap";
+3: 
+4: // Import Bourbon.io
+5: @import "bourbon";
+6: 
+7: // Import typography
+8: @import "base/typography";
+9: 
+10: // Import bg functions
+
+Backtrace:
+/edx/app/edxapp/themes/appsembler-cypress/static/sass/appsembler-cypress.scss:5
+/edx/app/edxapp/.gem/gems/sass-3.3.5/lib/sass/tree/import_node.rb:66:in `rescue in import'
+/edx/app/edxapp/.gem/gems/sass-3.3.5/lib/sass/tree/import_node.rb:45:in `import'
+/edx/app/edxapp/.gem/gems/sass-3.3.5/lib/sass/tree/import_node.rb:28:in `imported_file'
+/edx/app/edxapp/.gem/gems/sass-3.3.5/lib/sass/tree/import_node.rb:37:in `css_import?'
+/edx/app/edxapp/.gem/gems/sass-3.3.5/lib/sass/tree/visitors/perform.rb:283:in `visit_import'
+/edx/app/edxapp/.gem/gems/sass-3.3.5/lib/sass/tree/visitors/base.rb:36:in `visit'
+/edx/app/edxapp/.gem/gems/sass-3.3.5/lib/sass/tree/visitors/perform.rb:152:in `block in visit'
+/edx/app/edxapp/.gem/gems/sass-3.3.5/lib/sass/stack.rb:79:in `block in with_base'
+/edx/app/edxapp/.gem/gems/sass-3.3.5/lib/sass/stack.rb:121:in `with_frame'
+/edx/app/edxapp/.gem/gems/sass-3.3.5/lib/sass/stack.rb:79:in `with_base'
+/edx/app/edxapp/.gem/gems/sass-3.3.5/lib/sass/tree/visitors/perform.rb:152:in `visit'
+/edx/app/edxapp/.gem/gems/sass-3.3.5/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
+/edx/app/edxapp/.gem/gems/sass-3.3.5/lib/sass/tree/visitors/base.rb:52:in `map'
+/edx/app/edxapp/.gem/gems/sass-3.3.5/lib/sass/tree/visitors/base.rb:52:in `visit_children'
+/edx/app/edxapp/.gem/gems/sass-3.3.5/lib/sass/tree/visitors/perform.rb:161:in `block in visit_children'
+/edx/app/edxapp/.gem/gems/sass-3.3.5/lib/sass/tree/visitors/perform.rb:173:in `with_environment'
+/edx/app/edxapp/.gem/gems/sass-3.3.5/lib/sass/tree/visitors/perform.rb:160:in `visit_children'
+/edx/app/edxapp/.gem/gems/sass-3.3.5/lib/sass/tree/visitors/base.rb:36:in `block in visit'
+/edx/app/edxapp/.gem/gems/sass-3.3.5/lib/sass/tree/visitors/perform.rb:180:in `visit_root'
+/edx/app/edxapp/.gem/gems/sass-3.3.5/lib/sass/tree/visitors/base.rb:36:in `visit'
+/edx/app/edxapp/.gem/gems/sass-3.3.5/lib/sass/tree/visitors/perform.rb:151:in `visit'
+/edx/app/edxapp/.gem/gems/sass-3.3.5/lib/sass/tree/visitors/perform.rb:8:in `visit'
+/edx/app/edxapp/.gem/gems/sass-3.3.5/lib/sass/tree/root_node.rb:36:in `css_tree'
+/edx/app/edxapp/.gem/gems/sass-3.3.5/lib/sass/tree/root_node.rb:20:in `render'
+/edx/app/edxapp/.gem/gems/sass-3.3.5/lib/sass/engine.rb:275:in `block in render'
+/edx/app/edxapp/.gem/gems/sass-3.3.5/lib/sass/util.rb:442:in `silence_sass_warnings'
+/edx/app/edxapp/.gem/gems/sass-3.3.5/lib/sass/engine.rb:275:in `render'
+/edx/app/edxapp/.gem/gems/sass-3.3.5/lib/sass/plugin/compiler.rb:414:in `update_stylesheet'
+/edx/app/edxapp/.gem/gems/sass-3.3.5/lib/sass/plugin/compiler.rb:189:in `block in update_stylesheets'
+/edx/app/edxapp/.gem/gems/sass-3.3.5/lib/sass/plugin/compiler.rb:186:in `each'
+/edx/app/edxapp/.gem/gems/sass-3.3.5/lib/sass/plugin/compiler.rb:186:in `update_stylesheets'
+/edx/app/edxapp/.gem/gems/sass-3.3.5/lib/sass/plugin.rb:82:in `update_stylesheets'
+/edx/app/edxapp/.gem/gems/sass-3.3.5/lib/sass/exec.rb:489:in `watch_or_update'
+/edx/app/edxapp/.gem/gems/sass-3.3.5/lib/sass/exec.rb:346:in `process_result'
+/edx/app/edxapp/.gem/gems/sass-3.3.5/lib/sass/exec.rb:43:in `parse'
+/edx/app/edxapp/.gem/gems/sass-3.3.5/lib/sass/exec.rb:22:in `parse!'
+/edx/app/edxapp/.gem/gems/sass-3.3.5/bin/sass:13:in `<top (required)>'
+/edx/app/edxapp/edx-platform/bin/sass:16:in `load'
+/edx/app/edxapp/edx-platform/bin/sass:16:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Syntax error: File to import not found or unreadable: bourbon.\A               Load paths:\A                 /edx/app/edxapp/edx-platform (DEPRECATED)\A                 /edx/app/edxapp/edx-platform/common/static\A                 /edx/app/edxapp/edx-platform/common/static/sass\A                 /edx/app/edxapp/edx-platform/lms/static/sass\A                 /edx/app/edxapp/edx-platform/lms/static/certificates/sass\A                 /edx/app/edxapp/themes/appsembler-cypress/static/sass\A                 /edx/app/edxapp/edx-platform/cms/static/sass\A                 /edx/app/edxapp/edx-platform/common/static/sass\A                 /edx/app/edxapp/edx-platform/lms/static/sass\A                 /edx/app/edxapp/edx-platform/lms/static/certificates/sass\A                 /edx/app/edxapp/themes/appsembler-cypress/static/sass\A                 /edx/app/edxapp/edx-platform/cms/static/sass\A                 /edx/app/edxapp/edx-platform/common/static/sass\A         on line 5 of /edx/app/edxapp/themes/appsembler-cypress/static/sass/appsembler-cypress.scss\A \A 1: // Import Bootstrap Defaults\A 2: @import \"bootstrap\";\A 3: \A 4: // Import Bourbon.io\A 5: @import \"bourbon\";\A 6: \A 7: // Import typography\A 8: @import \"base/typography\";\A 9: \A 10: // Import bg functions"; }
