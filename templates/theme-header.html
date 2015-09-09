@@ -43,8 +43,8 @@ site_status_msg = get_site_status_msg(course_id)
 <nav class="navbar navbar-default" id="navbar">
   <div class="navigation container-bs">
     <div class="navbar-header">
-      <a class="page-scroll navbar__logo navbar__logo__positive" href="${marketing_link('ROOT')}"><img src="${static.url('themes/appsembler-cypress/images/brand-logo.svg')}" alt="${platform_name()}"></a>
-      <a class="page-scroll navbar__logo navbar__logo__negative" href="${marketing_link('ROOT')}"><img src="${static.url('themes/appsembler-cypress/images/brand-logo-negative.svg')}" alt="${platform_name()}"></a>
+      <a class="page-scroll navbar__logo navbar__logo__positive" href="${marketing_link('ROOT')}"><img src="${static.url('themes/')}/${settings.FEATURES.get('THEME_FOLDER')}/images/brand-logo.svg" alt="${platform_name()}"></a>
+      <a class="page-scroll navbar__logo navbar__logo__negative" href="${marketing_link('ROOT')}"><img src="${static.url('themes/')}/${settings.FEATURES.get('THEME_FOLDER')}/images/brand-logo-negative.svg" alt="${platform_name()}"></a>
 
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#edx-navbar-collapse">
             <span class="sr-only">Toggle navigation</span>
