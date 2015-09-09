@@ -92,7 +92,7 @@
 <%doc>
     <div class="course-list-view container-bs">
       <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-lg-8 col-lg-offset-2">
-        %for course in courses:
+        %for course in courses[:settings.HOMEPAGE_COURSE_MAX]:
           <div class="course-list-item">
             <div class="course-list-item__image" style="background-image: url('${course_image_url(course)}');"></div>
             <div class="course-list-item__info">
@@ -117,7 +117,7 @@
           <div class="landing-courses__logo"><img src="${static.url('themes/')}/${settings.FEATURES.get('THEME_FOLDER')}/images/icon-black.svg"></div>
         </div>
         <div class="row">
-          %for course in courses:
+          %for course in courses[:settings.HOMEPAGE_COURSE_MAX]:
             <div class="col-xs-12 col-sm-6 col-md-4 course-tile">
               <div class="course-tile__body">
                 <div class="course-tile__image"><img src="${course_image_url(course)}"></div>
