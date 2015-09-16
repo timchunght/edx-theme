@@ -15,7 +15,6 @@ $(function() {
 
 
 $("#dashboard-header__search-trigger").click(function() {
-	console.log('test');
     $(this).toggleClass("activated");
     $("#dashboard-search-bar").slideToggle();
 })
