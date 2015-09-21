@@ -6016,7 +6016,7 @@ html {
 }
 
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 400;
   font-style: normal;
   font-size: 14px;
@@ -6024,7 +6024,7 @@ body {
 }
 
 p {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 400;
   font-style: normal;
   font-size: 14px;
@@ -6148,7 +6148,7 @@ h1, h2, h3, h4, p, a, a:link, a:link:hover, a:link:focus {
 
 .form__label, .form label {
   display: block;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 400;
   font-style: normal;
   font-size: 14px;
@@ -6156,7 +6156,7 @@ h1, h2, h3, h4, p, a, a:link, a:link:hover, a:link:focus {
 }
 
 .form__label.required, .form label.required {
-  font-family: 'Roboto Slab', serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 700;
   font-style: normal;
 }
@@ -6170,7 +6170,7 @@ h1, h2, h3, h4, p, a, a:link, a:link:hover, a:link:focus {
 .form__input {
   border-radius: 0;
   box-shadow: none;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 400;
   font-style: normal;
   width: 100%;
@@ -6240,14 +6240,14 @@ h1, h2, h3, h4, p, a, a:link, a:link:hover, a:link:focus {
   float: left;
   display: inline-block;
   margin-left: 8px;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 400;
   font-style: normal;
   font-size: 14px;
 }
 
 .form__checkbox-label a {
-  font-family: 'Roboto Slab', serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 700;
   font-style: normal;
   font-size: 14px;
@@ -6260,7 +6260,7 @@ h1, h2, h3, h4, p, a, a:link, a:link:hover, a:link:focus {
 
 .form__button {
   cursor: pointer;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 400;
   font-style: normal;
   background-image: none;
@@ -6319,7 +6319,7 @@ h1, h2, h3, h4, p, a, a:link, a:link:hover, a:link:focus {
 }
 
 .form__status-message__title {
-  font-family: 'Roboto Slab', serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 700;
   font-style: normal;
   font-size: 18px;
@@ -6328,7 +6328,7 @@ h1, h2, h3, h4, p, a, a:link, a:link:hover, a:link:focus {
 
 .form__status-message__text, .form__status-message__text.ul li {
   margin: 10px 0 0;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 400;
   font-style: italic;
   font-size: 16px;
@@ -6349,7 +6349,7 @@ h1, h2, h3, h4, p, a, a:link, a:link:hover, a:link:focus {
 .form-group > textarea, .form-group > input[type="text"], .form-group > input[type="email"], .form-group > input[type="password"], .form-group > input[type="tel"] {
   border-radius: 0;
   box-shadow: none;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 400;
   font-style: normal;
   width: 100%;
@@ -6376,7 +6376,7 @@ h1, h2, h3, h4, p, a, a:link, a:link:hover, a:link:focus {
 textarea.form-input, input[type="text"].form-input, input[type="email"].form-input, input[type="password"].form-input, input[type="tel"].form-input {
   border-radius: 0;
   box-shadow: none;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 400;
   font-style: normal;
   width: 100%;
@@ -9394,7 +9394,7 @@ Copyright (c) 2015 Daniel Eden
   background-color: #0090c1;
   border-top: 2px solid #0081ad;
   padding: 40px 30px 60px;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 400;
   font-style: normal;
   font-weight: 400;
@@ -9749,7 +9749,7 @@ Copyright (c) 2015 Daniel Eden
 }
 
 .navbar-nav li a {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 400;
   font-style: normal;
   font-size: 16px;
@@ -9823,7 +9823,7 @@ Copyright (c) 2015 Daniel Eden
 .navbar-nav .dropdown-menu li a {
   text-transform: capitalize;
   color: #666 !important;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 400;
   font-style: normal;
   -webkit-transition: all 0.3s ease-in-out;
@@ -9973,7 +9973,7 @@ Copyright (c) 2015 Daniel Eden
   display: inline-block;
   margin-left: 20px;
   font-size: 16px;
-  font-family: 'Roboto Slab', serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 700;
   font-style: normal;
   color: #414151;
@@ -9992,7 +9992,7 @@ Copyright (c) 2015 Daniel Eden
   display: inline-block;
   margin-left: 20px;
   font-size: 16px;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 400;
   font-style: normal;
   color: #414151;
@@ -10001,7 +10001,7 @@ Copyright (c) 2015 Daniel Eden
 }
 
 .navigation__course-name span {
-  font-family: 'Roboto Slab', serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 700;
   font-style: normal;
   color: #414151;
@@ -10097,15 +10097,15 @@ Copyright (c) 2015 Daniel Eden
 }
 
 .page-header-arrow h1 {
-  font-family: 'Roboto Slab', serif;
-  font-weight: 700;
+  font-family: 'Lato', sans-serif;
+  font-weight: 800;
   font-style: normal;
   font-size: 64px;
   margin: 0 0 10px;
 }
 
 .page-header-arrow p {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 400;
   font-style: normal;
   font-size: 20px;
@@ -10141,15 +10141,15 @@ Copyright (c) 2015 Daniel Eden
 }
 
 .bg-photo-hero__content__text h1 {
-  font-family: 'Roboto Slab', serif;
-  font-weight: 700;
+  font-family: 'Lato', sans-serif;
+  font-weight: 800;
   font-style: normal;
   font-size: 64px;
   margin: 0 0 10px;
 }
 
 .bg-photo-hero__content__text p {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 400;
   font-style: normal;
   font-size: 20px;
@@ -10160,7 +10160,7 @@ Copyright (c) 2015 Daniel Eden
 .bg-photo-hero__content__button, .bg-photo-hero__content__button:visited, .bg-photo-hero__content__button:link {
   padding: 15px 40px;
   cursor: pointer;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 400;
   font-style: normal;
   background: none;
@@ -10297,8 +10297,8 @@ Copyright (c) 2015 Daniel Eden
 }
 
 .landing-hero__content__text h1 {
-  font-family: 'Roboto Slab', serif;
-  font-weight: 700;
+  font-family: 'Lato', sans-serif;
+  font-weight: 800;
   font-style: normal;
   font-size: 64px;
   margin: 0 0 10px;
@@ -10311,7 +10311,7 @@ Copyright (c) 2015 Daniel Eden
 }
 
 .landing-hero__content__text p {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 400;
   font-style: normal;
   font-size: 20px;
@@ -10322,7 +10322,7 @@ Copyright (c) 2015 Daniel Eden
 .landing-hero__content__button, .landing-hero__content__button:visited, .landing-hero__content__button:link {
   padding: 15px 40px;
   cursor: pointer;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 400;
   font-style: normal;
   background: none;
@@ -10368,7 +10368,7 @@ Copyright (c) 2015 Daniel Eden
 }
 
 .landing-featured-points__point h3 {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 400;
   font-style: normal;
   color: #0090C1;
@@ -10457,7 +10457,7 @@ Copyright (c) 2015 Daniel Eden
 }
 
 .landing-search__field input {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 300;
   font-style: normal;
   line-height: normal;
@@ -10485,7 +10485,7 @@ Copyright (c) 2015 Daniel Eden
 }
 
 .landing-courses h2 {
-  font-family: 'Roboto Slab', serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 700;
   font-style: normal;
   font-size: 32px;
@@ -10537,7 +10537,7 @@ Copyright (c) 2015 Daniel Eden
 }
 
 .landing-courses__more-link {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 400;
   font-style: normal;
   font-size: 18px;
@@ -10583,7 +10583,7 @@ Copyright (c) 2015 Daniel Eden
 }
 
 .landing-additional-text h2 {
-  font-family: 'Roboto Slab', serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 700;
   font-style: normal;
   font-size: 36px;
@@ -10601,7 +10601,7 @@ Copyright (c) 2015 Daniel Eden
 .landing-additional-text__button, .landing-additional-text__button:link, .landing-additional-text__button:visited {
   padding: 12px 30px;
   cursor: pointer;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 400;
   font-style: normal;
   background-image: none;
@@ -10702,7 +10702,7 @@ Copyright (c) 2015 Daniel Eden
 }
 
 .course-tile__date {
-  font-family: 'Roboto Slab', serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 700;
   font-style: normal;
   color: #8d8d96;
@@ -10712,7 +10712,7 @@ Copyright (c) 2015 Daniel Eden
 }
 
 .course-tile__name {
-  font-family: 'Roboto Slab', serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 700;
   font-style: normal;
   color: #414151;
@@ -10732,7 +10732,7 @@ Copyright (c) 2015 Daniel Eden
 }
 
 .course-tile__instructor {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 400;
   font-style: normal;
   color: #7a7a85;
@@ -10748,7 +10748,7 @@ Copyright (c) 2015 Daniel Eden
 }
 
 .course-tile__cta, .course-tile__cta:link, .course-tile__cta:visited {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 600;
   font-style: normal;
   font-size: 16px;
@@ -10831,7 +10831,7 @@ Copyright (c) 2015 Daniel Eden
 }
 
 .course-list-item__date {
-  font-family: 'Roboto Slab', serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 700;
   font-style: normal;
   color: #8d8d96;
@@ -10841,7 +10841,7 @@ Copyright (c) 2015 Daniel Eden
 }
 
 .course-list-item__name {
-  font-family: 'Roboto Slab', serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 700;
   font-style: normal;
   color: #414151;
@@ -10860,7 +10860,7 @@ Copyright (c) 2015 Daniel Eden
 }
 
 .course-list-item__instructor {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 400;
   font-style: normal;
   color: #7a7a85;
@@ -10876,7 +10876,7 @@ Copyright (c) 2015 Daniel Eden
 }
 
 .course-list-item__cta, .course-list-item__cta:link, .course-list-item__cta:visited {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 600;
   font-style: normal;
   font-size: 16px;
@@ -10944,7 +10944,7 @@ Copyright (c) 2015 Daniel Eden
 }
 
 .instructors-marketing__text__title {
-  font-family: 'Roboto Slab', serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 700;
   font-style: normal;
   font-size: 36px;
@@ -11000,7 +11000,7 @@ Copyright (c) 2015 Daniel Eden
 
 .instructors-marketing__list__single__name {
   font-size: 14px;
-  font-family: 'Roboto Slab', serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 700;
   font-style: normal;
   margin: 0 0 2px;
@@ -11029,8 +11029,8 @@ Copyright (c) 2015 Daniel Eden
 }
 
 .instructors-marketing__cta__title {
-  font-family: 'Roboto Slab', serif;
-  font-weight: 700;
+  font-family: 'Lato', sans-serif;
+  font-weight: 800;
   font-style: normal;
   font-size: 24px;
   margin: 0 0 20px;
@@ -11038,7 +11038,7 @@ Copyright (c) 2015 Daniel Eden
 
 .instructors-marketing__cta__button, .instructors-marketing__cta__button:link, .instructors-marketing__cta__button:visited {
   cursor: pointer;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 400;
   font-style: normal;
   background-image: none;
@@ -11059,7 +11059,7 @@ Copyright (c) 2015 Daniel Eden
   padding-right: 50px;
   margin: 15px 0 0;
   font-size: 16px;
-  font-family: 'Roboto Slab', serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 700;
   font-style: normal;
 }
@@ -11103,7 +11103,7 @@ Copyright (c) 2015 Daniel Eden
 
 .signup-form__help__heading, .login-form__help__heading {
   margin: 0 0 10px;
-  font-family: 'Roboto Slab', serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 700;
   font-style: normal;
   font-size: 18px;
@@ -11114,7 +11114,7 @@ Copyright (c) 2015 Daniel Eden
 }
 
 .signup-form__help p a, .signup-form__help p a:visited, .signup-form__help p a:link, .login-form__help p a, .login-form__help p a:visited, .login-form__help p a:link {
-  font-family: 'Roboto Slab', serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 700;
   font-style: normal;
   color: #0090C1;
@@ -11128,7 +11128,7 @@ Copyright (c) 2015 Daniel Eden
 
 .signup-form__help__login-button, .signup-form__help__login-button:link, .signup-form__help__login-button:visited, .login-form__help__login-button, .login-form__help__login-button:link, .login-form__help__login-button:visited {
   cursor: pointer;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 400;
   font-style: normal;
   background-image: none;
@@ -11265,7 +11265,7 @@ Copyright (c) 2015 Daniel Eden
 }
 
 .course-header__title {
-  font-family: 'Roboto Slab', serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 700;
   font-style: normal;
   font-size: 48px;
@@ -11282,7 +11282,7 @@ Copyright (c) 2015 Daniel Eden
 }
 
 .course-header__short-info {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 400;
   font-style: normal;
   font-size: 20px;
@@ -11299,7 +11299,7 @@ Copyright (c) 2015 Daniel Eden
 }
 
 .course-information__title, .course-information section h2 {
-  font-family: 'Roboto Slab', serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 700;
   font-style: normal;
   font-size: 24px;
@@ -11343,7 +11343,7 @@ Copyright (c) 2015 Daniel Eden
 
 .course-information .teacher h3 {
   margin: 10px 0 5px;
-  font-family: 'Roboto Slab', serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 700;
   font-style: normal;
   font-size: 18px;
@@ -11409,7 +11409,7 @@ Copyright (c) 2015 Daniel Eden
 
 .course-information__instructor__name, .course-information__instructor h3 {
   margin: 10px 0 5px;
-  font-family: 'Roboto Slab', serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 700;
   font-style: normal;
   font-size: 18px;
@@ -11418,7 +11418,7 @@ Copyright (c) 2015 Daniel Eden
 }
 
 .course-information__instructor__title {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 400;
   font-style: normal;
   font-size: 12px;
@@ -11429,7 +11429,7 @@ Copyright (c) 2015 Daniel Eden
 
 .course-information .faq h3 {
   margin: 20px 0 5px;
-  font-family: 'Roboto Slab', serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 700;
   font-style: normal;
   font-size: 18px;
@@ -11443,16 +11443,16 @@ Copyright (c) 2015 Daniel Eden
 }
 
 .course-meta__start-date {
-  font-family: 'Roboto Slab', serif;
-  font-weight: 700;
+  font-family: 'Lato', sans-serif;
+  font-weight: 800;
   font-style: normal;
   font-size: 18px;
   color: #0090C1;
 }
 
 .course-meta__end-date {
-  font-family: 'Roboto Slab', serif;
-  font-weight: 700;
+  font-family: 'Lato', sans-serif;
+  font-weight: 800;
   font-style: normal;
   font-size: 14px;
   opacity: 0.6;
@@ -11461,7 +11461,7 @@ Copyright (c) 2015 Daniel Eden
 .course-meta__enroll-button, .course-meta__enroll-button:link, .course-meta__enroll-button:visited {
   color: #fff;
   cursor: pointer;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 400;
   font-style: normal;
   background-image: none;
@@ -11481,7 +11481,7 @@ Copyright (c) 2015 Daniel Eden
   display: block;
   padding: 15px;
   font-size: 18px;
-  font-family: 'Roboto Slab', serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 700;
   font-style: normal;
   margin: 25px 20px;
@@ -11504,7 +11504,7 @@ Copyright (c) 2015 Daniel Eden
 
 .course-meta__enroll-button.unavailable, .course-meta__enroll-button:link.unavailable, .course-meta__enroll-button:visited.unavailable {
   cursor: pointer;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 400;
   font-style: normal;
   background-image: none;
@@ -11557,7 +11557,7 @@ Copyright (c) 2015 Daniel Eden
 }
 
 .course-meta__number {
-  font-family: 'Roboto Slab', serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 700;
   font-style: normal;
   font-size: 16px;
@@ -11565,7 +11565,7 @@ Copyright (c) 2015 Daniel Eden
 }
 
 .course-meta__number span {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 400;
   font-style: normal;
 }
@@ -11606,7 +11606,7 @@ Copyright (c) 2015 Daniel Eden
 
 .course-meta .share-helper-text {
   opacity: 14px;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 400;
   font-style: normal;
   color: rgba(65, 65, 81, 0.5);
@@ -11632,7 +11632,7 @@ Copyright (c) 2015 Daniel Eden
 
 .course-ribbon span {
   font-size: 14px;
-  font-family: 'Roboto Slab', serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 700;
   font-style: normal;
   color: #fff;
@@ -11684,7 +11684,7 @@ Copyright (c) 2015 Daniel Eden
 }
 
 .dashboard-user__info {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 400;
   font-style: normal;
   display: inline-block;
@@ -11751,7 +11751,7 @@ Copyright (c) 2015 Daniel Eden
 }
 
 .dashboard-user__info__name {
-  font-family: 'Roboto Slab', serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 700;
   font-style: normal;
   color: #0090C1;
@@ -11772,7 +11772,7 @@ Copyright (c) 2015 Daniel Eden
 }
 
 .dashboard-user__info__edit-setting-link, .dashboard-user__info__edit-setting-link:link, .dashboard-user__info__edit-setting-link:visited {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 400;
   font-style: normal;
   color: #414151;
@@ -11827,7 +11827,7 @@ Copyright (c) 2015 Daniel Eden
 
 .dashboard-user__setting-change__button, .dashboard-user__setting-change__button:link {
   cursor: pointer;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 400;
   font-style: normal;
   background-image: none;
@@ -11971,7 +11971,7 @@ Copyright (c) 2015 Daniel Eden
   font-size: 24px;
   margin: 0 0 15px;
   color: #0090C1;
-  font-family: 'Roboto Slab', serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 700;
   font-style: normal;
 }
@@ -11989,7 +11989,7 @@ Copyright (c) 2015 Daniel Eden
   display: inline-block;
   border-right: 1px solid #ddd;
   font-size: 16px;
-  font-family: 'Roboto Slab', serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 700;
   font-style: normal;
   color: rgba(65, 65, 81, 0.7);
@@ -12023,7 +12023,7 @@ Copyright (c) 2015 Daniel Eden
 .dashboard-courses__course__date-block {
   margin-bottom: 5px;
   font-size: 16px;
-  font-family: 'Roboto Slab', serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 700;
   font-style: normal;
   color: #0090C1;
@@ -12031,7 +12031,7 @@ Copyright (c) 2015 Daniel Eden
 
 .dashboard-courses__course__description {
   margin: 5px 0 0;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 400;
   font-style: normal;
   color: #414151;
@@ -12048,7 +12048,7 @@ Copyright (c) 2015 Daniel Eden
   margin: 5px 20px 0 0;
   list-style-type: none;
   display: inline-block;
-  font-family: 'Roboto Slab', serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 700;
   font-style: normal;
 }
@@ -12059,7 +12059,7 @@ Copyright (c) 2015 Daniel Eden
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
-  font-family: 'Roboto Slab', serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 700;
   font-style: normal;
 }
@@ -12075,7 +12075,7 @@ Copyright (c) 2015 Daniel Eden
 
 .dashboard-courses__course__view-button {
   cursor: pointer;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 400;
   font-style: normal;
   background-image: none;
@@ -12169,7 +12169,7 @@ Copyright (c) 2015 Daniel Eden
 }
 
 #email-settings-modal .inner-wrapper header h2, #unenroll-modal .inner-wrapper header h2 {
-  font-family: 'Roboto Slab', serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 700;
   font-style: normal;
   font-size: 24px;
@@ -12181,7 +12181,7 @@ Copyright (c) 2015 Daniel Eden
   display: block;
   text-align: center;
   font-size: 16px;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 400;
   font-style: normal;
   margin: 10px 0;
@@ -12195,7 +12195,7 @@ Copyright (c) 2015 Daniel Eden
 
 #email-settings-modal .inner-wrapper input[type="submit"], #unenroll-modal .inner-wrapper input[type="submit"] {
   cursor: pointer;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 400;
   font-style: normal;
   background-image: none;
@@ -12248,7 +12248,7 @@ Copyright (c) 2015 Daniel Eden
 
 #unenroll-modal .inner-wrapper input[type="submit"] {
   cursor: pointer;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 400;
   font-style: normal;
   background-image: none;
@@ -12315,7 +12315,7 @@ Copyright (c) 2015 Daniel Eden
 }
 
 .dashboard-header h2 {
-  font-family: 'Roboto Slab', serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 700;
   font-style: normal;
   font-size: 24px;
@@ -12417,7 +12417,7 @@ Copyright (c) 2015 Daniel Eden
   background: none;
   border: none;
   outline: none;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 400;
   font-style: normal;
   font-size: 18px;
@@ -12464,7 +12464,7 @@ Copyright (c) 2015 Daniel Eden
   padding: 20px 15px 30px;
   border-bottom: 1px solid #ddd;
   color: rgba(65, 65, 81, 0.9);
-  font-family: 'Roboto Slab', serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 700;
   font-style: normal;
 }
@@ -12472,14 +12472,14 @@ Copyright (c) 2015 Daniel Eden
 .search-results {
   padding: 40px 15px;
   color: 14px;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 400;
   font-style: normal;
 }
 
 .search-results .search-back-to-courses {
   color: #0090C1;
-  font-family: 'Roboto Slab', serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 700;
   font-style: normal;
 }
@@ -12490,7 +12490,7 @@ Copyright (c) 2015 Daniel Eden
 
 .search-results h2 {
   font-size: 24px;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 400;
   font-style: normal;
   color: rgba(65, 65, 81, 0.7);
@@ -12498,7 +12498,7 @@ Copyright (c) 2015 Daniel Eden
 }
 
 .search-results .search-count {
-  font-family: 'Roboto Slab', serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 700;
   font-style: normal;
   color: rgba(65, 65, 81, 0.7);
@@ -12509,7 +12509,7 @@ Copyright (c) 2015 Daniel Eden
 .login-register {
   padding: 30px 15px;
   margin-bottom: 20px;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 400;
   font-style: normal;
   min-width: 240px;
@@ -12526,7 +12526,7 @@ Copyright (c) 2015 Daniel Eden
 .login-register .form-field input, .login-register .form-field select {
   border-radius: 0;
   box-shadow: none;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 400;
   font-style: normal;
   width: 100%;
@@ -12555,7 +12555,7 @@ Copyright (c) 2015 Daniel Eden
 .login-register .form-field textarea {
   border-radius: 0;
   box-shadow: none;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 400;
   font-style: normal;
   width: 100%;
@@ -12580,7 +12580,7 @@ Copyright (c) 2015 Daniel Eden
 
 .login-register .form-field label {
   display: block;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 400;
   font-style: normal;
   font-size: 14px;
@@ -12588,7 +12588,7 @@ Copyright (c) 2015 Daniel Eden
 }
 
 .login-register .form-field label.required {
-  font-family: 'Roboto Slab', serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 700;
   font-style: normal;
 }
@@ -12604,7 +12604,7 @@ Copyright (c) 2015 Daniel Eden
 
 .login-register .action-primary {
   cursor: pointer;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 400;
   font-style: normal;
   background-image: none;
@@ -12697,7 +12697,7 @@ Copyright (c) 2015 Daniel Eden
 }
 
 .view-profile .profile-self .wrapper-profile-field-account-privacy .u-field-title {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 400;
   font-style: normal;
   color: rgba(65, 65, 81, 0.8);
@@ -12710,7 +12710,7 @@ Copyright (c) 2015 Daniel Eden
 }
 
 .view-profile .profile-self .wrapper-profile-field-account-privacy .u-field-value select {
-  font-family: 'Roboto Slab', serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 700;
   font-style: normal;
   padding: 5px;
@@ -12841,7 +12841,7 @@ Copyright (c) 2015 Daniel Eden
 }
 
 .view-profile input {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 400;
   font-style: normal;
   height: auto;
@@ -12859,7 +12859,7 @@ Copyright (c) 2015 Daniel Eden
 .wrapper-account-settings .wrapper-header .header-title {
   font-size: 2.2rem;
   color: #0090C1;
-  font-family: 'Roboto Slab', serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 700;
   font-style: normal;
   letter-spacing: 0;
@@ -12869,7 +12869,7 @@ Copyright (c) 2015 Daniel Eden
 .wrapper-account-settings .wrapper-header .account-settings-header-subtitle {
   margin: 10px 0 5px;
   font-size: 1rem;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 400;
   font-style: normal;
   color: rgba(65, 65, 81, 0.85);
@@ -12916,7 +12916,7 @@ Copyright (c) 2015 Daniel Eden
 }
 
 .account-settings-sections .section .u-field-title {
-  font-family: 'Roboto Slab', serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 700;
   font-style: normal;
   color: rgba(65, 65, 81, 0.7);
@@ -12937,7 +12937,7 @@ Copyright (c) 2015 Daniel Eden
 }
 
 .account-settings-sections .section .u-field-value {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 400;
   font-style: normal;
   color: #414151;
@@ -12959,7 +12959,7 @@ Copyright (c) 2015 Daniel Eden
 .account-settings-sections .section .u-field-value input, .account-settings-sections .section .u-field-value select {
   border-radius: 0;
   box-shadow: none;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 400;
   font-style: normal;
   width: 100%;
@@ -12992,7 +12992,7 @@ Copyright (c) 2015 Daniel Eden
 }
 
 .account-settings-sections .section .u-field-message {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 400;
   font-style: normal;
   color: #414151;
@@ -13019,7 +13019,7 @@ Copyright (c) 2015 Daniel Eden
 }
 
 .account-settings-sections .section-header {
-  font-family: 'Roboto Slab', serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 700;
   font-style: normal;
   font-size: 1.2rem;

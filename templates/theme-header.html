@@ -5,22 +5,22 @@
 from django.core.urlresolvers import reverse
 from django.utils.translation import ugettext as _
 
+from microsite_configuration import microsite
+from microsite_configuration.templatetags.microsite import platform_name
+from ccx.overrides import get_current_ccx
+
 # App that handles subdomain specific branding
 import branding
 # app that handles site status messages
 from status.status import get_site_status_msg
 %>
 
-<%! from microsite_configuration import microsite %>
-<%! from microsite_configuration.templatetags.microsite import platform_name %>
-
-
 ## Provide a hook for themes to inject branding on top.
 <%block name="navigation_top" />
 
 
 
-<%block cached="False">
+<%block>
 <%
 try:
     course_id = course.id.to_deprecated_string()
@@ -132,13 +132,9 @@ site_status_msg = get_site_status_msg(course_id)
 
   ## Display IE8 warning banner
   % if course:
-    <!--[if lte IE 8]>
-      <div class="ie-banner" aria-hidden="true">${_('<strong>Warning:</strong> Your browser is not fully supported. We strongly recommend using {chrome_link} or {ff_link}.').format(chrome_link='<a href="https://www.google.com/intl/en/chrome/browser/" target="_blank">Chrome</a>', ff_link='<a href="http://www.mozilla.org/en-US/firefox/new/" target="_blank">Firefox</a>')}</div>
+    <!--[if lte IE 9]>
+    <div class="ie-banner" aria-hidden="true">${_('<strong>Warning:</strong> Your browser is not fully supported. We strongly recommend using {chrome_link} or {ff_link}.').format(chrome_link='<a href="https://www.google.com/chrome" target="_blank">Chrome</a>', ff_link='<a href="http://www.mozilla.org/firefox" target="_blank">Firefox</a>')}</div>
     <![endif]-->
   % endif
-
-  %if not user.is_authenticated():
-      <%include file="forgot_password_modal.html" />
-  %endif
 
 <%include file="help_modal.html"/>
