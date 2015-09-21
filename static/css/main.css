@@ -10666,6 +10666,7 @@ Copyright (c) 2015 Daniel Eden
 .course-tile__body {
   border: 1px solid #d9d9dc;
   background-color: #fff;
+  width: 100%;
 }
 
 .course-tile__image {
