@@ -4,7 +4,11 @@
 <%inherit file="main.html" />
 <%namespace name='static' file='static_content.html'/>
 
-<%! from microsite_configuration import microsite %>
+<%!
+from django.utils.translation import ugettext as _
+from django.core.urlresolvers import reverse
+from microsite_configuration import microsite
+%>
 
 <%
   homepage_overlay_html = microsite.get_value('homepage_overlay_html')
@@ -15,10 +19,6 @@
   homepage_promo_video_youtube_id = "_LOgBWIf4Wo"
 
   show_partners = microsite.get_value('show_partners', True)
-
-  from django.utils.translation import ugettext as _
-  from django.core.urlresolvers import reverse
-  from courseware.courses import course_image_url, get_course_about_section
 %>
 
 
