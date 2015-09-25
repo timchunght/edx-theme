@@ -1,4 +1,5 @@
-<%! 
+<%!
+  import json
   from django.utils.translation import ugettext as _
   from microsite_configuration import microsite
 %>
@@ -12,10 +13,33 @@
   from courseware.courses import course_image_url, get_course_about_section
 %>
 
+<%block name="header_extras">
+  % if settings.FEATURES.get('ENABLE_COURSE_DISCOVERY'):
+  % for template_name in ["result_item", "filter_bar", "filter", "search_facets_list", "search_facets_section", "search_facet", "more_less_links"]:
+  <script type="text/template" id="${template_name}-tpl">
+      <%static:include path="discovery/${template_name}.underscore" />
+  </script>
+  % endfor
+  <script type="text/javascript">;(function (define) {{
+      define('course_discovery_meanings', function() {{
+          'use strict';
+          return ${json.dumps(course_discovery_meanings)};
+        }});
+      }})(define || RequireJS.define);
+  </script>
+  % endif
+</%block>
+
+<%block name="js_extra">
+  % if settings.FEATURES.get('ENABLE_COURSE_DISCOVERY'):
+  <%static:js group='discovery'/>
+  % endif
+</%block>
+
 <%block name="pagetitle">${_("Courses")}</%block>
 <%
   platform_name = microsite.get_value('platform_name', settings.PLATFORM_NAME)
-
+  course_discovery_enabled = settings.FEATURES.get('ENABLE_COURSE_DISCOVERY')
   if self.stanford_theme_enabled():
     course_index_overlay_text = _("Explore free courses from {university_name}.").format(university_name="Stanford University")
     logo_file = static.url('themes/stanford/images/seal.png')
@@ -37,18 +61,41 @@
     logo_alt_text = _("{platform_name} Logo").format(platform_name=platform_name)
 %>
 
+<!-- end of head includes -->
+
 <!-- Courses list hero portion -->
 <section class="bg-photo-hero">
   <div class="container-bs">
     <div class="bg-photo-hero__content">
       <div class="bg-photo-hero__content__text">
-        <h1>Here is our full courses list</h1>
+        <h1>Browse our courses</h1>
         <p>${course_index_overlay_text}</p>
       </div>
     </div>
   </div>
 </section>
+<!-- end of hero portion -->
 
+<!-- courses list search -->
+% if course_discovery_enabled:
+  <section class="dashboard-header container-bs" id="discovery-form" role="search" aria-label="course">
+    <div class="dashboard-header__main">
+      <h2 id="discovery-message"></h2>
+      <button type="button" class="dashboard-header__search-trigger" id="dashboard-header__search-trigger"><i class="fa fa-search inactive"></i><i class="fa fa-chevron-up active"></i></button>
+    </div>
+    <div class="dashboard-header__search__container" id="dashboard-search-bar">
+      <form>
+        <input type="text"  id="dashboard-search-input" class="discovery-input dashboard-header__search__input" placeholder="${_('Search for a course')}">
+        <button type="submit" class="button postfix discovery-submit dashboard-header__search__button" aria-label="${_('Search')}"><i class="fa fa-search"></i></button>
+      </form>
+    </div>
+  </section>
+  <div id="filter-bar" class="course-list-search__filters container-bs filters hide-phone">
+  </div>
+% endif
+<!-- end of courses list search -->
+
+<!-- courses view -->
 <section class="courses-courses">
   <div class="course-list-view container-bs">
     <div class="row">
@@ -72,3 +119,4 @@
     </div>
   </div>
 </section>
+<!-- end of courses view -->

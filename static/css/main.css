@@ -6277,6 +6277,7 @@ h1, h2, h3, h4, p, a, a:link, a:link:hover, a:link:focus {
   transition: all 0.3s ease-in-out;
   line-height: inherit;
   border: none;
+  box-shadow: none;
   padding-left: 40px;
   padding-right: 40px;
   outline: none;
@@ -10098,7 +10099,7 @@ Copyright (c) 2015 Daniel Eden
 
 .page-header-arrow h1 {
   font-family: 'Lato', sans-serif;
-  font-weight: 800;
+  font-weight: 900;
   font-style: normal;
   font-size: 64px;
   margin: 0 0 10px;
@@ -10142,7 +10143,7 @@ Copyright (c) 2015 Daniel Eden
 
 .bg-photo-hero__content__text h1 {
   font-family: 'Lato', sans-serif;
-  font-weight: 800;
+  font-weight: 900;
   font-style: normal;
   font-size: 64px;
   margin: 0 0 10px;
@@ -10298,7 +10299,7 @@ Copyright (c) 2015 Daniel Eden
 
 .landing-hero__content__text h1 {
   font-family: 'Lato', sans-serif;
-  font-weight: 800;
+  font-weight: 900;
   font-style: normal;
   font-size: 64px;
   margin: 0 0 10px;
@@ -10618,6 +10619,7 @@ Copyright (c) 2015 Daniel Eden
   transition: all 0.3s ease-in-out;
   line-height: inherit;
   border: none;
+  box-shadow: none;
   padding-left: 30px;
   padding-right: 30px;
   font-size: 16px;
@@ -10750,7 +10752,7 @@ Copyright (c) 2015 Daniel Eden
 
 .course-tile__cta, .course-tile__cta:link, .course-tile__cta:visited {
   font-family: 'Lato', sans-serif;
-  font-weight: 600;
+  font-weight: 700;
   font-style: normal;
   font-size: 16px;
   color: #0090C1;
@@ -10878,7 +10880,7 @@ Copyright (c) 2015 Daniel Eden
 
 .course-list-item__cta, .course-list-item__cta:link, .course-list-item__cta:visited {
   font-family: 'Lato', sans-serif;
-  font-weight: 600;
+  font-weight: 700;
   font-style: normal;
   font-size: 16px;
   color: #0090C1;
@@ -10895,6 +10897,77 @@ Copyright (c) 2015 Daniel Eden
   -ms-transform: scale(1.02);
   -o-transform: scale(1.02);
   transform: scale(1.02);
+}
+
+.course-list-search__filters {
+  padding: 30px 0;
+  border: none;
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.course-list-search__filters ul {
+  padding: 0;
+  display: inline-block;
+}
+
+.course-list-search__filters ul li {
+  list-style-type: none;
+  margin: 5px;
+}
+
+.course-list-search__filters span {
+  display: inline-block;
+  margin: 5px;
+}
+
+.course-list-search__filters button {
+  cursor: pointer;
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  background-image: none;
+  outline: none;
+  text-shadow: none;
+  border-radius: 0;
+  background-color: #ddd;
+  padding: 15px 25px;
+  color: #fff;
+  text-decoration: none;
+  display: inline-block;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  line-height: inherit;
+  border: none;
+  box-shadow: none;
+  color: rgba(65, 65, 81, 0.7);
+  padding: 10px 15px;
+  font-weight: bolder;
+}
+
+.course-list-search__filters button:hover, .course-list-search__filters button:focus, .course-list-search__filters button:hover:not(:disabled) {
+  background-image: none;
+  text-shadow: none;
+  border-radius: 0;
+  outline: none;
+  border: none;
+  background-color: #c6c6c6;
+  color: #fff;
+  text-decoration: none;
+}
+
+.course-list-search__filters button:link {
+  color: #fff;
+}
+
+.course-list-search__filters button span {
+  margin: 0 5px 0 0;
+}
+
+.course-list-search__filters button i {
+  opacity: 0.5;
 }
 
 .instructors-marketing {
@@ -11031,7 +11104,7 @@ Copyright (c) 2015 Daniel Eden
 
 .instructors-marketing__cta__title {
   font-family: 'Lato', sans-serif;
-  font-weight: 800;
+  font-weight: 900;
   font-style: normal;
   font-size: 24px;
   margin: 0 0 20px;
@@ -11056,6 +11129,7 @@ Copyright (c) 2015 Daniel Eden
   transition: all 0.3s ease-in-out;
   line-height: inherit;
   border: none;
+  box-shadow: none;
   padding-left: 50px;
   padding-right: 50px;
   margin: 15px 0 0;
@@ -11146,6 +11220,7 @@ Copyright (c) 2015 Daniel Eden
   transition: all 0.3s ease-in-out;
   line-height: inherit;
   border: none;
+  box-shadow: none;
   padding: 8px 30px;
   margin-bottom: 20px;
 }
@@ -11445,7 +11520,7 @@ Copyright (c) 2015 Daniel Eden
 
 .course-meta__start-date {
   font-family: 'Lato', sans-serif;
-  font-weight: 800;
+  font-weight: 900;
   font-style: normal;
   font-size: 18px;
   color: #0090C1;
@@ -11453,7 +11528,7 @@ Copyright (c) 2015 Daniel Eden
 
 .course-meta__end-date {
   font-family: 'Lato', sans-serif;
-  font-weight: 800;
+  font-weight: 900;
   font-style: normal;
   font-size: 14px;
   opacity: 0.6;
@@ -11479,6 +11554,7 @@ Copyright (c) 2015 Daniel Eden
   transition: all 0.3s ease-in-out;
   line-height: inherit;
   border: none;
+  box-shadow: none;
   display: block;
   padding: 15px;
   font-size: 18px;
@@ -11522,6 +11598,7 @@ Copyright (c) 2015 Daniel Eden
   transition: all 0.3s ease-in-out;
   line-height: inherit;
   border: none;
+  box-shadow: none;
 }
 
 .course-meta__enroll-button.unavailable:hover, .course-meta__enroll-button.unavailable:focus, .course-meta__enroll-button.unavailable:hover:not(:disabled), .course-meta__enroll-button:link.unavailable:hover, .course-meta__enroll-button:link.unavailable:focus, .course-meta__enroll-button:link.unavailable:hover:not(:disabled), .course-meta__enroll-button:visited.unavailable:hover, .course-meta__enroll-button:visited.unavailable:focus, .course-meta__enroll-button:visited.unavailable:hover:not(:disabled) {
@@ -11845,6 +11922,7 @@ Copyright (c) 2015 Daniel Eden
   transition: all 0.3s ease-in-out;
   line-height: inherit;
   border: none;
+  box-shadow: none;
   padding: 10px 30px;
   border: none;
   outline: none;
@@ -12093,6 +12171,7 @@ Copyright (c) 2015 Daniel Eden
   transition: all 0.3s ease-in-out;
   line-height: inherit;
   border: none;
+  box-shadow: none;
   width: 100%;
   position: relative;
   overflow: hidden;
@@ -12213,6 +12292,7 @@ Copyright (c) 2015 Daniel Eden
   transition: all 0.3s ease-in-out;
   line-height: inherit;
   border: none;
+  box-shadow: none;
   outline: none;
   border: none;
   font-size: 16px;
@@ -12266,6 +12346,7 @@ Copyright (c) 2015 Daniel Eden
   transition: all 0.3s ease-in-out;
   line-height: inherit;
   border: none;
+  box-shadow: none;
 }
 
 #unenroll-modal .inner-wrapper input[type="submit"]:hover, #unenroll-modal .inner-wrapper input[type="submit"]:focus, #unenroll-modal .inner-wrapper input[type="submit"]:hover:not(:disabled) {
@@ -12622,6 +12703,7 @@ Copyright (c) 2015 Daniel Eden
   transition: all 0.3s ease-in-out;
   line-height: inherit;
   border: none;
+  box-shadow: none;
   outline: none;
   border: none;
   font-size: 16px;
@@ -13039,3 +13121,5 @@ Copyright (c) 2015 Daniel Eden
 .account-settings-sections a:hover, .account-settings-sections a:focus, .account-settings-sections a span:hover, .account-settings-sections a span:focus {
   color: #005775;
 }
+
+/*# sourceMappingURL=main.css.map */
