@@ -113,7 +113,7 @@
     <div class="landing-courses__container">
       <div class="container-bs">
         <div class="row">
-          <div class="landing-courses__logo"><img src="${static.url('themes/')}/${settings.FEATURES.get('THEME_FOLDER')}/images/icon-black.svg"></div>
+          <div class="landing-courses__logo"><img src="${static.url('themes/' + settings.FEATURES.get('THEME_FOLDER') + '/images/icon-black.svg')}"></div>
         </div>
         <div class="row">
           %for course in courses[:settings.HOMEPAGE_COURSE_MAX]:
@@ -159,17 +159,17 @@
         </div>
         <div class="instructors-marketing__list">
           <div class="instructors-marketing__list__single">
-            <img class="instructors-marketing__list__single__image" src="${static.url('themes/')}/${settings.FEATURES.get('THEME_FOLDER')}/images/instructor-images/nate.jpg" alt="Nate Aune">
+            <img class="instructors-marketing__list__single__image" src="${static.url('themes/' + settings.FEATURES.get('THEME_FOLDER') + '/images/instructor-images/nate.jpg')}" alt="Nate Aune">
             <h4 class="instructors-marketing__list__single__name">Nate Aune</h4>
             <span class="instructors-marketing__list__single__title">Appsembler CEO</span>
           </div>
           <div class="instructors-marketing__list__single">
-            <img class="instructors-marketing__list__single__image" src="${static.url('themes/')}/${settings.FEATURES.get('THEME_FOLDER')}/images/instructor-images/louis.jpg" alt="Louis Gudema">
+            <img class="instructors-marketing__list__single__image" src="${static.url('themes/' + settings.FEATURES.get('THEME_FOLDER') + '/images/instructor-images/louis.jpg')}" alt="Louis Gudema">
             <h4 class="instructors-marketing__list__single__name">Herbert Hansen</h4>
             <span class="instructors-marketing__list__single__title">VP of Business Development</span>
           </div>
           <div class="instructors-marketing__list__single">
-            <img class="instructors-marketing__list__single__image" src="${static.url('themes/')}/${settings.FEATURES.get('THEME_FOLDER')}/images/instructor-images/cody.jpg" alt="Cody Carson">
+            <img class="instructors-marketing__list__single__image" src="${static.url('themes/' + settings.FEATURES.get('THEME_FOLDER') + '/images/instructor-images/cody.jpg')}" alt="Cody Carson">
             <h4 class="instructors-marketing__list__single__name">Cody Carson</h4>
             <span class="instructors-marketing__list__single__title">Appsembled edX evangelist</span>
           </div>
