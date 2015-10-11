@@ -12,9 +12,9 @@
   homepage_overlay_html = microsite.get_value('homepage_overlay_html')
 
   #show_homepage_promo_video = microsite.get_value('show_homepage_promo_video', True)
-  #homepage_promo_video_youtube_id = microsite.get_value('homepage_promo_video_youtube_id', "_LOgBWIf4Wo")
+  #homepage_promo_video_youtube_id = microsite.get_value('homepage_promo_video_youtube_id', "jkIOi5bCMSo")
   show_homepage_promo_video = True
-  homepage_promo_video_youtube_id = "_LOgBWIf4Wo"
+  homepage_promo_video_youtube_id = "jkIOi5bCMSo"
 
   show_partners = microsite.get_value('show_partners', True)
 %>
@@ -42,13 +42,13 @@
     <div class="container-bs">
       <div class="landing-hero__content">
         <div class="landing-hero__content__text">
-          <h1>Appsembler Open edX</h1>
-          <p>Well hello there! Welcome to our <b>Open edX based</b> e-learning platform!</p>
+          <h1>Appsembler Academy</h1>
+          <p>Bringing you mobile optimized courses about Open edX</p>
         </div>
 
         % if show_homepage_promo_video:
 
-          <a href="#" data-toggle="modal" data-target="#videoModal" class="landing-hero__content__button">View our video</a>
+          <a href="#" data-toggle="modal" data-target="#videoModal" class="landing-hero__content__button">View a sample video</a>
 
         % endif  
       </div>
@@ -61,7 +61,7 @@
         <h2>The Open edX Enterprise Experts</h2>
           <div class="landing-additional-text__separator"></div>
           <p>Appsembler is a leader in delivering educational technology solutions. We are a full-service Open edX solutions provider offering hosting, support, expert assistance and custom development services. edX is a nonprofit online initiative created by founding partners Harvard and MIT and composed of dozens of leading global institutions, the xConsortium. EdX offers interactive online courses and MOOCs from the world’s best universities and institutions.</p>
-          <p>Open edX is the open source platform that powers edX courses. Through our commitment to the open source vision, edX code is freely available to the community. Institutions can host their own instances of Open edX and offer their own classes. Educators can extend the platform to build learning tools that precisely meet their needs. And developers can contribute new features to the Open edX platform.</p>
+          <p>Open edX is the open source platform that powers edX courses, and the Open edX code is freely available to the community.</p>
       </div>
     </div>
   </section>
@@ -119,7 +119,7 @@
           %for course in courses[:settings.HOMEPAGE_COURSE_MAX]:
             <div class="col-xs-12 col-sm-6 col-md-4 course-tile">
               <div class="course-tile__body">
-                <div class="course-tile__image"><img src="${course_image_url(course)}"></div>
+                <div class="course-tile__image" style="background-image: url('${course_image_url(course)}'); background-size: cover; background-position: center center;"></div>
                 <div class="course-tile__info">
                   <span class="course-tile__date">${course.start_datetime_text()}</span>
                   <span class="course-tile__name"><a href="${reverse('about_course', args=[course.id.to_deprecated_string()])}">${get_course_about_section(course, 'title')}</a></span>
@@ -140,10 +140,22 @@
   <section class="landing-additional-text">
     <div class="container-bs">
       <div class="landing-additional-text__content">
-        <h2>Does the client want another paragraph?</h2>
+        <h2>Learn about Open edX at your own pace</h2>
         <div class="landing-additional-text__separator"></div>
-        <p>Sure as hell he can! This fancypants theme allows them to add another section of text where they can (if they want) lead visitors to their main site, products or something else! <b>Well ain’t that great?</b></p>
-        <a class="landing-additional-text__button" href="http://www.appsembler.com" target="_blank">Link to whatever</a>
+        <p>We noticed that many of our customers wanted instruction in best practices in Open edX, so we created this site to provide self-paced courses for anyone to hone their Open edX skills. We hope that you enjoy learning more about all that Open edX has to offer!</p>
+        <p>If you'd like to learn more about Appsembler, click the following button.</p>
+        <!--HubSpot Call-to-Action Code -->
+        <span class="hs-cta-wrapper" id="hs-cta-wrapper-4b323cda-b971-47b5-ba64-a1d4bae9634c">
+            <span class="hs-cta-node hs-cta-4b323cda-b971-47b5-ba64-a1d4bae9634c" id="hs-cta-4b323cda-b971-47b5-ba64-a1d4bae9634c">
+                <!--[if lte IE 8]><div id="hs-cta-ie-element"></div><![endif]-->
+                <a href="http://cta-redirect.hubspot.com/cta/redirect/1550892/4b323cda-b971-47b5-ba64-a1d4bae9634c" ><img class="hs-cta-img" id="hs-cta-img-4b323cda-b971-47b5-ba64-a1d4bae9634c" style="border-width:0px;" src="https://no-cache.hubspot.com/cta/default/1550892/4b323cda-b971-47b5-ba64-a1d4bae9634c.png"  alt="Learn more"/></a>
+            </span>
+            <script charset="utf-8" src="https://js.hscta.net/cta/current.js"></script>
+            <script type="text/javascript">
+                hbspt.cta.load(1550892, '4b323cda-b971-47b5-ba64-a1d4bae9634c');
+            </script>
+        </span>
+        <!-- end HubSpot Call-to-Action Code -->
       </div>
     </div>
   </section>
@@ -153,9 +165,10 @@
       <div class="col-xs-12 col-sm-6 col-md-7 col-lg-8">
         <div class="instructors-marketing__text">
           <h2 class="instructors-marketing__text__title">
-            Only the best Teachers
+            Learn from Open edX experts
           </h2>
-          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat. Mirum est notare quam littera gothica, quam nunc putamus parum claram.</p>
+          <p>We've been working with Open edX since 2013, and have helped our customers understand how Open edX works, and how to get the most out of it. Let us guide you on your Open edX journey!</p>
+          <p>And if you have any suggestions for other courses you'd like to see, click on the question mark icon in the lower right-hand corner of the screen.</p>
         </div>
         <div class="instructors-marketing__list">
           <div class="instructors-marketing__list__single">
@@ -178,7 +191,7 @@
       <div class="col-xs-12 col-sm-6 col-md-5 col-lg-4 instructors-marketing__cta">
         <div class="instructors-marketing__cta__content">
           <h3 class="instructors-marketing__cta__title">Join in on open education!</h3>
-          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
+          <p>Use this opportunity to learn more about the open source online learning platform supported by worlds most prestigious universities!</p>
           <a class="instructors-marketing__cta__button" href="/register">Sign up!</a>
         </div>
       </div>
