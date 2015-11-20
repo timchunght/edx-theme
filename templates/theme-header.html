@@ -40,14 +40,15 @@ site_status_msg = get_site_status_msg(course_id)
 </%block>
 
 
-% if user.is_staff:
+% if user.is_superuser:
   <!-- Nuke cache modal -->
   <div class="modal fade" id="nukeCacheModal" class="nukeCache" tabindex="-1" role="dialog" aria-labelledby="nukeCache">
     <div class="nukeCache__wrapper">
       <div class="nukeCache__container container">
         <h1>Nuke the edX template cache</h1>
         <p>The button below will clear all edX template caches. Use it in case you've made changes to templates, but they aren't showing up and you're now really getting pissed off and frustrated.</p>
-        <form>
+        <form action="${reverse('nuke_cache')}" method="post">
+          <input type="hidden" name="csrfmiddlewaretoken" value="${ csrf_token }">
           <button type="submit" class="nukeCache__button"><img src="${static.url('themes/' + settings.FEATURES.get('THEME_FOLDER') + '/images/radiation.svg')}"></button>
         </form>
         <a href="#" class="nukeCache__cancel" data-dismiss="modal" aria-label="Cancel">NO! I cannot do this! Oh the humanity!</a>
@@ -97,7 +98,7 @@ site_status_msg = get_site_status_msg(course_id)
                 <li class="divider"></li>
                 <li><a href="${reverse('learner_profile', kwargs={'username': user.username})}">My Profile</a></li>
                 <li><a href="${reverse('account_settings')}">Account Settings</a></li>
-                %if user.is_staff:
+                %if user.is_superuser:
                   <li class="divider"></li>
                   <li><a href="#" data-toggle="modal" data-target="#nukeCacheModal">Nuke cache</a></li>
                 %endif
