@@ -56,15 +56,15 @@
 		float: right;
 	}
 
-	@media(max-width:$screen-sm-min) {
+	@media(max-width:$screen-sm-max) {
 		text-align: center;
 	}
 
 	& li {
 		list-style-type: none;
 		padding: 10px;
-		
-		@media(min-width:$screen-sm-min) {
+
+		@media(min-width:$screen-sm-max) {
 			display: inline-block;
 			padding: 15px $header-li-padding-hor;
 		}
@@ -76,7 +76,7 @@
 			color: $navbar-text-color !important;
 			text-decoration: none;
 			@include transition(all 0.3s ease-in-out);
-			padding: 0;			
+			padding: 0;
 
 			&:hover, &:focus, &:active {
 				color: $navbar-text-color !important;
@@ -164,7 +164,7 @@
 }
 
 .navigation {
-	@media(min-width:$screen-sm-min) {
+	@media(min-width:$screen-sm-max) {
 		@include display(flex);
 		@include align-items(center);
 		@include justify-content(space-between);
@@ -184,8 +184,8 @@
 	& .navigation-group {
 		margin-top: 20px;
 		padding: 0;
-		
-		@media(min-width:$screen-sm-min) {
+
+		@media(min-width:$screen-sm-max) {
 			border-right: 1px solid rgba($navbar-text-color, 0.15);
 			padding: 0;
 			padding-right: $header-li-padding-hor;
@@ -236,14 +236,14 @@
 .navbar-collapse {
 	@include flex-shrink(0);
 	@include flex-grow(1);
-	
-	@media(min-width:$screen-sm-min) {
+
+	@media(min-width:$screen-sm-max) {
 		@include display(flex);
 		@include align-items(center);
 		float: right;
 	}
 
-	@media(max-width:$screen-sm-min) {
+	@media(max-width:$screen-sm-max) {
 		margin-top: 20px;
 	}
 
@@ -303,7 +303,7 @@
 }
 
 .navbar .container-bs {
-	@media(min-width: $screen-sm-min) {
+	@media(min-width: $screen-sm-max) {
 		@include display(flex);
 		@include align-items(center);
 	}
