@@ -4,32 +4,23 @@
 <%! from datetime import datetime %>
 <%! from pytz import UTC %>
 
-<footer class="footer">
-  <div class="container-bs footer__container">
-    <div class="footer__logo">
-      <a href="${marketing_link('ROOT')}" class=""><img src="${static.url('themes/trinity-education/images/tea-logo.png')}"></a>
+<div class="wrapper-footer">
+  <footer>
+    <div class="colophon">
+      <nav class="nav-colophon">
+        <ol>
+          <li><a href="${reverse('tos')}">Terms of Service</a></li>
+          <li><a href="${reverse('tos')}#privacy">Privacy Policy</a></li>
+          <li><a href="${reverse('tos')}#honor">Honor Code</a></li>
+          <li><a href="${reverse('tos')}#copyright">Copyright</a></li>
+          <li><a href="${reverse('about')}#careers">Careers</a></li>
+          <li><a href="${reverse('about')}#contact">Contact</a></li>
+          <li><a href="${marketing_link('FAQ')}">Help</a></li>
+        </ol>
+      </nav>
     </div>
-    <div class="footer__content">
-      <div class="footer__legal">
-        © Texas Gateway for Online Courses. All rights reserved except where noted.
-      </div>
-      <ul class="footer__links">
-        <li><a href="${reverse('about')}">About</a></li>
-        <li><a href="${reverse('about')}">FAQ</a></li>
-        <li><a href="${reverse('about')}">Contact</a></li>
-        <li><a href="mailto:help@texascourses.org">Help</a></li>
-        <li><a href="${reverse('about')}">Privacy policy</a></li>
-        <li><a href="${reverse('about')}">Terms of Service</a></li>
-        <li><a href="${reverse('about')}">Honor code</a></li>
-      </ul>
+    <div class="references">
+      <span>Built on <a href="http://code.edx.org">OpenEdX</a>.</span>
     </div>
-    <div class="footer__poweredby">
-      <span>Powered by:</span>
-      <a href="http://www.appsembler.com" class="footer__poweredby__logo" alt="Appsembler"><img src="${static.url('themes/trinity-education/images/appsembler-icon.svg')}" alt="Appsembler"></a>
-      <a href="http://open.edx.org" target="_blank" class="footer__poweredby__logo" alt="Open edX"><img src="${static.url('themes/trinity-education/images/openedx-logo.svg')}" style="height: 14px;" alt="Open edX"></a>
-    </div>
-  </div>
-  <div class="container-bs footer__edx-legal">
-    edX, Open edX and the edX and Open edX logos are trademarks or registered trademarks of edX Inc.
-  </div>
-</footer>
+  </footer>
+</div>
