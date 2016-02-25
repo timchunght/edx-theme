@@ -22,9 +22,9 @@
         % for menu_group in menu_items:
         <li class="a--site-menu__group">
           <ul>
-            % for label, args in menu_group.iteritems():
-            <li class="a--${args[1]}">
-              <a href="${args[0]}">${label}</a>
+            % for item in menu_group:
+            <li class="a--${item[2]}">
+              <a href="${item[1]}">${item[0]}</a>
             </li>
             % endfor
           </ul>
@@ -49,9 +49,9 @@
               % if not first_slideout_item:
                 <li class="a--spacer"></li>
               % endif
-              % for label, args in menu_group.iteritems():
-                <li class="a--${args[1]}">
-                  <a href="${args[0]}">${label}</a>
+              % for item in menu_group:
+                <li class="a--${item[2]}">
+                  <a href="${item[1]}">${item[0]}</a>
                 </li>
               % endfor
               <% first_slideout_item = False %>

@@ -7,6 +7,15 @@
 	}
 }
 
+@function calcNavbarUnderlineColor ($navbar-style, $brand-primary-color) {
+	@if $navbar-style == "brand" {
+		$underline-color: #fff;
+		@return $underline-color;
+	} @else {
+		@return $brand-primary-color;
+	}
+}
+
 @function calcNavbarTextColor ($navbar-style, $base-text-color) {
 	@if $navbar-style == "white" {
 		@return $base-text-color;
@@ -21,7 +30,7 @@
 		$navbar-button-border: none;
 		@return $navbar-button-border;
 	} @else {
-		$navbar-button-border: 2px solid #fff;
+		$navbar-button-border: 0.2rem solid #fff;
 		@return $navbar-button-border;
 	}
 }

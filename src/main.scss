@@ -1,8 +1,14 @@
-// Import Bootstrap Defaults
-@import "bootstrap";
+
 
 // Import Bourbon.io
 @import "bourbon/bourbon";
+
+// Import Bootstrap variables
+@import "bootstrap/variables";
+@import "bootstrap";
+
+// Import various vendor specific scss
+@import "vendors/animate";
 
 // Import typography
 @import "base/typography";
@@ -11,35 +17,18 @@
 @import "base/functions";
 
 // Import variables
-@import "basic-branding";
 @import "base/variables";
-
-// Import basic styles
-@import "base/specific-edx-overrides";
-@import "base/base";
-@import "base/buttons";
-@import "base/forms";
-@import "base/animate-lib";
 
 // Import mixins
 @import "base/mixins";
 
-// Import site base layout
-@import "layout/footer";
-@import "layout/header";
-@import "layout/standard-headers";
-@import "layout/modals";
+// Import basic styles
+@import "base/branding-basics";
+@import "base/base";
+@import "base/buttons";
 
-// import page specific sass
-@import "lms/landing";
-@import "lms/course-tile";
-@import "lms/course-list";
-@import "lms/instructors-marketing";
-@import "lms/signup-login";
-@import "lms/course";
-@import "lms/dashboard";
+// Import site shared layout
+@import "shared/header";
+@import "shared/footer";
 
-//
-@import "lms/login-register";
-@import "lms/view-profile";
-@import "lms/account-settings";
+// Import page specific sass

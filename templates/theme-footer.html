@@ -3,39 +3,21 @@
 <%namespace name='static' file='/static_content.html'/>
 <%! from datetime import datetime %>
 <%! from pytz import UTC %>
-
-<div class="wrapper-footer">
-  <footer>
-    <div class="colophon">
-      <nav class="nav-colophon">
-        <ol>
-          <li><a href="${reverse('tos')}">Terms of Service</a></li>
-          <li><a href="${reverse('tos')}#privacy">Privacy Policy</a></li>
-          <li><a href="${reverse('tos')}#honor">Honor Code</a></li>
-          <li><a href="${reverse('tos')}#copyright">Copyright</a></li>
-          <li><a href="${reverse('about')}#careers">Careers</a></li>
-          <li><a href="${reverse('about')}#contact">Contact</a></li>
-          <li><a href="${marketing_link('FAQ')}">Help</a></li>
-        </ol>
-      </nav>
-    </div>
-    <div class="references">
-      <span>Built on <a href="http://code.edx.org">OpenEdX</a>.</span>
-    </div>
-  </footer>
-</div>
+<%namespace file='theme-variables.html' import="getFooterMenuItems" />
 
 
 
+## Footer links, defined as --> 'Link text' : ['url', 'link-class']
 
+<%
+  theme_folder = settings.FEATURES.get('THEME_FOLDER')
+  footer_logo = '/static/themes/' + theme_folder + '/images/branding/icon-black.svg'
+  footer_copyright_text = "© 2016 Company Name. All rights reserved."
+  display_edx_disclaimer = True
+  edx_disclaimer = "edX, Open edX and the edX and Open edX logos are trademarks or registered trademarks of edX Inc."
+  display_poweredby = True
+%>
 
+<%include file = 'design-templates/footer/_footer-appsembler-01.html' args="theme_folder = theme_folder, footer_links = getFooterMenuItems(), footer_logo = footer_logo, footer_copyright_text = footer_copyright_text, display_edx_disclaimer = display_edx_disclaimer, edx_disclaimer = edx_disclaimer, display_poweredby = display_poweredby" />
 
-
-
-    <!-- Include jQuery mobile -->
-    <script src="${static.url('themes/' + settings.FEATURES.get('THEME_FOLDER') + '/js/jquery-1.11.2.min.js')}"></script>
-    <script src="${static.url('themes/' + settings.FEATURES.get('THEME_FOLDER') + '/js/jquery.mobile.custom.min.js')}"></script>
-    <!-- Bootstrap Core JavaScript -->
-    <script src="${static.url('themes/' + settings.FEATURES.get('THEME_FOLDER') + '/js/bootstrap.min.js')}"></script>
-    <!-- Custom base JavaScript -->
-    <script src="${static.url('themes/' + settings.FEATURES.get('THEME_FOLDER') + '/js/base.js')}"></script>
+<%include file = 'footer-extra.html' args="theme_folder = theme_folder" />

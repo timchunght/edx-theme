@@ -1,6 +1,8 @@
 ## mako
 <%namespace name='static' file='static_content.html'/>
 <%namespace file='main.html' import="login_query, stanford_theme_enabled"/>
+<%namespace file='theme-variables.html' import="getHeaderMenuLoggedOutExtraItems, getHeaderMenuLoggedInExtraItems" />
+
 <%!
 from django.core.urlresolvers import reverse
 from django.utils.translation import ugettext as _
@@ -36,6 +38,7 @@ site_status_msg = get_site_status_msg(course_id)
 </div>
 % endif
 </%block>
+
 
   <% theme_folder = settings.FEATURES.get('THEME_FOLDER') %>
   <% logo_positive = '/static/themes/' + theme_folder + '/images/branding/brand-logo.svg' %>
@@ -77,30 +80,36 @@ site_status_msg = get_site_status_msg(course_id)
       user_authenticated = True
       user_name = user.username
     %>
+    % if getHeaderMenuLoggedInExtraItems():
+      <%
+        menu_items.append(getHeaderMenuLoggedInExtraItems())
+        slideout_menu_items.append(getHeaderMenuLoggedInExtraItems())
+      %>
+    % endif
     % if settings.FEATURES.get('COURSES_ARE_BROWSABLE') or (settings.FEATURES.get('ENABLE_SYSADMIN_DASHBOARD','') and user.is_staff):
       <%
-        append_group = {}
+        append_group = []
       %>
       % if settings.FEATURES.get('COURSES_ARE_BROWSABLE'):
         <%
-          append_group['Find Courses'] = [marketing_link('COURSES'), '']
+          append_group.append(['Find Courses', marketing_link('COURSES'), ''])
         %>
       % endif
       % if settings.FEATURES.get('ENABLE_SYSADMIN_DASHBOARD','') and user.is_staff:
         <%
-          append_group['SysAdmin'] = [reverse('sysadmin'), '']
+          append_group.append(['SysAdmin', reverse('sysadmin'), ''])
         %>
       % endif
       <%
         menu_items.append(append_group)
         slideout_menu_items.append(append_group)
-        append_group = {}
-        append_group['Dashboard'] = reverse('dashboard')
-        append_group['Profile'] = [reverse('learner_profile', kwargs={'username': user.username}), '']
-        append_group['Account'] = [reverse('account_settings'), '']
+        append_group = []
+        append_group.append(['Dashboard', reverse('dashboard'), ''])
+        append_group.append(['Profile', reverse('learner_profile', kwargs={'username': user.username}), ''])
+        append_group.append(['Account', reverse('account_settings'), ''])
         slideout_menu_items.append(append_group)
-        append_group = {}
-        append_group['Sign Out'] = [reverse('logout'), '']
+        append_group = []
+        append_group.append(['Sign Out', reverse('logout'), ''])
         slideout_menu_items.append(append_group)
       %>
     % endif
@@ -110,52 +119,58 @@ site_status_msg = get_site_status_msg(course_id)
       user_authenticated = false
       user_name = ""
     %>
+    % if getHeaderMenuLoggedOutExtraItems():
+      <%
+        menu_items.append(getHeaderMenuLoggedOutExtraItems())
+        slideout_menu_items.append(getHeaderMenuLoggedOutExtraItems())
+      %>
+    % endif
     % if microsite.get_value('ENABLE_MKTG_SITE', settings.FEATURES.get('ENABLE_MKTG_SITE', False)):
       <%
-        append_group = {}
-        append_group['How it Works'] = [marketing_link('HOW_IT_WORKS'), '']
+        append_group = []
+        append_group.append(['How it Works', marketing_link('HOW_IT_WORKS'), ''])
       %>
       % if settings.FEATURES.get('COURSES_ARE_BROWSABLE'):
         <%
-          append_group['Courses'] = [marketing_link('COURSES'), '']
+          append_group.append(['Courses', marketing_link('COURSES'), ''])
         %>
       % endif
       <%
-        append_group['Schools'] = [marketing_link('SCHOOLS'), '']
+        append_group(['Schools', marketing_link('SCHOOLS'), ''])
         menu_items.append(append_group)
         slideout_menu_items.append(append_group)
       %>
     % endif
       % if not settings.FEATURES['DISABLE_LOGIN_BUTTON']:
       <%
-        append_group = {}
+        append_group = []
       %>
       % if settings.FEATURES.get('ENABLE_COURSE_DISCOVERY'):
         <%
-          append_group['Find Courses'] = ['/courses', '']
+          append_group.append(['Find Courses', '/courses', ''])
         %>
       % endif
       % if course and settings.FEATURES.get('RESTRICT_ENROLL_BY_REG_METHOD') and course.enrollment_domain:
         <%
-          append_group['Register'] = [reverse('course-specific-register', args=[course.id.to_deprecated_string()]), 'nav-cta']
+          append_group.append(['Register', reverse('course-specific-register', args=[course.id.to_deprecated_string()]), 'nav-cta'])
         %>
       % else:
         <%
-          append_group['Register'] = ['/register', 'nav-cta']
+          append_group.append(['Register', '/register', 'nav-cta'])
         %>
       % endif
       <%
         menu_items.append(append_group)
         slideout_menu_items.append(append_group)
-        append_group = {}
+        append_group = []
       %>
       % if course and settings.FEATURES.get('RESTRICT_ENROLL_BY_REG_METHOD') and course.enrollment_domain:
         <%
-          append_group['Sign in'] = [reverse('course-specific-login', args=[course.id.to_deprecated_string()]), '']
+          append_group.appned(['Sign in', reverse('course-specific-login', args=[course.id.to_deprecated_string()]), ''])
         %>
       % else:
         <%
-          append_group['Sign in'] = ['/login', '']
+          append_group.append(['Sign in', '/login', ''])
         %>
       % endif
       <%

@@ -1,0 +1,54 @@
+## mako
+<%! from django.core.urlresolvers import reverse %>
+<%namespace name='static' file='/static_content.html'/>
+
+
+
+## =======================================================
+## this template is used to define content to be displayed
+## =======================================================
+
+
+## add menu items to logged out header view
+
+<%def name="getHeaderMenuLoggedOutExtraItems()">
+  <%
+    return [
+      #['LINK_TEXT', 'LINK_URL', 'LINK_CLASS']
+      ['Test item', '#', 'test_class'],
+      ['Awesome!', 'www.awesome.com', 'class_awesomee']
+    ]
+  %>
+</%def>
+
+
+## add menu items to logged in header view
+
+<%def name="getHeaderMenuLoggedInExtraItems()">
+  <%
+    return [
+      #['LINK_TEXT', 'LINK_URL', 'LINK_CLASS']
+      ['Awesome!', 'www.awesome.com', 'class_awesomee']
+    ]
+  %>
+</%def>
+
+
+## footer menu items
+
+<%def name="getFooterMenuItems()">
+  <%
+    return [
+      #['LINK_TEXT', 'LINK_URL', 'LINK_CLASS']
+      ['Terms of Service', reverse('tos'), ''],
+      ['Privacy Policy', reverse('tos'), ''],
+      ['Honor Code', reverse('tos'), ''],
+      ['Copyright', reverse('tos'), ''],
+      ['Contact', reverse('tos'), ''],
+      ['Help', reverse('tos'), ''],
+      ['<i class="fa fa-linkedin"></i>', 'https://www.linkedin.com', 'a--linkedin'],
+      ['<i class="fa fa-facebook"></i>', 'https://www.facebook.com', 'a--facebook'],
+      ['<i class="fa fa-twitter"></i>', 'https://www.twitter.com', 'a--twitter']
+    ]
+  %>
+</%def>
