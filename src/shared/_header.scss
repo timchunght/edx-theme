@@ -129,6 +129,10 @@
         &:hover, &:focus {
           color: rgba(#fff, 0.8);
         }
+
+        &:after {
+          display: none;
+        }
       }
     }
   }
@@ -167,6 +171,20 @@
 
     &:nth-child(3) {
       @include transform(translateY($nav-toggle-bar-separation));
+    }
+  }
+
+  &:hover {
+
+    .a--toggle-bar {
+
+      &:nth-child(1) {
+        @include transform(translateY(-1.5*$nav-toggle-bar-separation));
+      }
+
+      &:nth-child(3) {
+        @include transform(translateY(1.5*$nav-toggle-bar-separation));
+      }
     }
   }
 

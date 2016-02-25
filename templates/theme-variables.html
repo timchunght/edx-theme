@@ -3,10 +3,31 @@
 <%namespace name='static' file='/static_content.html'/>
 
 
+<%
+  theme_name = "appsembler-dogwood"
+%>
+
+
 
 ## =======================================================
 ## this template is used to define content to be displayed
 ## =======================================================
+
+
+## define logo files
+
+<%def name="getBrandLogos()">
+  <%
+  return {
+    'logo_positive' : '/images/branding/brand-logo.svg',
+    'logo_negative' : '/images/branding/brand-logo-negative.svg',
+    'icon_color' : '/images/branding/icon-color.svg',
+    'icon_white' : '/images/branding/icon-white.svg',
+    'icon_black' : '/images/branding/icon-black.svg',
+  }
+  %>
+</%def>
+
 
 
 ## add menu items to logged out header view
@@ -49,6 +70,45 @@
       ['<i class="fa fa-linkedin"></i>', 'https://www.linkedin.com', 'a--linkedin'],
       ['<i class="fa fa-facebook"></i>', 'https://www.facebook.com', 'a--facebook'],
       ['<i class="fa fa-twitter"></i>', 'https://www.twitter.com', 'a--twitter']
+    ]
+  %>
+</%def>
+
+
+## footer overall settings
+
+<%def name="getFooterSettings()">
+  <%
+    return {
+      'footer_logo' : getBrandLogos()['icon_black'],
+      'footer_copyright_text' : '© 2016 Company Name. All rights reserved.',
+      'display_edx_disclaimer' : True,
+      'edx_disclaimer' : 'edX, Open edX and the edX and Open edX logos are trademarks or registered trademarks of edX Inc.',
+      'display_poweredby' : True
+    }
+  %>
+</%def>
+
+
+
+## index page content
+
+<%def name="getIndexContent()">
+  <%
+    return [
+        [
+          'design-templates/static-blocks/_hero-section-01.html', {
+            # template settings
+            'hero_title' : "Welcome to this test site!",
+            'hero_subtitle' : "Bringing you mobile optimized courses about Open edX. We're Appsembler. Awesome!",
+            'cta_link' : "Awesome link!",
+            'cta_link_text' : "http://www.appsembler.com",
+            'popup_video_url' : "MZrctLnsF4M",
+            'popup_video_text' : "Watch our video",
+            'popup_video_id' : "HeroVideo",
+            'bg_image_url' : '/static/themes/appsembler-dogwood/images/hero-image.jpg'
+          }
+        ]
     ]
   %>
 </%def>

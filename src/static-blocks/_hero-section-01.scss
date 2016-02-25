@@ -1,0 +1,19 @@
+.a--hero-section-01 {
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+  text-align: center;
+  background-position: center center;
+  background-size: cover;
+  background-color: $brand-primary-color;
+
+  h1 {
+    @include big-headings-font;
+    font-size: 5.8rem;
+    margin: 0 0 2rem;
+    color: #fff;
+  }
+
+  h4 {
+    
+  }
+}

@@ -1,0 +1,45 @@
+<%page args="templateSettings" />
+
+<%
+  hero_title = templateSettings['hero_title']
+  hero_subtitle = templateSettings['hero_subtitle']
+  cta_link = templateSettings['cta_link']
+  cta_link_text = templateSettings['cta_link_text']
+  popup_video_url = templateSettings['popup_video_url']
+  popup_video_text = templateSettings['popup_video_text']
+  popup_video_id = templateSettings['popup_video_id']
+  bg_image_url = templateSettings['bg_image_url']
+%>
+
+<section class="a--hero-section-01"
+  % if bg_image_url:
+    style="background-image: url('${bg_image_url}');"
+  % endif
+>
+  <div class="bs-container a--container a--hero-section-01__container">
+      <h1>${hero_title}</h1>
+      <h4>${hero_subtitle}</h4>
+      <div class="a--hero-section-01__cta-container">
+        % if popup_video_url:
+          <a href="#" data-toggle="#${popup_video_id}Modal" class="a--hero-section-01__cta">${popup_video_text}</a>
+        % endif
+        % if cta_link:
+          <a href="${cta_link}" class="a--hero-section-01__cta">${cta_link_text}</a>
+        % endif
+      </div>
+  </div>
+</section>
+
+% if popup_video_url:
+  <!-- Video modal -->
+  <div class="modal fade modal__video-fullscreen__wrapper" id="${popup_video_id}Modal" tabindex="-1" role="dialog" aria-labelledby="${popup_video_id}">
+    <div class="modal__video-fullscreen">
+      <div class="modal__video-fullscreen__container">
+        <iframe src='https://www.youtube.com/embed/${popup_video_url}?rel=0&controls=0&showinfo=0' frameborder="0" allowfullscreen></iframe>
+      </div>
+      <div class="modal__video-fullscreen__close">
+        <a href="#" data-dismiss="modal" aria-label="Close"><i class="fa fa-remove"></i></a>
+      </div>
+    </div>
+  </div>
+% endif

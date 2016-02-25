@@ -1,7 +1,7 @@
 ## mako
 <%namespace name='static' file='static_content.html'/>
 <%namespace file='main.html' import="login_query, stanford_theme_enabled"/>
-<%namespace file='theme-variables.html' import="getHeaderMenuLoggedOutExtraItems, getHeaderMenuLoggedInExtraItems" />
+<%namespace file='theme-variables.html' import="getHeaderMenuLoggedOutExtraItems, getHeaderMenuLoggedInExtraItems, getBrandLogos" />
 
 <%!
 from django.core.urlresolvers import reverse
@@ -41,8 +41,8 @@ site_status_msg = get_site_status_msg(course_id)
 
 
   <% theme_folder = settings.FEATURES.get('THEME_FOLDER') %>
-  <% logo_positive = '/static/themes/' + theme_folder + '/images/branding/brand-logo.svg' %>
-  <% logo_negative = '/static/themes/' + theme_folder + '/images/branding/brand-logo-negative.svg' %>
+  <% logo_positive = '/static/themes/' + theme_folder + getBrandLogos()['logo_positive'] %>
+  <% logo_negative = '/static/themes/' + theme_folder + getBrandLogos()['logo_negative'] %>
   <% logo_url = marketing_link('ROOT') %>
   <%
     if should_display_shopping_cart_func() and not (course and microsite.is_request_in_microsite()):

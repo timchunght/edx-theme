@@ -3,19 +3,16 @@
 <%namespace name='static' file='/static_content.html'/>
 <%! from datetime import datetime %>
 <%! from pytz import UTC %>
-<%namespace file='theme-variables.html' import="getFooterMenuItems" />
+<%namespace file='theme-variables.html' import="getFooterMenuItems, getFooterSettings" />
 
-
-
-## Footer links, defined as --> 'Link text' : ['url', 'link-class']
 
 <%
   theme_folder = settings.FEATURES.get('THEME_FOLDER')
-  footer_logo = '/static/themes/' + theme_folder + '/images/branding/icon-black.svg'
-  footer_copyright_text = "© 2016 Company Name. All rights reserved."
-  display_edx_disclaimer = True
-  edx_disclaimer = "edX, Open edX and the edX and Open edX logos are trademarks or registered trademarks of edX Inc."
-  display_poweredby = True
+  footer_logo = '/static/themes/' + theme_folder + getFooterSettings()['footer_logo']
+  footer_copyright_text = getFooterSettings()['footer_copyright_text']
+  display_edx_disclaimer = getFooterSettings()['display_edx_disclaimer']
+  edx_disclaimer = getFooterSettings()['edx_disclaimer']
+  display_poweredby = getFooterSettings()['display_poweredby']
 %>
 
 <%include file = 'design-templates/footer/_footer-appsembler-01.html' args="theme_folder = theme_folder, footer_links = getFooterMenuItems(), footer_logo = footer_logo, footer_copyright_text = footer_copyright_text, display_edx_disclaimer = display_edx_disclaimer, edx_disclaimer = edx_disclaimer, display_poweredby = display_poweredby" />
