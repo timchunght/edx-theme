@@ -1,7 +1,7 @@
 ## mako
 <%namespace name='static' file='static_content.html'/>
 <%namespace file='main.html' import="login_query, stanford_theme_enabled"/>
-<%namespace file='theme-variables.html' import="getHeaderMenuLoggedOutExtraItems, getHeaderMenuLoggedInExtraItems, getBrandLogos" />
+<%namespace file='theme-variables.html' import="get_header_menu_logged_out_extra_items, get_header_menu_logged_in_extra_items, get_brand_logos" />
 
 <%!
 from django.core.urlresolvers import reverse
@@ -41,8 +41,8 @@ site_status_msg = get_site_status_msg(course_id)
 
 
   <% theme_folder = settings.FEATURES.get('THEME_FOLDER') %>
-  <% logo_positive = '/static/themes/' + theme_folder + getBrandLogos()['logo_positive'] %>
-  <% logo_negative = '/static/themes/' + theme_folder + getBrandLogos()['logo_negative'] %>
+  <% logo_positive = '/static/themes/' + theme_folder + get_brand_logos()['logo_positive'] %>
+  <% logo_negative = '/static/themes/' + theme_folder + get_brand_logos()['logo_negative'] %>
   <% logo_url = marketing_link('ROOT') %>
   <%
     if should_display_shopping_cart_func() and not (course and microsite.is_request_in_microsite()):
@@ -80,10 +80,10 @@ site_status_msg = get_site_status_msg(course_id)
       user_authenticated = True
       user_name = user.username
     %>
-    % if getHeaderMenuLoggedInExtraItems():
+    % if get_header_menu_logged_in_extra_items():
       <%
-        menu_items.append(getHeaderMenuLoggedInExtraItems())
-        slideout_menu_items.append(getHeaderMenuLoggedInExtraItems())
+        menu_items.append(get_header_menu_logged_in_extra_items())
+        slideout_menu_items.append(get_header_menu_logged_in_extra_items())
       %>
     % endif
     % if settings.FEATURES.get('COURSES_ARE_BROWSABLE') or (settings.FEATURES.get('ENABLE_SYSADMIN_DASHBOARD','') and user.is_staff):
@@ -119,10 +119,10 @@ site_status_msg = get_site_status_msg(course_id)
       user_authenticated = false
       user_name = ""
     %>
-    % if getHeaderMenuLoggedOutExtraItems():
+    % if get_header_menu_logged_out_extra_items():
       <%
-        menu_items.append(getHeaderMenuLoggedOutExtraItems())
-        slideout_menu_items.append(getHeaderMenuLoggedOutExtraItems())
+        menu_items.append(get_header_menu_logged_out_extra_items())
+        slideout_menu_items.append(get_header_menu_logged_out_extra_items())
       %>
     % endif
     % if microsite.get_value('ENABLE_MKTG_SITE', settings.FEATURES.get('ENABLE_MKTG_SITE', False)):

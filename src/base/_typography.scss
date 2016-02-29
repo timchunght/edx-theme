@@ -37,9 +37,19 @@
 }
 
 
+@mixin body-base-font {
+	@include primary-font;
+}
 
 
+@mixin large-cta-font {
+	@include primary-font-light;
+}
 
 @mixin big-headings-font {
 	@include primary-font-light;
+}
+
+@mixin small-headings-font {
+	@include primary-font-bold;
 }

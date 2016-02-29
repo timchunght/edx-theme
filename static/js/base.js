@@ -40,4 +40,11 @@ $(document).ready(function(){
 	$('.a--reveal-on-load').each(function() {
 		$(this).addClass('a--revealed');
 	});
+
+	$('.a--expanding-section').on('click', function() {
+	 $('.a--expanding-section').each((function(index, el) {
+		 $(this).removeClass('a--expanded');
+			 }));
+	 $(this).toggleClass('a--expanded');
+ 	});
 });

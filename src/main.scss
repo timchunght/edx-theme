@@ -3,6 +3,9 @@
 // Import Bourbon.io
 @import "bourbon/bourbon";
 
+// edX normalizer for elements
+@import "base/edx-overrides";
+
 // Import Bootstrap variables
 @import "bootstrap/variables";
 @import "bootstrap";
@@ -26,6 +29,8 @@
 @import "base/branding-basics";
 @import "base/base";
 @import "base/buttons";
+@import "base/modals";
+@import "base/expanding-section";
 
 // Import site shared layout
 @import "shared/header";
@@ -33,3 +38,12 @@
 
 // Import static-blocks specific sass
 @import "static-blocks/hero-section-01";
+@import "static-blocks/header-plus-text-plus-cta";
+@import "static-blocks/plain-content-01";
+@import "static-blocks/expanding-sections-list-01";
+@import "static-blocks/line-separator";
+
+// Import live-blocks specific sass
+@import "live-blocks/single-course/course-tile-01";
+@import "live-blocks/single-course/course-tile-02";
+@import "live-blocks/course-listing/course-listing-01";

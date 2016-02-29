@@ -2,12 +2,15 @@ $brand-primary-color: #0090c1;
 $navbar-style: "white";  // brand or white
 $base-text-color: #666;
 
+$cta-button-bg: $brand-primary-color;
+$cta-button-border: none;
+
 $header-bg-color: calcNavbarBg($navbar-style, $brand-primary-color);
 $header-logo-height: 6rem;
 $header-padding-top: 1.5rem;
 $header-padding-bottom: $header-padding-top;
-$header-padding-xs-top: 1.5rem;
-$header-padding-xs-bottom: 1.5rem;
+$header-padding-sm-top: 1.5rem;
+$header-padding-sm-bottom: 1.5rem;
 $header-group-separation: 4rem;
 $header-font-size: 1.6rem;
 $header-text-color: calcNavbarTextColor($navbar-style, $base-text-color);

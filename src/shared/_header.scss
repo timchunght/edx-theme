@@ -5,6 +5,13 @@
     @include display(flex);
     @include align-items(center);
     @include justify-content(space-between);
+    padding-top: $header-padding-top;
+    padding-bottom: $header-padding-bottom;
+
+    @media(max-width: $screen-sm-max) {
+      padding-top: $header-padding-sm-top;
+      padding-bottom: $header-padding-sm-bottom;
+    }
 
     &:before, &:after {
       display: none;
@@ -55,8 +62,6 @@
 .a--site-menu {
 
   &__container {
-    padding-top: $header-padding-top;
-    padding-bottom: $header-padding-bottom;
     margin: 0;
     font-size: $header-font-size;
     @include primary-font-light;
@@ -64,11 +69,6 @@
     @include display(flex);
     @include align-items(center);
     color: $header-text-color;
-
-    @media(max-width: $screen-xs-max) {
-      padding-top: $header-padding-xs-top;
-      padding-bottom: $header-padding-xs-bottom;
-    }
 
     ul {
       padding: 0;
@@ -80,6 +80,10 @@
     display: inline-block;
     padding: 0 $header-group-separation/2;
 
+    @media(max-width: $screen-sm-max) {
+      display: none;
+    }
+
     &.a--slide-menu {
       @media(max-width: $screen-sm-max) {
         display: inline-block;
@@ -88,7 +92,7 @@
     }
 
     &:last-child {
-      padding: 0 $header-group-separation/2 0 0;
+      padding: 0 0 0 $header-group-separation/2;
     }
 
     ul li {

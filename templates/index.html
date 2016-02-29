@@ -6,11 +6,15 @@ from django.core.urlresolvers import reverse
 from microsite_configuration import microsite
 %>
 
-<%namespace file='theme-variables.html' import="getIndexContent" />
+<%namespace file='theme-variables.html' import="get_index_content" />
 
 
-% for section in getIndexContent():
-  <%include file = '${section[0]}' args = 'templateSettings = section[1]' />
+% for section in get_index_content():
+  % if 'courses-list' in section[0]:
+    <%include file = '${section[1]}' args = "template_settings = section[2], courses = courses" />
+  % else:
+    <%include file = '${section[1]}' args = 'template_settings = section[2]' />
+  % endif
 % endfor
 
 

@@ -3,18 +3,25 @@ html {
 }
 
 body {
-	background-color: #fafafa;
+	@include body-base-font;
+	letter-spacing: 0;
+}
+
+h1, h2, h3, h4 {
+	text-align: inherit;
 }
 
 a {
 	text-decoration: none;
-	color: $brand-blue-dark;
+	color: $brand-primary-color;
 	cursor: pointer;
 	@include transition(all 0.3s ease-in-out);
 
 	&:hover, &:focus {
-		color: shade($brand-blue-dark, 20%);
+		color: shade($brand-primary-color, 20%);
 		text-decoration: none;
+		outline: none;
+		box-shadow: none;
 	}
 
 	&.a-- {
@@ -53,12 +60,6 @@ a {
 	}
 }
 
-h1, h2, h3, h4, h5, a, p {
-	line-height: 140%;
-	font-weight: 400;
-	letter-spacing: 0.05rem;
-}
-
 .a--button {
 	border: none;
 	outline: none;
@@ -77,8 +78,6 @@ h1, h2, h3, h4, h5, a, p {
 
 .a--container {
 	width: 100%;
-	padding-left: 3rem;
-	padding-right: 3rem;
 
 	@media(min-width: 1440px) {
 		width: 1280px;

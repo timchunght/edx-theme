@@ -1,0 +1,22 @@
+<%page args="template_settings" />
+
+<%
+  heading = template_settings['heading']
+  text = template_settings['text']
+  cta_link = template_settings['cta_link']
+  cta_link_text = template_settings['cta_link_text']
+  optional_classes = template_settings['optional_classes']
+  extra_css = template_settings['extra_css']
+%>
+
+<section class="a--heading-plus-text-plus-cta ${optional_classes}" style="${extra_css}">
+  <div class="bs-container a--container a--heading-plus-text-plus-cta__container">
+      <h2>${heading}</h2>
+      ${text}
+      <div class="a--heading-plus-text-plus-cta__cta-container">
+        % if cta_link:
+          <a href="${cta_link}" class="a--cta">${cta_link_text}</a>
+        % endif
+      </div>
+  </div>
+</section>
