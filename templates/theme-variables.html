@@ -36,7 +36,8 @@
   <%
     return [
       #['LINK_TEXT', 'LINK_URL', 'LINK_CLASS']
-      ['Test item', '#', 'test_class'],
+      ['Our web', 'http://www.appsembler.com', ''],
+      ['About us', reverse('about'), '']
     ]
   %>
 </%def>
@@ -48,6 +49,7 @@
   <%
     return [
       #['LINK_TEXT', 'LINK_URL', 'LINK_CLASS']
+      ['About us', reverse('about'), ''],
       ['Awesome!', 'www.awesome.com', 'class_awesomee']
     ]
   %>
@@ -61,8 +63,8 @@
     return [
       #['LINK_TEXT', 'LINK_URL', 'LINK_CLASS']
       ['Terms of Service', reverse('tos'), ''],
-      ['Privacy Policy', reverse('tos'), ''],
-      ['Honor Code', reverse('tos'), ''],
+      ['FAQ', marketing_link('FAQ'), ''],
+      ['About', reverse('about'), ''],
       ['Copyright', reverse('tos'), ''],
       ['Contact', reverse('tos'), ''],
       ['Help', reverse('tos'), ''],
@@ -209,6 +211,69 @@
               ['We want students to be able to practice on our software. Could Open edX support this?', 'Yes, Appsembler has developed a custom virtual software lab for our clients that lets students instantly spin up a copy of their software to work on.'],
               ['How can students communicate with instructors?', 'The instructor and students in a course can communicate with one another in course discussion areas, and instructors and individual students can communicate directly via a one-to-one discussion thread and email. Instructors can email students individual or as a group.']
             ],
+            'optional_classes' : "",
+            'extra_css' : ""
+          }
+        ]
+    ]
+  %>
+</%def>
+
+
+## tos page content
+
+<%def name="get_tos_content()">
+  <%
+    return [
+        #[
+        #   'TEMPLATE_TYPE', 'TEMPLATE_URL', {
+        #     'template_setting_01': "value",
+        #     'template_setting_02': "value2",
+        #     ...
+        #   }
+        #]
+        [
+          'static-block', '../design-templates/static-blocks/_hero-section-01.html', {
+            # template settings
+            'hero_title' : "This is our sites TOS section",
+            'hero_subtitle' : "Got any questions for us? Check out the ones we already have answered below, and if you don't find yours - click to contact us!",
+            'cta_link' : "http://www.appsembler.com",
+            'cta_link_text' : "Contact us",
+            'popup_video_url' : "",
+            'popup_video_text' : "",
+            'popup_video_id' : "",
+            'bg_image_url' : '/static/themes/appsembler-dogwood/images/hero-image.jpg'
+          }
+        ],
+        [
+          'static-block', '../design-templates/static-blocks/_plain-content-01.html', {
+            # template settings
+            'content' : '<h1>Terms of Service</h1><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. </p><h2>Subheading here</h2><p>Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum.</p><h2>Subheading here</h2><p>Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum.<h3>Subheading here</h3><p>Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum.<h3>Subheading here</h3><p>Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus.<h2>Subheading here</h2><p>Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum.',
+            'optional_classes' : "",
+            'extra_css' : ""
+          }
+        ]
+    ]
+  %>
+</%def>
+
+
+## about page content
+
+<%def name="get_about_content()">
+  <%
+    return [
+        #[
+        #   'TEMPLATE_TYPE', 'TEMPLATE_URL', {
+        #     'template_setting_01': "value",
+        #     'template_setting_02': "value2",
+        #     ...
+        #   }
+        #]
+        [
+          'static-block', '../design-templates/static-blocks/_plain-content-01.html', {
+            # template settings
+            'content' : '<h1>About us</h1><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. </p><h2>Subheading here</h2><p>Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum.</p><h2>Subheading here</h2><p>Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum.<h3>Subheading here</h3><p>Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum.<h3>Subheading here</h3><p>Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus.<h2>Subheading here</h2><p>Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum.',
             'optional_classes' : "",
             'extra_css' : ""
           }
