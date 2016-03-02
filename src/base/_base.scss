@@ -11,7 +11,7 @@ h1, h2, h3, h4 {
 	text-align: inherit;
 }
 
-a {
+a, a:visited {
 	text-decoration: none;
 	color: $brand-primary-color;
 	cursor: pointer;
@@ -26,36 +26,40 @@ a {
 
 	&.a-- {
 
-		&facebook:hover, &.facebook:focus {
+		&facebook:hover, &facebook:focus {
 			color: #3a5998 !important;
 		}
 
-		&instagram:hover, &.instagram:focus {
+		&instagram:hover, &instagram:focus {
 			color: #3f729b !important;
 		}
 
-		&twitter:hover, &.twitter:focus {
+		&twitter:hover, &twitter:focus {
 			color: #54aced !important;
 		}
 
-		&linkedin:hover, &.linkedin:focus {
+		&linkedin:hover, &linkedin:focus {
 			color: #007ab6 !important;
 		}
 
-		&youtube:hover, &.youtube:focus {
+		&youtube:hover, &youtube:focus {
 			color: #ba0000 !important;
 		}
 
-		&github:hover, &.github:focus {
+		&github:hover, &github:focus {
 			color: #333333 !important;
 		}
 
-		&rss:hover, &.rss:focus {
+		&rss:hover, &rss:focus {
 			color: #ff8700 !important;
 		}
 
-		&meetup:hover, &.meetup:focus {
+		&meetup:hover, &meetup:focus {
 			color: #e51937 !important;
+		}
+
+		&email:hover, &email:focus {
+			color: #dc4e41 !important;
 		}
 	}
 }

@@ -37,7 +37,6 @@
     return [
       #['LINK_TEXT', 'LINK_URL', 'LINK_CLASS']
       ['Test item', '#', 'test_class'],
-      ['Awesome!', 'www.awesome.com', 'class_awesomee']
     ]
   %>
 </%def>
@@ -137,7 +136,7 @@
         [
           'courses-list', 'design-templates/live-blocks/course-listing/_course-listing-01.html', {
             # template settings
-            'max_courses' : 5,
+            'max_courses' : 3,
             'course_template' : '../single-course/_course-tile-02.html',
             'section_heading' : "Check out our courses!",
             'section_text' : "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.",
@@ -161,7 +160,7 @@
 </%def>
 
 
-## index page content
+## faq page content
 
 <%def name="get_faq_content()">
   <%
@@ -211,6 +210,49 @@
               ['How can students communicate with instructors?', 'The instructor and students in a course can communicate with one another in course discussion areas, and instructors and individual students can communicate directly via a one-to-one discussion thread and email. Instructors can email students individual or as a group.']
             ],
             'optional_classes' : "",
+            'extra_css' : ""
+          }
+        ]
+    ]
+  %>
+</%def>
+
+
+
+## course about page content
+
+<%def name="get_course_about_content()">
+  <%
+    return [
+        #[
+        #   'TEMPLATE_TYPE', 'TEMPLATE_URL', {
+        #     'template_setting_01': "value",
+        #     'template_setting_02': "value2",
+        #     ...
+        #   }
+        #]
+        [
+          'about-course-template', 'design-templates/pages/course-about/_course-about-01.html', {
+            # template settings
+            'optional_classes' : "",
+            'extra_css' : ""
+          }
+        ],
+        [
+          'courses-list', 'design-templates/static-blocks/_line-separator.html', {
+            # template settings
+            'optional_classes' : "",
+            'extra_css' : ""
+          }
+        ],
+        [
+          'static-block', 'design-templates/static-blocks/_heading-plus-text-plus-cta.html', {
+            # template settings
+            'heading' : "We're awesome!",
+            'text' : "<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>",
+            'cta_link' : "http://www.appsembler.com",
+            'cta_link_text' : "Check out our site!",
+            'optional_classes' : "centered",
             'extra_css' : ""
           }
         ]
