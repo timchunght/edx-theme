@@ -112,18 +112,18 @@ from django.utils.translation import ugettext as _
   <div class="bs-container a--container a--course-about-01__content__container">
     <ul class="a--course-about-01__info">
 
-      <li><i class="fa fa-info-circle"></i><p>${_("Course Number")}<span></span></p></li>
+      <li><i class="fa fa-info-circle"></i><p>${_("Course Number")}</p><span>${course_vars['course_number']}</span></li>
       % if course_vars['course_display_start_date']:
-        <li><i class="fa fa-calendar"></i><p>${_("Classes Start")}<span>${course_vars['course_start_date']}</span></p></li>
+        <li><i class="fa fa-calendar"></i><p>${_("Classes Start")}</p><span>${course_vars['course_start_date']}</span></li>
       % endif
       % if course_vars['course_end_date']:
-        <li><i class="fa fa-calendar"></i><p>${_("Classes End")}<span>${course_vars['course_end_date']}</span></p></li>
+        <li><i class="fa fa-calendar"></i><p>${_("Classes End")}</p><span>${course_vars['course_end_date']}</span></li>
       % endif
       % if course_vars['course_effort']:
-        <li><i class="fa fa-pencil"></i><p>${_("Estimated Effort")}<span>${course_vars['course_effort']}/week</span></p></li>
+        <li><i class="fa fa-pencil"></i><p>${_("Estimated Effort")}</p><span>${course_vars['course_effort']}/week</span></li>
       % endif
       % if course_vars['course_price'] and course_vars['can_add_course_to_cart']:
-        <li><i class="fa fa-dollar"></i><p>${_("Price")}<span>${course_vars['course_price']}</span></p></li>
+        <li><i class="fa fa-dollar"></i><p>${_("Price")}</p><span>${course_vars['course_price']}</span></li>
       % endif
     </ul>
     <div class="a--course-about-01__overview">

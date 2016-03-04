@@ -37,6 +37,11 @@
   &__group-left {
     @include display(flex);
     @include align-items(center);
+    @include flex-shrink(1);
+  }
+
+  &__group-right {
+    @include flex-shrink(0);
   }
 
   &__course-name {
@@ -46,7 +51,6 @@
     padding-left: 2rem;
     @include primary-font-light;
     font-size: 1.6rem;
-    max-width: 24rem;
 
     @media (max-width: $screen-sm-max) {
       display: none;

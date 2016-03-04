@@ -252,12 +252,15 @@
       p {
         color: rgba($base-text-color, 0.75);
         @include primary-font-light;
+        margin-right: 1.5rem;
+        display: inline-block;
+        width: 13rem;
       }
 
       span {
-        margin-left: 1.5rem;
         color: $brand-primary-color;
         @include primary-font;
+        display: inline-block;
       }
     }
   }

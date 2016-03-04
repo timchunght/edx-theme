@@ -24,13 +24,19 @@
     padding: 0;
     @include transition(all 0.3s ease-in-out);
     background-color: #fff;
-    display: block;
     width: 100%;
+    @include display(flex);
+    @include flex-direction(column);
+    cursor: pointer;
+    -webkit-box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.1), 0 0.3rem 0.2rem rgba(0,0,0,0.1);
+    -moz-box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.1), 0 0.3rem 0.2rem rgba(0,0,0,0.1);
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.1), 0 0.3rem 0.2rem rgba(0,0,0,0.1);
 
     &:hover, &:focus {
-      -webkit-box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
-      -moz-box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
-      box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+      cursor: pointer;
+      -webkit-box-shadow: 0 1.9rem 3.8rem rgba(0,0,0,0.30), 0 1.5rem 1.2rem rgba(0,0,0,0.22);
+      -moz-box-shadow: 0 1.9rem 3.8rem rgba(0,0,0,0.30), 0 1.5rem 1.2rem rgba(0,0,0,0.22);
+      box-shadow: 0 1.9rem 3.8rem rgba(0,0,0,0.30), 0 1.5rem 1.2rem rgba(0,0,0,0.22);
     }
   }
 
@@ -39,10 +45,17 @@
     height: 18rem;
     background-size: cover;
     background-position: center center;
+    @include flex-grow(0);
+    border-bottom: 0.4rem solid $brand-primary-color;
   }
 
   &__info {
     padding: 3rem 2rem;
+    @include display(flex);
+    @include flex-grow(1);
+    @include flex-direction(column);
+    @include justify-content(space-between);
+    background-color: #fff;
   }
 
   &__code, &__organization {
@@ -56,10 +69,14 @@
     @include primary-font;
     font-size: 2rem;
     margin: 0 0 1.5rem;
-    padding-bottom: 1.5rem;
     color: $brand-primary-color;
     display: block;
-    border-bottom: 0.1rem solid rgba($base-text-color, 0.2);
+  }
+
+  &__organization {
+    border-top: 0.1rem solid rgba($base-text-color, 0.1);
+    padding-top: 1.5rem;
+    display: block;
   }
 
   &__start-date {
