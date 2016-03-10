@@ -2098,6 +2098,38 @@
 		"shouldRunBless": 0,
 		"useLibsass": 0
 		},
+	"\/src\/live-blocks\/discovery\/_facets-01.scss": {
+		"createSourceMap": 0,
+		"debugStyle": 0,
+		"decimalPrecision": 10,
+		"fileType": 4,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/src\/live-blocks\/discovery\/_facets-01.scss",
+		"outputAbbreviatedPath": "\/src\/live-blocks\/css\/_facets-01.css",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0,
+		"shouldRunAutoprefixer": 0,
+		"shouldRunBless": 0,
+		"useLibsass": 0
+		},
+	"\/src\/live-blocks\/discovery\/_search-01.scss": {
+		"createSourceMap": 0,
+		"debugStyle": 0,
+		"decimalPrecision": 10,
+		"fileType": 4,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/src\/live-blocks\/discovery\/_search-01.scss",
+		"outputAbbreviatedPath": "\/src\/live-blocks\/css\/_search-01.css",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0,
+		"shouldRunAutoprefixer": 0,
+		"shouldRunBless": 0,
+		"useLibsass": 0
+		},
 	"\/src\/live-blocks\/single-course\/_course-tile-01.scss": {
 		"createSourceMap": 0,
 		"debugStyle": 0,
@@ -2171,6 +2203,22 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/src\/pages\/_course-about-01.scss",
 		"outputAbbreviatedPath": "\/src\/css\/_course-about-01.css",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0,
+		"shouldRunAutoprefixer": 0,
+		"shouldRunBless": 0,
+		"useLibsass": 0
+		},
+	"\/src\/pages\/_course-catalogue-01.scss": {
+		"createSourceMap": 0,
+		"debugStyle": 0,
+		"decimalPrecision": 10,
+		"fileType": 4,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/src\/pages\/_course-catalogue-01.scss",
+		"outputAbbreviatedPath": "\/src\/css\/_course-catalogue-01.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
@@ -2867,23 +2915,23 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/static\/override\/js\/discovery\/app.js": {
+	"\/static\/override\/js\/discovery\/views\/course_card.js": {
 		"fileType": 64,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/static\/override\/js\/discovery\/app.js",
-		"outputAbbreviatedPath": "\/static\/override\/js\/discovery\/min\/app-min.js",
+		"inputAbbreviatedPath": "\/static\/override\/js\/discovery\/views\/course_card.js",
+		"outputAbbreviatedPath": "\/static\/override\/js\/discovery\/views\/min\/course_card-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/static\/override\/js\/discovery\/form.js": {
+	"\/static\/override\/js\/discovery\/views\/min\/course_card-min.js": {
 		"fileType": 64,
-		"ignore": 0,
+		"ignore": 1,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/static\/override\/js\/discovery\/form.js",
-		"outputAbbreviatedPath": "\/static\/override\/js\/discovery\/min\/form-min.js",
+		"inputAbbreviatedPath": "\/static\/override\/js\/discovery\/views\/min\/course_card-min.js",
+		"outputAbbreviatedPath": "\/static\/override\/js\/discovery\/views\/min\/min\/course_card-min-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
@@ -2959,6 +3007,15 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/templates\/design-templates\/live-blocks\/discovery\/_discovery-search-01.html": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/templates\/design-templates\/live-blocks\/discovery\/_discovery-search-01.html",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/templates\/design-templates\/live-blocks\/single-course\/_course-tile-01.html": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -2991,6 +3048,15 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/templates\/design-templates\/pages\/course-about\/_course-about-01.html",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/templates\/design-templates\/pages\/course-catalogue\/_course-catalogue-01.html": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/templates\/design-templates\/pages\/course-catalogue\/_course-catalogue-01.html",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0

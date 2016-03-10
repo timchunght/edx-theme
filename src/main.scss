@@ -3,9 +3,6 @@
 // Import Bourbon.io
 @import "bourbon/bourbon";
 
-// edX normalizer for elements
-@import "base/edx-overrides";
-
 // Import Bootstrap variables
 @import "bootstrap/variables";
 @import "bootstrap";
@@ -24,6 +21,9 @@
 
 // Import mixins
 @import "base/mixins";
+
+// edX normalizer for elements
+@import "base/edx-overrides";
 
 // Import basic styles
 @import "base/branding-basics";
@@ -48,7 +48,10 @@
 @import "live-blocks/single-course/course-tile-02";
 @import "live-blocks/single-course/course-tile-03";
 @import "live-blocks/course-listing/course-listing-01";
+@import "live-blocks/discovery/search-01";
+@import "live-blocks/discovery/facets-01";
 
 
 // Import page specific templates sass
 @import "pages/course-about-01";
+@import "pages/course-catalogue-01";

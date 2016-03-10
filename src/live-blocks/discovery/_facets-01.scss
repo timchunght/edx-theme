@@ -1,0 +1,74 @@
+.a--discovery-facets {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+
+  &__heading {
+    @include primary-font-bold;
+    color: rgba($base-text-color, 0.7);
+    font-size: 2rem;
+    margin: 0 0 2rem;
+    border-bottom: 0.1rem solid rgba($base-text-color, 0.2);
+    padding: 0 0 2rem;
+  }
+
+  &__group-title {
+    @include primary-font;
+    color: $brand-primary-color;
+    font-size: 1.6rem;
+    margin: 1.5rem 0 1.5rem;
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0 0 1.5rem;
+    border-bottom: 0.1rem solid rgba($base-text-color, 0.2);
+
+    li {
+      list-style-type: none;
+    }
+  }
+
+  &__toggle {
+
+    button {
+      @include edx_style_killer;
+      @include no_damn_focus_glow;
+      padding: 1rem 0 2rem;
+      font-size: 1.2rem;
+    }
+  }
+
+  &__facet-option {
+    @include edx_style_killer;
+    @include no_damn_focus_glow;
+    list-style-type: none;
+    padding: 0.75rem 0;
+    @include display(flex);
+    @include align-items(center);
+    @include justify-content(space-between);
+    width: 100%;
+
+    &.selected {
+      opacity: 0.6;
+    }
+
+      span.name {
+        @include display(flex);
+        @include flex-shrink(1);
+        @include primary-font;
+        width: 100%;
+        font-size: 1.6rem;
+      }
+
+      span.count {
+        @include display(flex);
+        @include flex-shrink(0);
+        @include primary-font-bold;
+        background-color: $brand-primary-color;
+        padding: 0.3rem 0.8rem;
+        border-radius: 1rem;
+        font-size: 1.2rem;
+        color: #fff;
+      }
+  }
+}

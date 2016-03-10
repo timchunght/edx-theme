@@ -47,4 +47,9 @@ $(document).ready(function(){
 			 }));
 	 $(this).toggleClass('a--expanded');
  	});
+
+	$("#discovery-expand-button").click(function() {
+    $(this).toggleClass("activated");
+    $("#discovery-expanding-area").slideToggle();
+	})
 });

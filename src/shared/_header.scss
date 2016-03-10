@@ -68,7 +68,7 @@
   &__container {
     margin: 0;
     font-size: $header-font-size;
-    @include primary-font-light;
+    @include primary-font;
     letter-spacing: $base-letter-spacing;
     @include display(flex);
     @include align-items(center);
@@ -146,14 +146,14 @@
   }
 }
 
-.a--site-nav__mobile-toggle {
+button.a--site-nav__mobile-toggle {
   color: #fff;
   font-size: 2rem;
   background: none;
   border: none;
   outline: none;
   width: $nav-toggle-bar-width;
-  height: $nav-toggle-bar-width;
+  height: $nav-toggle-bar-width !important;
   padding: 0;
   position: relative;
   bottom: 0.2rem;

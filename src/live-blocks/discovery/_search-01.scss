@@ -1,0 +1,123 @@
+.a--discovery-search-01 {
+  width: 100%;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  padding: 0 2rem;
+  border-bottom: 0.1rem solid rgba($base-text-color, 0.25);
+
+  &__main {
+    @include display(flex);
+    @include align-items(center);
+    padding: 3rem 0;
+
+    h2 {
+      margin: 0 3rem 0 0;
+      font-size: 2.4rem;
+      @include primary-font-bold;
+      color: rgba($base-text-color, 0.7);
+    }
+
+    &__content {
+      width: 100%;
+      @include flex-shrink(1);
+    }
+  }
+
+  &__expand-area-wrapper {
+    display: none;
+  }
+
+  &__expand-button {
+    @include edx_style_killer;
+    @include no_damn_focus_glow;
+    @include flex-shrink(0);
+    font-size: 2rem;
+    color: rgba($base-text-color, 0.7);
+
+    .inactive {
+      display: block;
+    }
+
+    .active {
+      display: none;
+    }
+
+
+    &:hover, &:focus, &:hover:not(:disabled), &:focus:not(:disabled) {
+
+    }
+
+    &.activated {
+      color: rgba($base-text-color, 0.3);
+
+      .inactive {
+        display: none;
+      }
+
+      .active {
+        display: block;
+      }
+    }
+  }
+
+  &__expand-area {
+    @include display(flex);
+    @include align-items(center);
+    padding: 3rem 0;
+    border-bottom: 0.1rem solid rgba($base-text-color, 0.25);
+  }
+
+  &__search-button {
+    @include edx_style_killer;
+    @include no_damn_focus_glow;
+    @include flex-shrink(0);
+    font-size: 2rem;
+    color: rgba($base-text-color, 0.7);
+  }
+
+  input[type="text"] {
+    @include edx_style_killer;
+    @include no_damn_focus_glow;
+    width: 100%;
+    @include flex-shrink(1);
+    font-size: 1.6rem;
+    @include primary-font;
+    color: $base-text-color;
+
+    &:hover, &:focus {
+
+    }
+  }
+
+  &__filters {
+    padding: 3rem 0;
+
+    button.clear-filters, button.facet-option {
+      @include edx_style_killer;
+      @include no_damn_focus_glow;
+      background-color: rgba($base-text-color, 0.4);
+      color: rgba($base-text-color, 0.8);
+      @include transition(all 0.3s ease-in-out);
+      padding: 1rem 1.5rem;
+      margin: 0.75rem;
+
+      &:hover, &:focus {
+        background-color: $brand-primary-color;
+        color: #fff;
+        padding: 1rem 1.5rem;
+      }
+    }
+
+    ul.active-filters {
+      padding: 0;
+      margin: 0;
+      display: inline-block;
+
+      li {
+        list-style-type: none;
+        display: inline-block;
+        margin: 0.75rem;
+      }
+    }
+  }
+}

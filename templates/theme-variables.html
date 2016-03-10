@@ -129,7 +129,7 @@
           }
         ],
         [
-          'courses-list', 'design-templates/static-blocks/_line-separator.html', {
+          'static-block', 'design-templates/static-blocks/_line-separator.html', {
             # template settings
             'optional_classes' : "",
             'extra_css' : ""
@@ -138,8 +138,9 @@
         [
           'courses-list', 'design-templates/live-blocks/course-listing/_course-listing-01.html', {
             # template settings
-            'max_courses' : 4,
-            'course_template' : '../single-course/_course-tile-03.html',
+            'max_courses' : 3,
+            'course_template_class' : 'a--course-tile-02',
+            'course_template' : '../single-course/_course-tile-02.html',
             'section_heading' : "Check out our courses!",
             'section_text' : "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.",
             'optional_classes' : "",
@@ -321,6 +322,48 @@
             'extra_css' : ""
           }
         ]
+    ]
+  %>
+</%def>
+
+
+## course catalogue page settings and content
+
+<%def name="get_course_catalogue_settings()">
+  <%
+    return {
+      'default_edx_view' : false,
+      'discovery_course_card' : '_course-tile-02.underscore',
+      'discovery_facet' : '_facet-01.underscore',
+      'discovery_facet_option' : '_facet_option-01.underscore',
+      'course_template_class' : 'a--course-tile-02',
+      'course_template' : '../../live-blocks/single-course/_course-tile-02.html',
+      'discovery-search-template' : '../../live-blocks/discovery/_discovery-search-01.html'
+    }
+  %>
+</%def>
+
+<%def name="get_course_catalogue_content()">
+  <%
+    return [
+      [
+        'static-block', '../design-templates/static-blocks/_heading-plus-text-plus-cta.html', {
+          # template settings
+          'heading' : "This is a heading! Blablah!",
+          'text' : "<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>",
+          'cta_link' : "http://www.appsembler.com",
+          'cta_link_text' : "Check out our site!",
+          'optional_classes' : "centered",
+          'extra_css' : ""
+        }
+      ],
+      [
+        'courses-list', '../design-templates/pages/course-catalogue/_course-catalogue-01.html', {
+          # template settings
+          'optional_classes' : "",
+          'extra_css' : ""
+        }
+      ]
     ]
   %>
 </%def>
