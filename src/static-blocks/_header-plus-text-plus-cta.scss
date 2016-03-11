@@ -33,6 +33,11 @@
 
   &.centered {
     text-align: center;
+
+    p {
+      max-width: 92rem;
+      margin: 1rem auto;
+    }
   }
 
   &.negative {
