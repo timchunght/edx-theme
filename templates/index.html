@@ -11,9 +11,9 @@ from microsite_configuration import microsite
 
 % for section in get_index_content():
   % if 'courses-list' in section[0]:
-    <%include file = '${section[1]}' args = "template_settings = section[2], courses = courses" />
+    <%include file = 'design-templates/${section[1]}' args = "template_settings = section[2], courses = courses" />
   % else:
-    <%include file = '${section[1]}' args = 'template_settings = section[2]' />
+    <%include file = 'design-templates/${section[1]}' args = 'template_settings = section[2]' />
   % endif
 % endfor
 

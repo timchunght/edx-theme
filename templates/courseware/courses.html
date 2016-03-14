@@ -92,9 +92,9 @@
 
   % for section in get_course_catalogue_content():
     % if 'courses-list' in section[0]:
-      <%include file = '${section[1]}' args = "courses = courses, discovery_enabled = course_discovery_enabled" />
+      <%include file = '../design-templates/${section[1]}' args = "courses = courses, discovery_enabled = course_discovery_enabled" />
     % else:
-      <%include file = '${section[1]}' args = 'template_settings = section[2]' />
+      <%include file = '../design-templates/${section[1]}' args = 'template_settings = section[2]' />
     % endif
   % endfor
 

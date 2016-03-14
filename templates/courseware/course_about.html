@@ -192,9 +192,9 @@ from openedx.core.lib.courses import course_image_url
 
 % for section in get_course_about_content():
   % if 'about-course-template' in section[0]:
-    <%include file = '../${section[1]}' args = "template_settings = section[2], course_vars = course_about_vars" />
+    <%include file = '../design-templates/${section[1]}' args = "template_settings = section[2], course_vars = course_about_vars" />
   % else:
-    <%include file = '../${section[1]}' args = 'template_settings = section[2]' />
+    <%include file = '../design-templates/${section[1]}' args = 'template_settings = section[2]' />
   % endif
 % endfor}
 

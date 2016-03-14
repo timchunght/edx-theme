@@ -1,20 +1,20 @@
 .a--discovery-search-01 {
   width: 100%;
-  margin-top: 3rem;
-  margin-bottom: 3rem;
-  padding: 0 2rem;
-  border-bottom: 0.1rem solid rgba($base-text-color, 0.25);
+  margin-top: $search-bar-vertical-margin;
+  margin-bottom: $search-bar-vertical-margin;
+  padding: $search-bar-wrapper-padding;
+  border-bottom: $search-bar-bottom-border;
 
   &__main {
     @include display(flex);
     @include align-items(center);
-    padding: 3rem 0;
+    padding: $search-bar-inner-container-padding;
 
     h2 {
       margin: 0 3rem 0 0;
-      font-size: 2.4rem;
+      font-size: $search-bar-big-message-text-size;
       @include primary-font-bold;
-      color: rgba($base-text-color, 0.7);
+      color: $search-bar-big-message-text-color;
     }
 
     &__content {
@@ -31,8 +31,8 @@
     @include edx_style_killer;
     @include no_damn_focus_glow;
     @include flex-shrink(0);
-    font-size: 2rem;
-    color: rgba($base-text-color, 0.7);
+    font-size: $search-bar-icon-button-font-size;
+    color: $search-bar-icon-button-color;
 
     .inactive {
       display: block;
@@ -64,15 +64,15 @@
     @include display(flex);
     @include align-items(center);
     padding: 3rem 0;
-    border-bottom: 0.1rem solid rgba($base-text-color, 0.25);
+    border-bottom: $search-bar-bottom-border;
   }
 
   &__search-button {
     @include edx_style_killer;
     @include no_damn_focus_glow;
     @include flex-shrink(0);
-    font-size: 2rem;
-    color: rgba($base-text-color, 0.7);
+    font-size: $search-bar-icon-button-font-size;
+    color: $search-bar-icon-button-color;
   }
 
   input[type="text"] {
@@ -95,16 +95,16 @@
     button.clear-filters, button.facet-option {
       @include edx_style_killer;
       @include no_damn_focus_glow;
-      background-color: rgba($base-text-color, 0.4);
-      color: rgba($base-text-color, 0.8);
+      background-color: $search-filter-bg-color;
+      color: $search-filter-text-color;
       @include transition(all 0.3s ease-in-out);
-      padding: 1rem 1.5rem;
-      margin: 0.75rem;
+      padding: $search-filter-padding;
+      margin: $search-filter-margin;
 
       &:hover, &:focus {
         background-color: $brand-primary-color;
         color: #fff;
-        padding: 1rem 1.5rem;
+        padding: $search-filter-padding;
       }
     }
 
@@ -116,7 +116,7 @@
       li {
         list-style-type: none;
         display: inline-block;
-        margin: 0.75rem;
+        margin: $search-filter-margin;
       }
     }
   }

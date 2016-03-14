@@ -6,5 +6,5 @@
 <%block name="pagetitle">${_("Terms of Service")}</%block>
 
 % for section in get_tos_content():
-    <%include file = '${section[1]}' args = 'template_settings = section[2]' />
+    <%include file = '../design-templates/${section[1]}' args = 'template_settings = section[2]' />
 % endfor

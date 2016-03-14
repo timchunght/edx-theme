@@ -2194,6 +2194,22 @@
 		"shouldRunBless": 0,
 		"useLibsass": 1
 		},
+	"\/src\/pages\/_combined-login-register.scss": {
+		"createSourceMap": 0,
+		"debugStyle": 0,
+		"decimalPrecision": 10,
+		"fileType": 4,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/src\/pages\/_combined-login-register.scss",
+		"outputAbbreviatedPath": "\/src\/css\/_combined-login-register.css",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0,
+		"shouldRunAutoprefixer": 0,
+		"shouldRunBless": 0,
+		"useLibsass": 0
+		},
 	"\/src\/pages\/_course-about-01.scss": {
 		"createSourceMap": 0,
 		"debugStyle": 0,
@@ -2953,15 +2969,6 @@
 		"shouldRunBless": 0,
 		"useLibsass": 0
 		},
-	"\/templates\/course.html": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/templates\/course.html",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
 	"\/templates\/courseware\/course_about.html": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -3160,11 +3167,11 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/templates\/theme-courses.html": {
+	"\/templates\/student_account\/login_and_register.html": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/templates\/theme-courses.html",
+		"inputAbbreviatedPath": "\/templates\/student_account\/login_and_register.html",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0

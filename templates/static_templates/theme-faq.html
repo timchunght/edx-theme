@@ -6,5 +6,5 @@
 <%block name="pagetitle">${_("FAQ")}</%block>
 
 % for section in get_faq_content():
-    <%include file = '${section[1]}' args = 'template_settings = section[2]' />
+    <%include file = '../design-templates/${section[1]}' args = 'template_settings = section[2]' />
 % endfor

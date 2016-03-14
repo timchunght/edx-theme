@@ -1,7 +1,7 @@
 ## mako
 <%namespace name='static' file='static_content.html'/>
 <%namespace file='main.html' import="login_query, stanford_theme_enabled"/>
-<%namespace file='theme-variables.html' import="get_header_menu_logged_out_extra_items, get_header_menu_logged_in_extra_items, get_brand_logos" />
+<%namespace file='theme-variables.html' import="get_header_footer_templates, get_header_menu_logged_out_extra_items, get_header_menu_logged_in_extra_items, get_brand_logos" />
 
 <%!
 from django.core.urlresolvers import reverse
@@ -180,7 +180,7 @@ site_status_msg = get_site_status_msg(course_id)
     % endif
   % endif
 
-  <%include file = 'design-templates/header/_header-appsembler-01.html' args="user_authenticated = user_authenticated, user_name = user_name, theme_folder = theme_folder, logo_positive = logo_positive, logo_negative = logo_negative, logo_url = logo_url, display_shopping_cart = display_shopping_cart, shopping_cart_url = shopping_cart_url, display_course_name = display_course_name, course_number = course_number, course_name = course_name, menu_items = menu_items, slideout_menu_items = slideout_menu_items" />
+  <%include file = "design-templates/${get_header_footer_templates()['header_template']}" args="user_authenticated = user_authenticated, user_name = user_name, theme_folder = theme_folder, logo_positive = logo_positive, logo_negative = logo_negative, logo_url = logo_url, display_shopping_cart = display_shopping_cart, shopping_cart_url = shopping_cart_url, display_course_name = display_course_name, course_number = course_number, course_name = course_name, menu_items = menu_items, slideout_menu_items = slideout_menu_items" />
 
 % if course:
 <!--[if lte IE 9]>
