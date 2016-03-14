@@ -99,3 +99,12 @@
     outline: none !important;
   }
 }
+
+@mixin responsive_square_div {
+
+  &:after {
+    content: "";
+    display: block;
+    padding-bottom: 100%;
+  }
+}

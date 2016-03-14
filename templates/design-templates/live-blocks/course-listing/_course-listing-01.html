@@ -30,7 +30,7 @@
     <div class="a--course-listing-01__courses courses-listing ${template_settings['course_template_class']}-parent-element">
       % for course in courses:
         % if not course_count == max_courses:
-          <%include file="${course_template}" args="course=course" />
+          <%include file="../${course_template}" args="course=course" />
           <% course_count = course_count + 1 %>
         % endif
       % endfor

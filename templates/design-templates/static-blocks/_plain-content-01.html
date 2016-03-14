@@ -1,13 +1,8 @@
 <%page args="template_settings" />
 
-<%
-  content = template_settings['content']
-  optional_classes = template_settings['optional_classes']
-  extra_css = template_settings['extra_css']
-%>
 
-<section class="a--plain-content ${optional_classes}" style="${extra_css}">
+<section class="a--plain-content ${template_settings['optional_classes']}" style="${template_settings['extra_css']}">
   <div class="bs-container a--container a--plain-content__container">
-    ${content}
+    ${template_settings['content']}
   </div>
 </section>

@@ -125,7 +125,8 @@
             'popup_video_url' : "MZrctLnsF4M",
             'popup_video_text' : "Watch our video",
             'popup_video_id' : "HeroVideo",
-            'bg_image_url' : '/static/themes/appsembler-dogwood/images/hero-image.jpg'
+            'bg_image_url' : '/static/themes/appsembler-dogwood/images/hero-image.jpg',
+            'extra_css' : ""
           }
         ],
         [
@@ -135,7 +136,7 @@
             'text' : "<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p><p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius.</p><p>Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum.</p>",
             'cta_link' : "http://www.appsembler.com",
             'cta_link_text' : "Check out our site!",
-            'optional_classes' : "",
+            'optional_classes' : "centered",
             'extra_css' : ""
           }
         ],
@@ -149,12 +150,12 @@
         [
           'courses-list', 'live-blocks/course-listing/_course-listing-01.html', {
             # template settings
-            'max_courses' : 3,
-            'course_template_class' : 'a--course-tile-02',
-            'course_template' : '../single-course/_course-tile-02.html',
+            'max_courses' : 4,
+            'course_template_class' : 'a--course-tile-01',
+            'course_template' : 'single-course/_course-tile-01.html',
             'section_heading' : "Check out our courses!",
             'section_text' : "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.",
-            'optional_classes' : "",
+            'optional_classes' : "centered",
             'extra_css' : ""
           }
         ],
@@ -165,7 +166,26 @@
             'text' : "<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p><p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius.</p><p>Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum.</p>",
             'cta_link' : "http://www.appsembler.com",
             'cta_link_text' : "Check out our site!",
-            'optional_classes' : "negative",
+            'optional_classes' : "centered negative",
+            'extra_css' : ""
+          }
+        ],
+        [
+          'static-block', 'static-blocks/_photo-grid-01.html', {
+            # template settings
+            'photos' : [
+              ['/static/themes/appsembler-dogwood/images/hero-image.jpg', 'This is the photo alt text.'],
+              ['/static/themes/appsembler-dogwood/images/hero-image.jpg', 'This is the photo alt text.'],
+              ['/static/themes/appsembler-dogwood/images/hero-image.jpg', 'This is the photo alt text.'],
+              ['/static/themes/appsembler-dogwood/images/hero-image.jpg', 'This is the photo alt text.'],
+              ['/static/themes/appsembler-dogwood/images/hero-image.jpg', 'This is the photo alt text.']
+            ],
+            'photos_per_row_lg' : 4, ## can be either 1, 2, 3, 4 or 6
+            'photos_per_row_md' : 3, ## can be either 1, 2, 3, 4 or 6
+            'photos_per_row_sm' : 2, ## can be either 1, 2, 3, 4 or 6
+            'photos_per_row_xs' : 1, ## can be either 1, 2, 3, 4 or 6
+            'double_sized_first_photo' : True,
+            'optional_classes' : "",
             'extra_css' : ""
           }
         ]
@@ -348,8 +368,8 @@
       'discovery_facet' : '_facet-01.underscore',
       'discovery_facet_option' : '_facet_option-01.underscore',
       'course_template_class' : 'a--course-tile-02',
-      'course_template' : '../../live-blocks/single-course/_course-tile-02.html',
-      'discovery-search-template' : '../../live-blocks/discovery/_discovery-search-01.html'
+      'course_template' : 'live-blocks/single-course/_course-tile-02.html',
+      'discovery-search-template' : 'live-blocks/discovery/_discovery-search-01.html'
     }
   %>
 </%def>
@@ -374,14 +394,13 @@
           'popup_video_url' : "",
           'popup_video_text' : "",
           'popup_video_id' : "",
-          'bg_image_url' : '/static/themes/appsembler-dogwood/images/hero-image.jpg'
-        }
+          'bg_image_url' : "",
+          'extra_css' : "padding-top: 5rem; padding-bottom: 5rem;"
+         }
       ],
       [
-        'courses-list', 'pages/course-catalogue/_course-catalogue-01.html', {
+        'course-catalogue', 'pages/course-catalogue/_course-catalogue-01.html', {
           # template settings
-          'optional_classes' : "",
-          'extra_css' : ""
         }
       ]
     ]
