@@ -17,12 +17,12 @@
   <div class="bs-container a--container a--photo-grid-01__container">
     % for photo in template_settings['photos']:
       % if double_sized_first_photo:
-        <div class="col-xs-${double_class_xs} col-sm-${double_class_sm} col-md-${double_class_md} col-lg-${double_class_lg}" >
+        <div class="col-xs-${double_class_xs} col-sm-${double_class_sm} col-md-${double_class_md} col-lg-${double_class_lg} a--photo-grid-01__single-container" >
           <span class="a--photo-grid-01__photo" style="background-image: url('${photo[0]}');" title="${photo[1]}"></span>
         </div>
         <% double_sized_first_photo = False %>
       % else:
-        <div class="col-xs-${class_xs} col-sm-${class_sm} col-md-${class_md} col-lg-${class_lg}" >
+        <div class="col-xs-${class_xs} col-sm-${class_sm} col-md-${class_md} col-lg-${class_lg} a--photo-grid-01__single-container">
           <span class="a--photo-grid-01__photo" style="background-image: url('${photo[0]}');" title="${photo[1]}"></span>
         </div>
       % endif
