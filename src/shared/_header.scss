@@ -143,6 +143,10 @@
         }
       }
     }
+
+    &.a--user-avatar {
+      color: rgba($base-text-color, 0.6);
+    }
   }
 }
 

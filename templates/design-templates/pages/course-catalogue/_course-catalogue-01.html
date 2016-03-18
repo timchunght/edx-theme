@@ -10,7 +10,7 @@ from django.utils.translation import ugettext as _
 % if discovery_enabled:
 
   <section class="a--course-catalogue-01__discovery bs-container a--container">
-    <%include file = "../../${get_course_catalogue_settings()['discovery-search-template']}" />
+    <%include file = "../../${get_course_catalogue_settings()['discovery-search-template']}" args='search_wrapper_id = "discovery-form"' />
   </section>
 
   <section class="a--course-catalogue-01__courses">

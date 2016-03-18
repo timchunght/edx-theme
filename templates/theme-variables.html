@@ -412,3 +412,43 @@
     ]
   %>
 </%def>
+
+
+## dashboard settings
+
+<%def name="get_dashboard_settings()">
+  <%
+    return {
+      'default_edx_view' : False, ## required boolean value. Set to "true" if you want the default edX look and feel.
+      'dashboard_search_enabled' : True,
+      'dashboard_course_listing' : 'live-blocks/dashboard-course-listing/_dashboard-course-listing-01.html', ## set which template should be used to display a single course in the dashboard
+      'discovery_course_card' : '_course-tile-02.underscore', ## define which tile template to use for results
+      'discovery_facet' : '_facet-01.underscore', ## define which template for facets to use
+      'discovery_facet_option' : '_facet_option-01.underscore', ## define which template for a single facet to use
+      'discovery-search-template' : 'live-blocks/discovery/_discovery-search-01.html', ## design which discovery-search block design to use
+      'promote_course_catalog' : True
+    }
+  %>
+</%def>
+
+
+## dashboard page content
+
+<%def name="get_dashboard_content()">
+  <%
+    return [
+      #[
+      #   'TEMPLATE_TYPE', 'TEMPLATE_URL', {
+      #     'template_setting_01': "value",
+      #     'template_setting_02': "value2",
+      #     ...
+      #   }
+      #]
+      [
+        'dashboard', 'pages/dashboard/_dashboard-01.html', {
+          # just include the course-catalogue template with the search, facets and results/listing at a place on the page
+        }
+      ]
+    ]
+  %>
+</%def>
