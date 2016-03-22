@@ -3182,11 +3182,11 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/templates\/design-templates\/live-blocks\/dashboard-course-listing\/_dashboard-course-listing.html": {
+	"\/templates\/design-templates\/live-blocks\/dashboard-course-listing\/_dashboard-course-listing-01.html": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/templates\/design-templates\/live-blocks\/dashboard-course-listing\/_dashboard-course-listing.html",
+		"inputAbbreviatedPath": "\/templates\/design-templates\/live-blocks\/dashboard-course-listing\/_dashboard-course-listing-01.html",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
