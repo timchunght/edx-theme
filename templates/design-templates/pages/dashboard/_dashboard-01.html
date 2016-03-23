@@ -12,6 +12,7 @@ from django.core.urlresolvers import reverse
   <ul class="bs-container a--container a--dashboard-notifications__container">
     <li class="a--dashboard-notifications__notification">
       This is a test message. This list item will be removed. YEEEHAW.
+      <a href="#" data-toggle="modal" data-target="#testModal" class="a--cta">test</a>
     </li>
     % if message:
       <li class="a--dashboard-notifications__notification">
@@ -76,65 +77,45 @@ from django.core.urlresolvers import reverse
   </aside>
 </section>
 
-<section id="email-settings-modal" class="modal" aria-hidden="true">
-  <div class="inner-wrapper" role="dialog" aria-labelledby="email-settings-title">
-    <button class="close-modal">
-      <i class="icon fa fa-remove"></i>
-      <span class="sr">
-        ## Translators: this is a control to allow users to exit out of this modal interface (a menu or piece of UI that takes the full focus of the screen)
-        ${_("Close")}
-      </span>
-    </button>
 
-    <header>
-      <h2 id="email-settings-title">
+<section class="modal a--modal a--bottom-slideout-modal" id="email-settings-modal" tabindex="-1" aria-hidden="true">
+  <div class="a--bottom-slideout-modal__wrapper" role="dialog">
+    <div class="bs-container a--container a--bottom-slideout-modal__container">
+      <h1 class="a--bottom-slideout-modal__title">
         ${_("Email Settings for {course_number}").format(course_number='<span id="email_settings_course_number"></span>')}
-        <span class="sr">,
-          ## Translators: this text gives status on if the modal interface (a menu or piece of UI that takes the full focus of the screen) is open or not
-          ${_("window open")}
-        </span>
-      </h2>
-      <hr/>
-    </header>
-
-    <form id="email_settings_form" method="post">
-      <input name="course_id" id="email_settings_course_id" type="hidden" />
-      <label>${_("Receive course emails")} <input type="checkbox" id="receive_emails" name="receive_emails" /></label>
-      <div class="submit">
-        <input type="submit" id="submit" value="${_("Save Settings")}" />
-      </div>
-    </form>
+      </h1>
+      <form id="email_settings_form" method="post">
+        <div class="a--bottom-slideout-modal__content">
+          <input name="course_id" id="email_settings_course_id" type="hidden" />
+          <span>${_("Receive course emails")} <input type="checkbox" id="receive_emails" name="receive_emails" /></span>
+        </div>
+        <div class="a--bottom-slideout-modal__controls">
+          <button type="submit" id="submit" class="a--bottom-slideout-modal__control-button action">${_("Save Settings")}</button>
+          <button type="button" class="a--bottom-slideout-modal__control-button dismiss close-modal" data-dismiss="modal" aria-label="Cancel">${_("Close")}</button>
+        </div>
+      </form>
+    </div>
   </div>
 </section>
 
-<section id="unenroll-modal" class="modal unenroll-modal" aria-hidden="true">
-  <div class="inner-wrapper" role="dialog" aria-labelledby="unenrollment-modal-title">
-    <button class="close-modal">
-      <i class="icon fa fa-remove"></i>
-      <span class="sr">
-        ## Translators: this is a control to allow users to exit out of this modal interface (a menu or piece of UI that takes the full focus of the screen)
-        ${_("Close")}
-      </span>
-    </button>
-
-    <header>
-      <h2 id="unenrollment-modal-title">
+<section class="modal unenroll-modal a--modal a--bottom-slideout-modal" id="unenroll-modal" tabindex="-1" aria-hidden="true">
+  <div class="a--bottom-slideout-modal__wrapper" role="dialog">
+    <div class="bs-container a--container a--bottom-slideout-modal__container">
+      <h1 class="a--bottom-slideout-modal__title">
         <span id='track-info'></span>
-        <span id='refund-info'></span>
-        <span class="sr">,
-          ## Translators: this text gives status on if the modal interface (a menu or piece of UI that takes the full focus of the screen) is open or not
-          ${_("window open")}
-        </span>
-      </h2>
-      <hr/>
-    </header>
-    <div id="unenroll_error" class="modal-form-error"></div>
-    <form id="unenroll_form" method="post" data-remote="true" action="${reverse('change_enrollment')}">
-      <input name="course_id" id="unenroll_course_id" type="hidden" />
-      <input name="enrollment_action" type="hidden" value="unenroll" />
-      <div class="submit">
-        <input name="submit" type="submit" value="${_("Unenroll")}" />
-      </div>
-    </form>
+      </h1>
+      <form id="unenroll_form" method="post" data-remote="true" action="${reverse('change_enrollment')}">
+        <div class="a--bottom-slideout-modal__content">
+          <span id='refund-info'></span>
+          <input name="course_id" id="unenroll_course_id" type="hidden" />
+          <input name="enrollment_action" type="hidden" value="unenroll" />
+        </div>
+        <div class="a--bottom-slideout-modal__controls">
+          <button type="submit" name="submit" class="a--bottom-slideout-modal__control-button warning">${_("Unenroll")}</button>
+          <button type="button" class="a--bottom-slideout-modal__control-button dismiss close-modal" data-dismiss="modal" aria-label="Cancel">${_("Close")}</button>
+        </div>
+      </form>
+      <div id="unenroll_error" class="modal-form-error"></div>
+    </div>
   </div>
 </section>
