@@ -14,6 +14,17 @@
 ## =======================================================
 
 
+## define some global settings
+
+<%def name="get_global_settings()">
+  <%
+  return {
+    'enable_registration_button' : True
+  }
+  %>
+</%def>
+
+
 ## define logo files. All the variables need to be defined.
 
 <%def name="get_brand_logos()">

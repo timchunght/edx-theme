@@ -1,7 +1,7 @@
 ## mako
 <%namespace name='static' file='static_content.html'/>
 <%namespace file='main.html' import="login_query, stanford_theme_enabled"/>
-<%namespace file='theme-variables.html' import="get_header_footer_templates, get_header_menu_logged_out_extra_items, get_header_menu_logged_in_extra_items, get_brand_logos" />
+<%namespace file='theme-variables.html' import="get_global_settings, get_header_footer_templates, get_header_menu_logged_out_extra_items, get_header_menu_logged_in_extra_items, get_brand_logos" />
 
 <%!
 from django.core.urlresolvers import reverse
@@ -150,14 +150,16 @@ site_status_msg = get_site_status_msg(course_id)
           append_group.append(['Find Courses', '/courses', ''])
         %>
       % endif
-      % if course and settings.FEATURES.get('RESTRICT_ENROLL_BY_REG_METHOD') and course.enrollment_domain:
-        <%
-          append_group.append(['Register', reverse('course-specific-register', args=[course.id.to_deprecated_string()]), 'nav-cta'])
-        %>
-      % else:
-        <%
-          append_group.append(['Register', '/register', 'nav-cta'])
-        %>
+      % if get_global_settings()['enable_registration_button']:
+        % if course and settings.FEATURES.get('RESTRICT_ENROLL_BY_REG_METHOD') and course.enrollment_domain:
+          <%
+            append_group.append(['Register', reverse('course-specific-register', args=[course.id.to_deprecated_string()]), 'nav-cta'])
+          %>
+        % else:
+          <%
+            append_group.append(['Register', '/register', 'nav-cta'])
+          %>
+        % endif
       % endif
       <%
         menu_items.append(append_group)

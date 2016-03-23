@@ -4,6 +4,7 @@
     from openedx.core.lib.js_utils import escape_json_dumps
 %>
 <%namespace name='static' file='/static_content.html'/>
+<%namespace file='../theme-variables.html' import="get_global_settings" />
 
 <%inherit file="../main.html" />
 
@@ -17,11 +18,25 @@
 </%block>
 
 <%block name="header_extras">
+  % if get_global_settings()['enable_registration_button']:
     % for template_name in ["account", "access", "form_field", "login", "register", "institution_login", "institution_register", "password_reset", "hinted_login"]:
         <script type="text/template" id="${template_name}-tpl">
             <%static:include path="student_account/${template_name}.underscore" />
         </script>
-% endfor
+    % endfor
+  % else:
+    % for template_name in ["account", "access", "form_field", "institution_login", "institution_register", "password_reset", "hinted_login"]:
+        <script type="text/template" id="${template_name}-tpl">
+            <%static:include path="student_account/${template_name}.underscore" />
+        </script>
+        <script type="text/template" id="login-tpl">
+            <%static:include path="student_account/login-no-register.underscore" />
+        </script>
+        <script type="text/template" id="register-tpl">
+            <%static:include path="student_account/register.underscore" />
+        </script>
+    % endfor
+  % endif
 </%block>
 
 <div class="section-bkg-wrapper">
