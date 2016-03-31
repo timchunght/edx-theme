@@ -7,25 +7,30 @@ from django.core.urlresolvers import reverse
 
 <%namespace file='../../../theme-variables.html' import="get_dashboard_settings" />
 
+<%
+  if get_dashboard_settings()['promote_course_catalog']:
+    dashboard_sidebar_enabled = True
+  else:
+    dashboard_sidebar_enabled = False
+  endif
+%>
 
-<section class="a--dashboard-notifications">
-  <ul class="bs-container a--container a--dashboard-notifications__container">
-    <li class="a--dashboard-notifications__notification">
-      This is a test message. This list item will be removed. YEEEHAW.
-      <a href="#" data-toggle="modal" data-target="#testModal" class="a--cta">test</a>
-    </li>
-    % if message:
-      <li class="a--dashboard-notifications__notification">
+% if message or enrollment_message:
+  <section class="a--dashboard-01__notifications">
+    <ul class="bs-container a--container a--dashboard-01__notifications__container">
+      % if message:
+        <li class="a--dashboard-01__notifications__notification">
 
-      </li>
-    % endif
-    % if enrollment_message:
-      <li class="a--dashboard-notifications__notification">
+        </li>
+      % endif
+      % if enrollment_message:
+        <li class="a--dashboard-01__notifications__notification">
 
-      </li>
-    % endif
-  </ul>
-</section>
+        </li>
+      % endif
+    </ul>
+  </section>
+% endif
 
 % if get_dashboard_settings()['dashboard_search_enabled']:
   <section class="a--dashboard-01__discovery bs-container a--container">
@@ -33,48 +38,53 @@ from django.core.urlresolvers import reverse
   </section>
 % endif
 
-<section class="a--dashboard__main">
-  <div class="bs-container a--container a--dashboard__main__container">
-    <div class="col-xs-12 col-sm-8 col-md-9 a--dashboard__main__courses-container" id="my-courses">
-      % if len(course_enrollments) > 0:
-        <ul class="a--dashboard__main__courses">
-          % for dashboard_index, enrollment in enumerate(course_enrollments):
-            <% show_courseware_link = (enrollment.course_id in show_courseware_links_for) %>
-            <% cert_status = cert_statuses.get(enrollment.course_id) %>
-            <% can_unenroll = (not cert_status) or cert_status.get('can_unenroll') %>
-            <% credit_status = credit_statuses.get(enrollment.course_id) %>
-            <% show_email_settings = (enrollment.course_id in show_email_settings_for) %>
-            <% course_mode_info = all_course_modes.get(enrollment.course_id) %>
-            <% show_refund_option = (enrollment.course_id in show_refund_option_for) %>
-            <% is_paid_course = (enrollment.course_id in enrolled_courses_either_paid) %>
-            <% is_course_blocked = (enrollment.course_id in block_courses) %>
-            <% course_verification_status = verification_status_by_course.get(enrollment.course_id, {}) %>
-            <% course_requirements = courses_requirements_not_met.get(enrollment.course_id) %>
-            <% course_program_info = course_programs.get(unicode(enrollment.course_id)) %>
-            <%include file = "../../${get_dashboard_settings()['dashboard_course_listing']}" args="course_overview=enrollment.course_overview, enrollment=enrollment, show_courseware_link=show_courseware_link, cert_status=cert_status, can_unenroll=can_unenroll, credit_status=credit_status, show_email_settings=show_email_settings, course_mode_info=course_mode_info, show_refund_option=show_refund_option, is_paid_course=is_paid_course, is_course_blocked=is_course_blocked, verification_status=course_verification_status, course_requirements=course_requirements, dashboard_index=dashboard_index, user=user, course_program_info=course_program_info" />
-          % endfor
-        </ul>
-      % else:
-        <div class="a--dashboard__main__no-enrollments__container">
-          <p>${_("Looks like you haven't enrolled in any courses yet.")}</p>
-          % if get_dashboard_settings()['promote_course_catalog']:
-            <a class="a--dashboard__main__no-enrollments__cta" href="${marketing_link('COURSES')}">${_("Find courses now!")}</a>
-          % endif
+<section class="a--dashboard__content">
+  <div class="bs-container a--container a--dashboard-01__main__container">
+    <div class="a--dashboard-01__main__content">
+      <div class="a--dashboard-01__main__courses-container" id="my-courses">
+        % if len(course_enrollments) > 0:
+          <ul class="a--dashboard-01__main__courses">
+            % for dashboard_index, enrollment in enumerate(course_enrollments):
+              <% show_courseware_link = (enrollment.course_id in show_courseware_links_for) %>
+              <% cert_status = cert_statuses.get(enrollment.course_id) %>
+              <% can_unenroll = (not cert_status) or cert_status.get('can_unenroll') %>
+              <% credit_status = credit_statuses.get(enrollment.course_id) %>
+              <% show_email_settings = (enrollment.course_id in show_email_settings_for) %>
+              <% course_mode_info = all_course_modes.get(enrollment.course_id) %>
+              <% show_refund_option = (enrollment.course_id in show_refund_option_for) %>
+              <% is_paid_course = (enrollment.course_id in enrolled_courses_either_paid) %>
+              <% is_course_blocked = (enrollment.course_id in block_courses) %>
+              <% course_verification_status = verification_status_by_course.get(enrollment.course_id, {}) %>
+              <% course_requirements = courses_requirements_not_met.get(enrollment.course_id) %>
+              <% course_program_info = course_programs.get(unicode(enrollment.course_id)) %>
+              <%include file = "../../${get_dashboard_settings()['dashboard_course_listing']}" args="course_overview=enrollment.course_overview, enrollment=enrollment, show_courseware_link=show_courseware_link, cert_status=cert_status, can_unenroll=can_unenroll, credit_status=credit_status, show_email_settings=show_email_settings, course_mode_info=course_mode_info, show_refund_option=show_refund_option, is_paid_course=is_paid_course, is_course_blocked=is_course_blocked, verification_status=course_verification_status, course_requirements=course_requirements, dashboard_index=dashboard_index, user=user, course_program_info=course_program_info" />
+            % endfor
+          </ul>
+        % else:
+          <div class="a--dashboard-01__main__no-enrollments__container">
+            <p>${_("Looks like you haven't enrolled in any courses yet.")}</p>
+            % if get_dashboard_settings()['promote_course_catalog']:
+              <a class="a--dashboard-01__main__no-enrollments__cta" href="${marketing_link('COURSES')}">${_("Find courses now!")}</a>
+            % endif
+          </div>
+        % endif
+      </div>
+      % if get_dashboard_settings()['dashboard_search_enabled']:
+        <div class="a--dashboard-01__main__search-results" id="dashboard-search-results">
         </div>
       % endif
     </div>
-    % if get_dashboard_settings()['dashboard_search_enabled']:
-      <div class="col-xs-12 col-sm-8 col-md-9 a--dashboard__main__search-results" id="dashboard-search-results">
-
-      </div>
+    % if dashboard_sidebar_enabled:
+      <aside class="a--dashboard-01__main__sidebar">
+        % if get_dashboard_settings()['promote_course_catalog']:
+        <div class="a--dashboard-01__promote_catalog">
+          <p>${get_dashboard_settings()['promote_course_catalog_text']}</p>
+          <a class="a--dashboard-01__promote_catalog__cta" href="${marketing_link('COURSES')}">${_("Find courses now!")}</a>
+        </div>
+        % endif
+      </aside>
     % endif
   </div>
-
-  <aside class="col-xs-12 col-sm-4 col-md-3">
-    % if get_dashboard_settings()['promote_course_catalog']:
-      <a class="a--dashboard__main__no-enrollments__cta" href="${marketing_link('COURSES')}">${_("Find courses now!")}</a>
-    % endif
-  </aside>
 </section>
 
 

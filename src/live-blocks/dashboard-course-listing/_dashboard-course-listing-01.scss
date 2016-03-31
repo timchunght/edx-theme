@@ -20,10 +20,13 @@
     width: 24rem;
     margin-right: 3rem;
     min-height: 18rem;
+    @include display(flex);
+    @include align-items(center);
     @include flex-shrink(0);
     background-size: cover;
     background-position: center center;
     opacity: 1;
+    position: relative;
 
     &:hover, &:focus {
       opacity: 0.8;
@@ -32,6 +35,26 @@
     @media (max-width: $screen-xs-max) {
       width: 100%;
       margin: 0 0 2rem;
+    }
+
+    .course-blocked-overlay {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      @include linear-gradient(to top, darken($brand-primary-color, 40%), darken($brand-primary-color, 20%));
+      opacity: 0.7;
+    }
+
+    .course-blocked-label {
+      font-size: 2.2rem;
+      @include primary-font-bold;
+      letter-spacing: 0.1rem;
+      color: rgba(#fff, 0.8);
+      display: block;
+      width: 100%;
+      text-align: center;
     }
   }
 

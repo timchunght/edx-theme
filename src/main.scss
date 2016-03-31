@@ -52,9 +52,11 @@
 @import "live-blocks/discovery/search-01";
 @import "live-blocks/discovery/facets-01";
 @import "live-blocks/dashboard-course-listing/dashboard-course-listing-01";
+@import "live-blocks/dashboard-search-results/dashboard-search-results--default";
 
 
 // Import page specific templates sass
 @import "pages/course-about-01";
 @import "pages/course-catalogue-01";
 @import "pages/combined-login-register";
+@import "pages/dashboard-01";
