@@ -63,8 +63,9 @@
   }
 
   &__promote-catalog {
-    padding: 2rem 0;
+    padding: 3rem 0;
     border-bottom: 0.1rem solid rgba($base-text-color, 0.3);
+    text-align: center;
 
     p {
       font-size: 1.6rem;
@@ -72,39 +73,12 @@
       margin: 0 0 1.5rem;
     }
 
-    &__cta {
+    a.a--dashboard-01__promote-catalog__cta {
       background-color: $navbar-button-bg;
       border: $navbar-button-border;
       display: inline-block;
       padding: 1.5rem 2rem;
-      margin: 1.5rem 0 0;
-      @include primary-font;
-      color: #fff;
-      @include button_radius;
-      @include button_splash($buttons-border-radius);
-
-      &:hover, &:focus {
-        color: rgba(#fff, 0.8);
-      }
-    }
-  }
-
-  &__promote-catalog {
-    padding: 2rem 0;
-    border-bottom: 0.1rem solid rgba($base-text-color, 0.3);
-
-    p {
-      font-size: 1.6rem;
-      @include primary-font;
-      margin: 0 0 1.5rem;
-    }
-
-    &__cta {
-      background-color: $navbar-button-bg;
-      border: $navbar-button-border;
-      display: inline-block;
-      padding: 1.5rem 2rem;
-      margin: 1.5rem 0 0;
+      margin: 0.5rem 0 0;
       @include primary-font;
       color: #fff;
       @include button_radius;
