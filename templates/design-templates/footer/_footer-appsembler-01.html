@@ -1,4 +1,6 @@
 <%page args="theme_folder, footer_links, footer_logo, footer_copyright_text, display_edx_disclaimer, edx_disclaimer, display_poweredby" />
+<%namespace file='../../theme-variables.html' import="get_footer_settings" />
+<%! from django.utils.translation import ugettext as _ %>
 
 <footer class="a--footer">
   <div class="bs-container a--container a--footer__container">
@@ -12,6 +14,13 @@
             ${footer_copyright_text}
           </p>
           <ul class="a--footer__links-container">
+            % if get_footer_settings()['display_app_link']:
+              <li>
+                <a href="${get_footer_settings()['app_url']}" target="_blank">
+                  <img class="app-store" alt="${_("Apple app on Apple Store")}" src="/static/images/app/app_store_badge_135x40.svg" style="height: 30px; width: auto;">
+                </a>
+              </li>
+            % endif
             % for item in footer_links:
             <li class="">
               <a href="${item[1]}" class="${item[2]}">${item[0]}</a>
