@@ -54,6 +54,16 @@
 @import "live-blocks/dashboard-course-listing/dashboard-course-listing-01";
 @import "live-blocks/dashboard-search-results/dashboard-search-results--default";
 
+// Import courseware stuff
+@import "courseware/top-nav-01";
+@import "courseware/courseware-banner-01";
+@import "courseware/courseware-wrapper-01";
+@import "courseware/course-info-01";
+@import "courseware/course-content-01";
+@import "courseware/course-progress-01";
+@import "courseware/discussion-in-course";
+@import "courseware/courseware-textbook";
+
 
 // Import page specific templates sass
 @import "pages/course-about-01";

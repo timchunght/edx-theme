@@ -6,6 +6,12 @@ $(document).ready(function(){
 		$('#slide-menu').toggleClass('a--active');
 	});
 
+	// courseware nav toggling
+	$('.a--course-content__nav__mobile-toggle').on('click', function() {
+		$('.a--course-content__nav__mobile-toggle').slideToggle();
+		$('#course-nav-wrapper').slideToggle();
+	});
+
 	// execute css on-load animations
 	$('.a--animated').addClass("a--do-animate");
 

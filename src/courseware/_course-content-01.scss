@@ -1,0 +1,365 @@
+.a--course-content {
+
+  &__nav {
+    @include flex-shrink(0);
+    min-width: 24rem;
+    max-width: 28rem;
+    padding-right: 3rem;
+    margin-right: 3rem;
+    border-right: 0.1rem solid #ddd;
+
+    &__mobile-toggle {
+      text-align: center;
+      display: block;
+      padding: 1.5rem 1rem;
+      background-color: #eee;
+      border-radius: 4rem;
+      color: rgba($base-text-color, 0.7);
+      margin: 1.5rem 0;
+
+      @media(min-width: $screen-md-min) {
+        display: none;
+      }
+    }
+
+    &__wrapper {
+
+      @media(max-width: $screen-sm-max) {
+        display: none;
+      }
+    }
+
+    @media(max-width: $screen-sm-max) {
+      max-width: none;
+      width: 100%;
+      margin-right: 0;
+      padding-right: 0;
+      border-right: none;
+      border-bottom: 0.1rem solid #ddd;
+    }
+
+    .courseware-search-bar {
+      box-shadow: none;
+      margin-bottom: 2rem;
+      padding: 0.9rem 0 2.2rem;
+      border-bottom: 0.2rem solid #ddd;
+
+      .search-field-wrapper {
+        @include display(flex);
+        @include align-items(center);
+        border: 0.1rem solid #ddd;
+      }
+
+      .search-field {
+        top: 0;
+        border-radius: 0;
+        border: none;
+        box-shadow: none;
+        padding: 1rem 1rem;
+        height: auto;
+        font-size: 1.6rem;
+        @include transition(all 0.3s ease-in-out);
+
+        &:hover, &:focus {
+          box-shadow: none;
+          outline: none;
+          border: none;
+          padding: 2rem 1rem;
+        }
+      }
+
+      .search-button {
+        position: relative;
+        top: 0;
+        right: 1rem;
+        width: auto;
+        height: auto;
+
+        &:hover, &:focus {
+          box-shadow: none;
+          outline: none;
+          border: none;
+          color: $brand-primary-color;
+        }
+      }
+    }
+
+    .accordion {
+
+      .course-navigation {
+
+        .button-chapter {
+          display: block;
+          padding: 1.5rem 0;
+          @include primary-font;
+          color: $base-text-color;
+          font-size: 1.6rem;
+          border-bottom: 0.1rem solid #eee;
+          @include transition(all 0.3s ease-in-out);
+
+          .group-heading {
+            @include display(flex);
+            @include align-items(center);
+            width: 100%;
+          }
+
+          .icon {
+            width: 2rem;
+            @include flex-shrink(0);
+            @include transition(all 0.3s ease-in-out);
+          }
+
+          &.active {
+            position: relative;
+
+            .group-heading {
+
+              &:after {
+                width: 0.8rem;
+                height: 0.8rem;
+                content: "";
+                background-color: $brand-primary-color;
+                border-radius: 0.5rem;
+                @include transition(all 0.3s ease-in-out);
+                opacity: 1;
+                @include flex-shrink(0);
+              }
+            }
+          }
+
+          &.is-open {
+            color: rgba($base-text-color, 0.7);
+
+            .icon {
+              width: 2.5rem;
+            }
+
+            .group-heading {
+
+              &:after {
+                opacity: 0;
+              }
+            }
+          }
+
+          &:hover, &:focus {
+
+            .icon {
+              width: 2.5rem;
+            }
+          }
+        }
+
+        .chapter-content-container {
+          padding-left: 2.5rem;
+
+          &.is-open {
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 0.1rem solid #eee;
+          }
+
+          .menu-item {
+
+            a {
+              display: block;
+              padding: 0.8rem 0;
+              font-size: 1.4rem;
+              color: $base-text-color;
+            }
+
+            &.active {
+
+              a {
+                @include primary-font-bold;
+                color: $brand-primary-color;
+              }
+            }
+
+            .subtitle {
+              margin-top: 0.5rem;
+              font-size: 1.2rem;
+              @include primary-font-italic;
+              color: rgba($base-text-color, 0.7);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__main-content {
+    width: 100%;
+    @include flex-shrink(1);
+    overflow-y: auto;
+
+    .course-content {
+      padding: 0;
+      margin-top: 1.1rem;
+
+      // top nav inside course-content
+
+      .sequence-nav {
+        border-bottom: 0.2rem solid #ddd;
+        padding-bottom: 2.1rem;
+        @include display(flex);
+        @include align-items(center);
+        @include justify-content(space-between);
+
+        .sequence-nav-button {
+          border: none;
+          background: none;
+          cursor: pointer;
+          position: relative;
+          @include transition(all 0.3s ease-in-out);
+          top: 0;
+          @include flex-shrink(0);
+
+          &:hover, &:focus {
+            color: $base-text-color;
+            top: -0.5rem;
+          }
+        }
+
+        .sequence-list-wrapper {
+          background: none;
+          box-shadow: none;
+          border: none;
+          @include flex-shrink(1);
+          width: 100%;
+          margin: 0 1.5rem;
+          height: auto;
+
+          @media(max-width: $screen-xs-max) {
+            display: none;
+          }
+        }
+
+        ol {
+          position: relative;
+          padding: 0;
+          @include display(flex);
+          @include align-items(center);
+          border: none;
+          border-left: 0.2rem solid #ddd;
+          border-right: 0.2rem solid #ddd;
+
+            li {
+              width: 100%;
+              display: block;
+              text-align: center;
+              border: none;
+              padding: 0 1.5rem;
+              border-right: 0.1rem solid #ddd;
+
+              &:last-child {
+                border-right: none;
+              }
+
+              a {
+                position: relative;
+                border: none;
+                @include transition(all 0.3s ease-in-out);
+
+                .icon {
+                  position: relative;
+                  top: 0;
+                  @include transition(all 0.3s ease-in-out);
+                }
+
+                &:hover, &:focus {
+                  background-color: #efefef;
+
+                  .icon {
+                    top: -0.5rem;
+                  }
+                }
+
+                &.active {
+                  background-color: #efefef;
+
+                  .icon {
+                    color: $brand-primary-color;
+                  }
+
+                  &:hover, &:focus {
+                    background-color: #efefef;
+                  }
+
+                  &:after {
+                    width: 100%;
+                    height: 0.2rem;
+                    background-color: $brand-primary-color;
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                    bottom: -2.5rem;
+                  }
+                }
+              }
+            }
+        }
+
+        .left-shadow, .right-shadow {
+          display: none;
+        }
+      }
+
+      // bottom nav in course content
+
+      nav.sequence-bottom {
+        border-top: 0.2rem solid #ddd;
+        padding: 3rem 2rem 0;
+        width: 50%;
+        height: auto;
+        margin: 3rem 25% 2rem;
+        @include display(flex);
+        @include align-items(center);
+        @include justify-content(space-around);
+
+        .sequence-nav-button {
+          border: none;
+          background: none;
+          cursor: pointer;
+          position: relative;
+          @include transition(all 0.3s ease-in-out);
+          top: 0;
+          @include flex-shrink(0);
+
+          span {
+            font-size: 1.6rem;
+          }
+
+          &:hover, &:focus {
+            color: $base-text-color;
+            top: -0.5rem;
+          }
+        }
+      }
+
+      // overall course content default stylings
+
+      h2 {
+        text-transform: none;
+        @include primary-font;
+        font-size: 2.2rem;
+        color: $brand-primary-color;
+        letter-spacing: 0;
+      }
+
+      h3 {
+        text-transform: none;
+        @include small-headings-font;
+        color: $brand-primary-color;
+        letter-spacing: 0;
+      }
+
+      h4 {
+        text-transform: none;
+        @include small-headings-font;
+        color: rgba($base-text-color, 0.75);
+        letter-spacing: 0;
+      }
+    }
+  }
+}
