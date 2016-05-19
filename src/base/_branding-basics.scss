@@ -1,8 +1,9 @@
-$brand-primary-color: #0090c1;
+$brand-primary-color: #0B55A8;
 $navbar-style: "white";  // brand or white
-$base-text-color: #666;
+$base-text-color: #424242;
 
-$cta-button-bg: $brand-primary-color;
+$cta-button-bg: #FFC23D;
+$cta-button-text-color: $brand-primary-color;
 $cta-button-border: none;
 
 $header-bg-color: calcNavbarBg($navbar-style, $brand-primary-color);
@@ -15,7 +16,7 @@ $header-group-separation: 4rem;
 $header-font-size: 1.6rem;
 $header-text-color: calcNavbarTextColor($navbar-style, $base-text-color);
 $navbar-button-border: calcNavbarButtonBorder($navbar-style);
-$navbar-button-bg: calcNavbarButtonBg($navbar-style, $brand-primary-color);
+$navbar-button-bg: calcNavbarButtonBg($navbar-style, #FFC23D);
 $navbar-anchor-underline-color: calcNavbarUnderlineColor($navbar-style, $brand-primary-color);
 
 $display-navbar-logo-positive: calcDisplayLogoPositive($navbar-style);
@@ -36,7 +37,7 @@ $slideout-menu-item-padding: 1.4rem;
 
 $base-letter-spacing: 0;
 
-$buttons-border-radius: 4rem;
+$buttons-border-radius: 0.5rem;
 
 
 $footer-padding-top: 4rem;
@@ -82,7 +83,7 @@ $single-facet-padding: 0.75rem 0;
 $single-facet-selected-opacity: 0.6;
 $facet-font-size: 1.6rem;
 $facet-results-count-font-size: 1.2rem;
-$facet-results-count-bg-color: $brand-primary-color;
+$facet-results-count-bg-color: #FFC23D;
 $facet-results-count-text-color: #fff;
 $facet-results-count-padding: 0.3rem 0.8rem;
 $facet-results-count-border-radius: 1rem;
@@ -103,7 +104,7 @@ $login-register-input-border-bottom: $login-register-input-border;
 $login-register-input-border-top: none;
 $login-register-input-border-left: none;
 $login-register-input-border-right: none;
-$login-register-hover-border-color: $brand-primary-color;
+$login-register-hover-border-color: #FFC23D;
 $login-register-textarea-min-height: 10rem;
 $login-register-input-text-size: 1.4rem;
 $login-register-tip-text-color: rgba($base-text-color, 0.7);

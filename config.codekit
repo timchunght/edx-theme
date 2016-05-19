@@ -3103,13 +3103,13 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/static\/images\/hero-image.jpg": {
+	"\/static\/images\/ou-hero-bg-01.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 77042,
-		"inputAbbreviatedPath": "\/static\/images\/hero-image.jpg",
-		"outputAbbreviatedPath": "\/static\/images\/hero-image.jpg",
+		"initialSize": 22683,
+		"inputAbbreviatedPath": "\/static\/images\/ou-hero-bg-01.jpg",
+		"outputAbbreviatedPath": "\/static\/images\/ou-hero-bg-01.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -3257,15 +3257,15 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/static\/sass\/_appsembler-dogwood.scss": {
+	"\/static\/sass\/_ou-dogwood.scss": {
 		"createSourceMap": 0,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 4,
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/static\/sass\/_appsembler-dogwood.scss",
-		"outputAbbreviatedPath": "\/static\/css\/_appsembler-dogwood.css",
+		"inputAbbreviatedPath": "\/static\/sass\/_ou-dogwood.scss",
+		"outputAbbreviatedPath": "\/static\/css\/_ou-dogwood.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,

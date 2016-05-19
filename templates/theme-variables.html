@@ -58,8 +58,9 @@
   <%
     return [
       #['LINK_TEXT', 'LINK_URL', 'LINK_CLASS']
-      ['Our web', 'http://www.appsembler.com', ''],
-      ['About us', reverse('about'), '']
+      ['OU Website', 'http://www.open.ac.uk/', ''],
+      ['About us', reverse('about'), ''],
+      ['FAQ', marketing_link('FAQ'), '']
     ]
   %>
 </%def>
@@ -71,8 +72,7 @@
   <%
     return [
       #['LINK_TEXT', 'LINK_URL', 'LINK_CLASS']
-      ['About us', reverse('about'), ''],
-      ['Awesome!', 'www.awesome.com', 'class_awesomee']
+      ['OU Website', 'http://www.open.ac.uk/', '']
     ]
   %>
 </%def>
@@ -131,24 +131,24 @@
         [
           'static-block', 'static-blocks/_hero-section-01.html', {
             # template settings
-            'hero_title' : "Welcome to this test site, buddy!", ## leave value empty if you don't want it displayed.
-            'hero_subtitle' : "Bringing you mobile optimized courses about Open edX. We're Appsembler. Awesome!", ## leave value empty if you don't want it displayed.
-            'cta_link' : "http://www.appsembler.com", ## leave value empty if you don't want a CTA button displayed.
-            'cta_link_text' : "Awesome link!", ## leave value empty if you don't want a CTA button displayed.
-            'popup_video_url' : "MZrctLnsF4M", ## YouTube video ID - leave value empty if you don't want a video button and modal displayed.
+            'hero_title' : "Welcome to Open University Open edX!", ## leave value empty if you don't want it displayed.
+            'hero_subtitle' : "Every year, thousands of students like you decide to study with us. With over 120 highly respected qualifications, you can be confident we’ve got the right course for you.", ## leave value empty if you don't want it displayed.
+            'cta_link' : "", ## leave value empty if you don't want a CTA button displayed.
+            'cta_link_text' : "", ## leave value empty if you don't want a CTA button displayed.
+            'popup_video_url' : "ktAnpf_nu5c", ## YouTube video ID - leave value empty if you don't want a video button and modal displayed.
             'popup_video_text' : "Watch our video", ## leave value empty if you don't want a video button and modal displayed.
             'popup_video_id' : "HeroVideo", ## leave value empty if you don't want a video button and modal displayed.
-            'bg_image_url' : '/static/themes/appsembler-dogwood/images/hero-image.jpg', ## leave empty if you want just a full color background
+            'bg_image_url' : '/static/themes/ou-dogwood/images/ou-hero-bg-01.jpg', ## leave empty if you want just a full color background
             'extra_css' : "" ## add custom css to be added inline to the wrapper element
           }
         ],
         [
           'static-block', 'static-blocks/_heading-plus-text-plus-cta.html', {
             # template settings
-            'heading' : "This is a heading! Blablah!", ## leave value empty if you don't want it displayed.
-            'text' : "<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p><p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius.</p><p>Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum.</p>", ## leave value empty if you don't want it displayed.
-            'cta_link' : "http://www.appsembler.com", ## leave value empty if you don't want a CTA button displayed.
-            'cta_link_text' : "Check out our site!", ## leave value empty if you don't want a CTA button displayed.
+            'heading' : "About the OU", ## leave value empty if you don't want it displayed.
+            'text' : "<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>", ## leave value empty if you don't want it displayed.
+            'cta_link' : "http://www.open.ac.uk/", ## leave value empty if you don't want a CTA button displayed.
+            'cta_link_text' : "Our website", ## leave value empty if you don't want a CTA button displayed.
             'optional_classes' : "centered", ## can be "centered" to have all text centered, or "negative" if you want white text on solid color background
             'extra_css' : "" ## add custom css to be added inline to the wrapper element
           }
@@ -163,10 +163,10 @@
         [
           'courses-list', 'live-blocks/course-listing/_course-listing-01.html', {
             # template settings
-            'max_courses' : 4, ## required, sets max number of courses to be displayed in the block
-            'course_template_class' : 'a--course-tile-01', ## required, defined as "a--{template-name}"
-            'course_template' : 'single-course/_course-tile-01.html', ## required
-            'section_heading' : "Check out our courses!", ## leave value empty if you don't want it displayed.
+            'max_courses' : 7, ## required, sets max number of courses to be displayed in the block
+            'course_template_class' : 'a--course-tile-02', ## required, defined as "a--{template-name}"
+            'course_template' : 'single-course/_course-tile-02.html', ## required
+            'section_heading' : "Our latest courses:", ## leave value empty if you don't want it displayed.
             'section_text' : "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.", ## leave value empty if you don't want it displayed.
             'optional_classes' : "centered", ## can be "centered" to have all text centered
             'extra_css' : "" ## add custom css to be added inline to the wrapper element
@@ -175,31 +175,11 @@
         [
           'static-block', 'static-blocks/_heading-plus-text-plus-cta.html', {
             # template settings
-            'heading' : "This is a heading! Blablah!", ## leave value empty if you don't want it displayed.
-            'text' : "<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p><p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius.</p><p>Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum.</p>", ## leave value empty if you don't want it displayed.
-            'cta_link' : "http://www.appsembler.com", ## leave value empty if you don't want a CTA button displayed.
-            'cta_link_text' : "Check out our site!", ## leave value empty if you don't want a CTA button displayed.
+            'heading' : "Browse our entire course catalogue", ## leave value empty if you don't want it displayed.
+            'text' : "<p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius.</p>", ## leave value empty if you don't want it displayed.
+            'cta_link' : "/courses", ## leave value empty if you don't want a CTA button displayed.
+            'cta_link_text' : "Course catalogue", ## leave value empty if you don't want a CTA button displayed.
             'optional_classes' : "centered negative", ## can be "centered" to have all text centered, or "negative" if you want white text on solid color background
-            'extra_css' : "" ## add custom css to be added inline to the wrapper element
-          }
-        ],
-        [
-          'static-block', 'static-blocks/_photo-grid-01.html', {
-            # template settings
-            'photos' : [
-              ## ['image_path', 'Image alt text'],
-              ['/static/themes/appsembler-dogwood/images/temp-photos/temp-photo-01.jpg', 'This is the photo alt text.'],
-              ['/static/themes/appsembler-dogwood/images/temp-photos/temp-photo-02.jpg', 'This is the photo alt text.'],
-              ['/static/themes/appsembler-dogwood/images/temp-photos/temp-photo-03.jpg', 'This is the photo alt text.'],
-              ['/static/themes/appsembler-dogwood/images/temp-photos/temp-photo-04.jpg', 'This is the photo alt text.'],
-              ['/static/themes/appsembler-dogwood/images/temp-photos/temp-photo-05.jpg', 'This is the photo alt text.']
-            ],
-            'photos_per_row_lg' : 4, ## can be either 1, 2, 3, 4 or 6
-            'photos_per_row_md' : 3, ## can be either 1, 2, 3, 4 or 6
-            'photos_per_row_sm' : 2, ## can be either 1, 2, 3, 4 or 6
-            'photos_per_row_xs' : 1, ## can be either 1, 2, 3, 4 or 6
-            'double_sized_first_photo' : True, ## required boolean value
-            'optional_classes' : "", ##
             'extra_css' : "" ## add custom css to be added inline to the wrapper element
           }
         ]
