@@ -50,9 +50,9 @@ Single course about page using the following blocks: course-about-01, line separ
 
 Register page
 
-![Alt text](/theme-faq.jpg?raw=true "Open edX Default Theme Screenshot")
+![Alt text](/theme-dashboard.jpg?raw=true "Open edX Default Theme Screenshot")
 
-FAQ page using the following blocks: hero-section-01, plain-content-01, expanding-sections-list-01
+Dashboard page
 
 
 Theme Authoring

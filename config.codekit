@@ -3727,13 +3727,13 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/theme-faq.jpg": {
+	"\/theme-dashboard.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"initialSize": 500023,
-		"inputAbbreviatedPath": "\/theme-faq.jpg",
-		"outputAbbreviatedPath": "\/theme-faq.jpg",
+		"inputAbbreviatedPath": "\/theme-dashboard.jpg",
+		"outputAbbreviatedPath": "\/theme-dashboard.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
