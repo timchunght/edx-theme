@@ -94,7 +94,7 @@
 
   &.courses-listing-narrower {
 
-    .discovery-course-tile {
+    li.courses-listing-item {
       padding: 1.5rem;
       width: 33.3%;
       @include display(flex);
@@ -113,7 +113,7 @@
     }
   }
 
-  .discovery-course-tile {
+  li.courses-listing-item {
     padding: 1.5rem;
     width: 25%;
     @include display(flex);

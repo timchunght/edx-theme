@@ -5,6 +5,7 @@
   width: 100%;
   @include transition(all 0.3s ease-in-out);
   border: 0.1rem solid #dedede;
+  text-align: left;
 
   &:hover, &:focus {
     -webkit-box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
