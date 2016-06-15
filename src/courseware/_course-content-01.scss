@@ -41,7 +41,7 @@
     .courseware-search-bar {
       box-shadow: none;
       margin-bottom: 2rem;
-      padding: 0.9rem 0 2.2rem;
+      padding: 0.9rem 0 ($sequence-nav-bottom-padding + 0.1rem);
       border-bottom: 0.2rem solid #ddd;
 
       .search-field-wrapper {
@@ -91,11 +91,17 @@
         .button-chapter {
           display: block;
           padding: 1.5rem 0;
-          @include primary-font;
+          @include primary-font-bold;
           color: $base-text-color;
           font-size: 1.6rem;
           border-bottom: 0.1rem solid #eee;
           @include transition(all 0.3s ease-in-out);
+
+          @if $courseware-link-hover == "expanding-underline" {
+            @include underline_expanding_hover($brand-primary-color, 0.2rem);
+          } @else if $courseware-link-hover == "hover-pop" {
+            @include hover_pop(0, 0, 0, 0.5rem);
+          }
 
           .group-heading {
             @include display(flex);
@@ -113,6 +119,7 @@
             position: relative;
 
             .group-heading {
+              position: relative;
 
               &:after {
                 width: 0.8rem;
@@ -123,6 +130,9 @@
                 @include transition(all 0.3s ease-in-out);
                 opacity: 1;
                 @include flex-shrink(0);
+                position: absolute;
+                right: 0;
+                top: 0.8rem;
               }
             }
           }
@@ -139,13 +149,6 @@
               &:after {
                 opacity: 0;
               }
-            }
-          }
-
-          &:hover, &:focus {
-
-            .icon {
-              width: 2.5rem;
             }
           }
         }
@@ -166,6 +169,10 @@
               padding: 0.8rem 0;
               font-size: 1.4rem;
               color: $base-text-color;
+
+              &:hover, &:focus {
+                color: $brand-primary-color;
+              }
             }
 
             &.active {
@@ -191,7 +198,16 @@
   &__main-content {
     width: 100%;
     @include flex-shrink(1);
-    overflow-y: auto;
+
+    @media(max-width:$screen-sm-max) {
+      overflow-y: auto;
+    }
+
+    .xmodule_display.xmodule_HtmlModule p {
+      @include primary-font;
+      font-size: $courseware-content-font-size;
+      line-height: $courseware-content-line-height !important;
+    }
 
     .course-content {
       padding: 0;
@@ -201,7 +217,7 @@
 
       .sequence-nav {
         border-bottom: 0.2rem solid #ddd;
-        padding-bottom: 2.1rem;
+        padding-bottom: $sequence-nav-bottom-padding;
         @include display(flex);
         @include align-items(center);
         @include justify-content(space-between);
@@ -210,14 +226,17 @@
           border: none;
           background: none;
           cursor: pointer;
-          position: relative;
           @include transition(all 0.3s ease-in-out);
-          top: 0;
           @include flex-shrink(0);
+
+          @if $courseware-link-hover == "expanding-underline" {
+            @include underline_expanding_hover($base-text-color, 0.2rem);
+          } @else if $courseware-link-hover == "hover-pop" {
+            @include hover_pop(-0.5rem, 0, 0, 0);
+          }
 
           &:hover, &:focus {
             color: $base-text-color;
-            top: -0.5rem;
           }
         }
 
@@ -261,17 +280,23 @@
                 border: none;
                 @include transition(all 0.3s ease-in-out);
 
-                .icon {
-                  position: relative;
-                  top: 0;
-                  @include transition(all 0.3s ease-in-out);
-                }
-
                 &:hover, &:focus {
                   background-color: #efefef;
+                }
 
+                @if $courseware-link-hover == "expanding-underline" {
+                  @include underline_expanding_hover($brand-primary-color, 0.2rem);
+                } @else if $courseware-link-hover == "hover-pop" {
                   .icon {
-                    top: -0.5rem;
+                    position: relative;
+                    top: 0;
+                    @include transition(all 0.3s ease-in-out);
+                  }
+
+                  &:hover, &:focus {
+                    .icon {
+                      top: -0.5rem;
+                    }
                   }
                 }
 
@@ -293,7 +318,19 @@
                     content: "";
                     position: absolute;
                     left: 0;
-                    bottom: -2.5rem;
+                    bottom: -$sequence-nav-bottom-padding - 0.4rem;
+                  }
+                }
+
+                p {
+                  white-space: inherit;
+                  width: 24rem;
+                  padding: 2rem;
+                  z-index: 1000;
+                  background-color: $brand-primary-color;
+
+                  &:after {
+                    background-color: $brand-primary-color;
                   }
                 }
               }
@@ -310,12 +347,16 @@
       nav.sequence-bottom {
         border-top: 0.2rem solid #ddd;
         padding: 3rem 2rem 0;
-        width: 50%;
+        width: $courseware-content-bottom-nav-width;
         height: auto;
-        margin: 3rem 25% 2rem;
+        margin: 3rem auto 2rem;
         @include display(flex);
         @include align-items(center);
         @include justify-content(space-around);
+
+        @media(max-width: $screen-xs-max) {
+          width: $courseware-content-bottom-nav-width*2;
+        }
 
         .sequence-nav-button {
           border: none;
@@ -342,7 +383,7 @@
       h2 {
         text-transform: none;
         @include primary-font;
-        font-size: 2.2rem;
+        font-size: 1.8 * $courseware-content-font-size;
         color: $brand-primary-color;
         letter-spacing: 0;
       }

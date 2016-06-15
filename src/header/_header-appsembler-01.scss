@@ -112,7 +112,7 @@
 
         a {
           color: $header-text-color;
-          @include underline_expanding_hover;
+          @include underline_expanding_hover($header-text-color, 1rem);
 
           &:hover, &:focus {
             color: lighten($header-text-color, 20%);
@@ -224,7 +224,12 @@
     }
 
     .a--toggle-pulsar {
-      display: block;
+
+      @if $nav-toggle-bar-pulsar-visible {
+        display: block;
+      } @else {
+        display: none;
+      }
       position: absolute;
       bottom: -0.5rem;
       right: -0.7rem;

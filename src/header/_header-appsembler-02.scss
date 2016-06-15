@@ -116,7 +116,7 @@
         a {
           color: $header-text-color;
           text-transform: uppercase;
-          @include underline_expanding_hover;
+          @include underline_expanding_hover($header-text-color, 1rem);
 
           &:hover, &:focus {
             color: lighten($header-text-color, 20%);

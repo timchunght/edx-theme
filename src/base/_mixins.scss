@@ -52,17 +52,17 @@
   border-radius: $buttons-border-radius;
 }
 
-@mixin underline_expanding_hover {
+@mixin underline_expanding_hover($line_color, $distance) {
   position: relative;
 
   &:after {
     position: absolute;
-    bottom: -1rem;
+    bottom: -$distance;
     left: 0;
     width: 0;
     height: 0.2rem;
     border-radius: 0.05rem;
-    background-color: $header-text-color;
+    background-color: $line_color;
     content: "";
     @include transition(0.2s all ease-in-out);
   }
@@ -72,6 +72,22 @@
     &:after {
       width: 100%;
     }
+  }
+}
+
+@mixin hover_pop($top_pop, $right_pop, $left_pop, $bottom_pop) {
+  position: relative;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  @include transition(all 0.3s ease-in-out);
+
+  &:hover, &:focus {
+    top: $top_pop;
+    right: $right_pop;
+    bottom: $bottom_pop;
+    left: $left_pop;
   }
 }
 

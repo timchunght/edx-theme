@@ -3,8 +3,8 @@
 <%
   max_courses = template_settings['max_courses']
   courses = courses
-  course_template = "single-course/_{}.html".format(template_settings['course_template_type'])
-  course_template_class = "a--{}".format(template_settings['course_template_type'])
+  course_template = template_settings['course_template']
+  course_template_class = template_settings['course_template_class']
 %>
 
 

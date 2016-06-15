@@ -90,11 +90,6 @@ site_status_msg = get_site_status_msg(course_id)
       <%
         append_group = []
       %>
-      % if settings.FEATURES.get('COURSES_ARE_BROWSABLE'):
-        <%
-          append_group.append(['Find Courses', marketing_link('COURSES'), ''])
-        %>
-      % endif
       % if settings.FEATURES.get('ENABLE_SYSADMIN_DASHBOARD','') and user.is_staff:
         <%
           append_group.append(['SysAdmin', reverse('sysadmin'), ''])
@@ -123,22 +118,6 @@ site_status_msg = get_site_status_msg(course_id)
       <%
         menu_items.append(get_header_menu_logged_out_extra_items())
         slideout_menu_items.append(get_header_menu_logged_out_extra_items())
-      %>
-    % endif
-    % if microsite.get_value('ENABLE_MKTG_SITE', settings.FEATURES.get('ENABLE_MKTG_SITE', False)):
-      <%
-        append_group = []
-        append_group.append(['How it Works', marketing_link('HOW_IT_WORKS'), ''])
-      %>
-      % if settings.FEATURES.get('COURSES_ARE_BROWSABLE'):
-        <%
-          append_group.append(['Courses', marketing_link('COURSES'), ''])
-        %>
-      % endif
-      <%
-        append_group(['Schools', marketing_link('SCHOOLS'), ''])
-        menu_items.append(append_group)
-        slideout_menu_items.append(append_group)
       %>
     % endif
       % if not settings.FEATURES['DISABLE_LOGIN_BUTTON']:

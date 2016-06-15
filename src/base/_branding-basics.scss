@@ -29,6 +29,7 @@ $nav-toggle-bar-margin: 2rem;
 $nav-toggle-bar-color: $header-text-color;
 $nav-toggle-bar-separation: 1rem;
 $nav-toggle-bar-pulsar-color: $brand-primary-color;
+$nav-toggle-bar-pulsar-visible: false;
 
 $slideout-menu-text-color: #fff;
 $slideout-menu-background-color: $brand-primary-color;
@@ -113,3 +114,17 @@ $login-register-field-link-font-size: $login-register-input-text-size;
 $login-register-field-link-color: $brand-primary-color;
 $login-register-toggle-title-font-size: 2rem;
 $login-register-toggle-title-color: rgba($base-text-color, 0.7);
+
+
+// courseware
+
+$courseware-top-nav-top-margin: 1rem;
+$courseware-top-nav-bottom-margin: 2rem;
+
+$sequence-nav-bottom-padding: 1.6rem;
+$courseware-content-bottom-nav-width: 30%;
+
+$courseware-link-hover: "hover-pop";
+//$courseware-link-hover: "expanding-underline";
+$courseware-content-font-size: 16px;
+$courseware-content-line-height: 20px;
