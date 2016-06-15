@@ -3,7 +3,8 @@
 <%
   max_courses = template_settings['max_courses']
   courses = courses
-  course_template = template_settings['course_template']
+  course_template = "single-course/_{}.html".format(template_settings['course_template_type'])
+  course_template_class = "a--{}".format(template_settings['course_template_type'])
 %>
 
 
@@ -27,7 +28,7 @@
         % endif
       </div>
     % endif
-    <div class="a--course-listing-01__courses courses-listing ${template_settings['course_template_class']}-parent-element">
+    <div class="a--course-listing-01__courses courses-listing ${course_template_class}-parent-element">
       % for course in courses:
         % if not course_count == max_courses:
           <%include file="../${course_template}" args="course=course" />

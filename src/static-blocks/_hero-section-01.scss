@@ -16,7 +16,7 @@
     @include big-headings-font;
     font-size: 5.8rem;
     margin: 0 0 2rem;
-    color: #fff;
+    color: inherit;;
 
     @media(max-width: $screen-sm-max) {
       font-size: 4.2rem;
@@ -27,7 +27,8 @@
     @include small-headings-font;
     font-size: 1.6rem;
     margin: 0;
-    color: rgba(#fff, 0.7);
+    color: inherit;
+    opacity: 0.75
   }
 
   &__cta-container {

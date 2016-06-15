@@ -14,9 +14,9 @@
             ${footer_copyright_text}
           </p>
           <ul class="a--footer__links-container">
-            % if get_footer_settings()['display_app_link']:
+            % if get_footer_settings().get('display_app_link', False):
               <li>
-                <a href="${get_footer_settings()['app_url']}" target="_blank">
+                <a href="${get_footer_settings().get('app_url')}" target="_blank">
                   <img class="app-store" alt="${_("Apple app on Apple Store")}" src="/static/images/app/app_store_badge_135x40.svg" style="height: 30px; width: auto;">
                 </a>
               </li>

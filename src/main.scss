@@ -33,8 +33,11 @@
 @import "base/expanding-section";
 
 // Import site shared layout
-@import "shared/header";
 @import "shared/footer";
+
+// Import header styles
+@import "header/header-appsembler-01";
+@import "header/header-appsembler-02";
 
 // Import static-blocks specific sass
 @import "static-blocks/hero-section-01";
