@@ -20,12 +20,12 @@ from django.core.urlresolvers import reverse
     <ul class="bs-container a--container a--dashboard-01__notifications__container">
       % if message:
         <li class="a--dashboard-01__notifications__notification">
-
+          ${message}
         </li>
       % endif
       % if enrollment_message:
         <li class="a--dashboard-01__notifications__notification">
-
+          ${enrollment_message}
         </li>
       % endif
     </ul>
