@@ -107,6 +107,7 @@
             @include display(flex);
             @include align-items(center);
             width: 100%;
+            padding-right: 2rem;
           }
 
           .icon {
@@ -156,10 +157,19 @@
         .chapter-content-container {
           padding-left: 2.5rem;
 
+          .chapter-menu {
+            display: none;
+            overflow: hidden;
+          }
+
           &.is-open {
             padding-top: 1rem;
             padding-bottom: 1rem;
             border-bottom: 0.1rem solid #eee;
+
+            .chapter-menu {
+              display: block;
+            }
           }
 
           .menu-item {
