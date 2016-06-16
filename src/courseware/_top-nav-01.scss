@@ -14,12 +14,16 @@
     right: 0;
     top: 0;
     bottom: 0;
-    @include display(flex);
-    @include align-items(center);
-    @include justify-content(space-around);
     font-size: 2rem;
     @include linear-gradient(to right, rgba(#fafafa, 0) 0%, rgba(#fafafa, 1) 40%);
     padding-left: 3rem;
+    display: none;
+
+    &.visible {
+      @include display(flex);
+      @include align-items(center);
+      @include justify-content(space-around);
+    }
   }
 
   &__list-container {

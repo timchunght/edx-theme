@@ -82,8 +82,8 @@ include_special_exams = settings.FEATURES.get('ENABLE_SPECIAL_EXAMS', False) and
 
 % if disable_tabs is UNDEFINED or not disable_tabs:
   <nav class="a--courseware-top-nav__container bs-container a--container">
-    <div class="a--courseware-top-nav__list-container">
-      <ul class="a--courseware-top-nav__list a--animated">
+    <div class="a--courseware-top-nav__list-container" id="courseware-top-nav-container">
+      <ul class="a--courseware-top-nav__list a--animated" id="courseware-top-nav-list">
         % for tab in get_course_tab_list(request, course):
           <%
               tab_is_active = (tab.tab_id == active_page) or (tab.tab_id == default_tab)
@@ -96,10 +96,15 @@ include_special_exams = settings.FEATURES.get('ENABLE_SPECIAL_EXAMS', False) and
         % endfor
       </ul>
     </div>
-    <div class="a--courseware-top-nav__mobile-scroll-indicator">
+    <div class="a--courseware-top-nav__mobile-scroll-indicator" id="courseware-top-nav-chevron">
       <i class="fa fa-angle-double-right"></i>
     </div>
   </nav>
+  <script>
+    $(document).ready(function(){
+      toggleCoursewareNavChevrons();
+    });
+  </script>
 %endif
 
 % if show_preview_menu:
