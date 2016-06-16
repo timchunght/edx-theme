@@ -92,24 +92,24 @@ site_status_msg = get_site_status_msg(course_id)
       %>
       % if settings.FEATURES.get('COURSES_ARE_BROWSABLE'):
         <%
-          append_group.append(['Find Courses', marketing_link('COURSES'), ''])
+          append_group.append(['Find Courses', marketing_link('COURSES'), '', ''])
         %>
       % endif
       % if settings.FEATURES.get('ENABLE_SYSADMIN_DASHBOARD','') and user.is_staff:
         <%
-          append_group.append(['SysAdmin', reverse('sysadmin'), ''])
+          append_group.append(['SysAdmin', reverse('sysadmin'), '', ''])
         %>
       % endif
       <%
         menu_items.append(append_group)
         slideout_menu_items.append(append_group)
         append_group = []
-        append_group.append(['Dashboard', reverse('dashboard'), ''])
-        append_group.append(['Profile', reverse('learner_profile', kwargs={'username': user.username}), ''])
-        append_group.append(['Account', reverse('account_settings'), ''])
+        append_group.append(['Dashboard', reverse('dashboard'), '', ''])
+        append_group.append(['Profile', reverse('learner_profile', kwargs={'username': user.username}), '', ''])
+        append_group.append(['Account', reverse('account_settings'), '', ''])
         slideout_menu_items.append(append_group)
         append_group = []
-        append_group.append(['Sign Out', reverse('logout'), ''])
+        append_group.append(['Sign Out', reverse('logout'), '', ''])
         slideout_menu_items.append(append_group)
       %>
     % endif
@@ -128,15 +128,15 @@ site_status_msg = get_site_status_msg(course_id)
     % if microsite.get_value('ENABLE_MKTG_SITE', settings.FEATURES.get('ENABLE_MKTG_SITE', False)):
       <%
         append_group = []
-        append_group.append(['How it Works', marketing_link('HOW_IT_WORKS'), ''])
+        append_group.append(['How it Works', marketing_link('HOW_IT_WORKS'), '', ''])
       %>
       % if settings.FEATURES.get('COURSES_ARE_BROWSABLE'):
         <%
-          append_group.append(['Courses', marketing_link('COURSES'), ''])
+          append_group.append(['Courses', marketing_link('COURSES'), '', ''])
         %>
       % endif
       <%
-        append_group(['Schools', marketing_link('SCHOOLS'), ''])
+        append_group(['Schools', marketing_link('SCHOOLS'), '', ''])
         menu_items.append(append_group)
         slideout_menu_items.append(append_group)
       %>
@@ -147,17 +147,17 @@ site_status_msg = get_site_status_msg(course_id)
       %>
       % if settings.FEATURES.get('ENABLE_COURSE_DISCOVERY'):
         <%
-          append_group.append(['Find Courses', '/courses', ''])
+          append_group.append(['Find Courses', '/courses', '', ''])
         %>
       % endif
       % if get_global_settings()['enable_registration_button']:
         % if course and settings.FEATURES.get('RESTRICT_ENROLL_BY_REG_METHOD') and course.enrollment_domain:
           <%
-            append_group.append(['Register', reverse('course-specific-register', args=[course.id.to_deprecated_string()]), 'nav-cta'])
+            append_group.append(['Register', reverse('course-specific-register', args=[course.id.to_deprecated_string()]), 'nav-cta', ''])
           %>
         % else:
           <%
-            append_group.append(['Register', '/register', 'nav-cta'])
+            append_group.append(['Register', '/register', 'nav-cta', ''])
           %>
         % endif
       % endif
@@ -168,11 +168,11 @@ site_status_msg = get_site_status_msg(course_id)
       %>
       % if course and settings.FEATURES.get('RESTRICT_ENROLL_BY_REG_METHOD') and course.enrollment_domain:
         <%
-          append_group.appned(['Sign in', reverse('course-specific-login', args=[course.id.to_deprecated_string()]), ''])
+          append_group.appned(['Sign in', reverse('course-specific-login', args=[course.id.to_deprecated_string()]), '', ''])
         %>
       % else:
         <%
-          append_group.append(['Sign in', '/login', ''])
+          append_group.append(['Sign in', '/login', '', ''])
         %>
       % endif
       <%
