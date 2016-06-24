@@ -209,6 +209,10 @@
     width: 100%;
     @include flex-shrink(1);
 
+    label {
+      font-size: 1.6rem;
+    }
+
     @media(max-width:$screen-sm-max) {
       overflow-y: auto;
     }
