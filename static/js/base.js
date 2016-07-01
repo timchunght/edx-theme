@@ -58,7 +58,67 @@ $(document).ready(function(){
     $(this).toggleClass("activated");
     $("#discovery-expanding-area").slideToggle();
 	})
+
+	// YouTube control
+	var tag = document.createElement('script');
+	tag.src = "//www.youtube.com/player_api";
+	var firstScriptTag = document.getElementsByTagName('script')[0];
+	firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 });
+
+
+// TouTube pausing in modals
+
+function getFrameID(id){
+	var elem = document.getElementById(id);
+	if (elem) {
+			if(/^iframe$/i.test(elem.tagName)) return id; //Frame, OK
+			// else: Look for frame
+			var elems = elem.getElementsByTagName("iframe");
+			if (!elems.length) return null; //No iframe found, FAILURE
+			for (var i=0; i<elems.length; i++) {
+				 if (/^https?:\/\/(?:www\.)?youtube(?:-nocookie)?\.com(\/|$)/i.test(elems[i].src)) break;
+			}
+			elem = elems[i]; //The only, or the best iFrame
+			if (elem.id) return elem.id; //Existing ID, return it
+			// else: Create a new ID
+			do { //Keep postfixing `-frame` until the ID is unique
+					id += "-frame";
+			} while (document.getElementById(id));
+			elem.id = id;
+			return id;
+	}
+	// If no element, return null.
+	return null;
+}
+
+var youTubePlayers = {};
+
+function onYouTubePlayerAPIReady() {
+	$(".youtube-modal-iframe[id]").each(function() {
+		var identifier = this.id;
+		var frameID = getFrameID(identifier);
+		if (frameID) {
+			youTubePlayers[frameID] = new YT.Player(frameID, {
+				events: {
+					"onReady": createYTEvent(frameID, identifier)
+				}
+			});
+		}
+	});
+}
+
+
+function createYTEvent(frameID, identifier) {
+	return function (event) {
+		buttonId = "a--video-modal-close-" + frameID;
+		var pauseButton = document.getElementById(buttonId);
+		pauseButton.addEventListener("click", function() {
+			youTubePlayers[frameID].pauseVideo();
+		})
+	}
+}
+
 
 function toggleCoursewareNavChevrons() {
 	var childrenTotalWidth = 0;

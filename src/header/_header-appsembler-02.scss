@@ -27,6 +27,16 @@
       &__logo {
         height: $header-logo-height;
 
+        // IE fix hack
+        @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+           width: 100%;
+        }
+
+        // Edge fix hack
+        @supports (-ms-accelerator:true) {
+          width: 100%;
+        }
+
         &__container {
           @include flex-shrink(0);
         }
@@ -178,6 +188,17 @@
     position: relative;
     bottom: 0.2rem;
 
+    // IE fix hack
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+      top: $nav-toggle-bar-width / 2;
+    }
+
+    // Edge fix hack
+    @supports (-ms-accelerator:true) {
+      top: $nav-toggle-bar-width / 2;
+    }
+
+
     .a--toggle-text {
       position: absolute;
       top: $header-font-size*0.2;
@@ -188,10 +209,20 @@
       @include display(flex);
       @include align-items(center);
       font-size: $header-font-size;
-      color: calcNavbarBgInverse($navbar-style, $brand-primary-color);
+      color: $header-text-color;
       @include primary-font-bold;
       @include transition(all 0.3s ease-in-out);
       z-index: 2;
+
+      // IE fix hack
+      @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        top: - $nav-toggle-bar-width / 4 * 3;
+      }
+
+      // Edge fix hack
+      @supports (-ms-accelerator:true) {
+        top: - $nav-toggle-bar-width / 4 * 3;
+      }
     }
 
     .a--toggle-bar {
@@ -318,7 +349,7 @@
   .a--slide-menu__container, ul.a--slide-menu__container {
     position: absolute;
     z-index: 1001;
-    width: 32rem;
+    width: 100%;
     max-width: 100%;
     padding-top: 10rem;
     padding-bottom: 50rem;

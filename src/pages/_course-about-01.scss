@@ -38,6 +38,8 @@
 
     &__image {
       width: 30%;
+      @include flex-grow(0);
+      @include flex-shrink(0);
       max-width: 32rem;
       margin-right: 5rem;
       position: relative;
@@ -83,7 +85,9 @@
     }
 
     &__info {
-
+      width: 100%;
+      @include flex-shrink(1);
+      @include flex-grow(1);
     }
 
     &__title {
@@ -102,6 +106,13 @@
       font-size: 1.8rem;
       color: #fff;
       margin: -1rem 0 3rem;
+    }
+  }
+
+  &__courseware-button-wrapper {
+
+    #register_error {
+      display: inline-block;
     }
   }
 
@@ -156,7 +167,7 @@
     display: inline-block;
     padding: 1.5rem 2rem;
     font-size: 1.6rem;
-    margin: 0 2rem 0 0;
+    margin: 1rem 2rem 1rem 0;
     @include large-cta-font;
     color: #fff;
     @include button_radius;

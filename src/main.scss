@@ -10,9 +10,6 @@
 // Import various vendor specific scss
 @import "vendors/animate";
 
-// Import typography
-@import "base/typography";
-
 // Import bg functions
 @import "base/functions";
 
@@ -22,11 +19,16 @@
 // Import mixins
 @import "base/mixins";
 
+// Import basic styles
+@import "base/branding-basics";
+
+// Import typography
+@import "base/typography";
+
 // edX normalizer for elements
 @import "base/edx-overrides";
 
 // Import basic styles
-@import "base/branding-basics";
 @import "base/base";
 @import "base/buttons";
 @import "base/modals";

@@ -3135,13 +3135,13 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/static\/images\/ou-hero-bg-01.jpg": {
+	"\/static\/images\/hero--example-background.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 22683,
-		"inputAbbreviatedPath": "\/static\/images\/ou-hero-bg-01.jpg",
-		"outputAbbreviatedPath": "\/static\/images\/ou-hero-bg-01.jpg",
+		"initialSize": 167209,
+		"inputAbbreviatedPath": "\/static\/images\/hero--example-background.jpg",
+		"outputAbbreviatedPath": "\/static\/images\/hero--example-background.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -3289,15 +3289,15 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/static\/sass\/_ou-dogwood.scss": {
+	"\/static\/sass\/_dogwood-theme-codebase.scss": {
 		"createSourceMap": 0,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 4,
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/static\/sass\/_ou-dogwood.scss",
-		"outputAbbreviatedPath": "\/static\/css\/_ou-dogwood.css",
+		"inputAbbreviatedPath": "\/static\/sass\/_dogwood-theme-codebase.scss",
+		"outputAbbreviatedPath": "\/static\/css\/_dogwood-theme-codebase.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
@@ -3908,7 +3908,7 @@
 	},
 "projectAttributes": {
 	"bowerAbbreviatedPath": "",
-	"displayValue": "ou-dogwood",
+	"displayValue": "dogwood-theme-codebase",
 	"displayValueWasSetByUser": 1,
 	"iconImageName": "globe_yellow"
 	},

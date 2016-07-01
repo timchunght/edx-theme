@@ -68,9 +68,18 @@
       padding: 1rem 1.5rem;
 
       @if $courseware-link-hover == "expanding-underline" {
-        @include underline_expanding_hover($brand-primary-color, 1rem);
-      } @else if $courseware-link-hover == "hover-pop" {
-        @include hover_pop(-0.5rem, 0, 0, 0);
+          @include underline_expanding_hover($brand-primary-color, 1rem);
+      } @else if $chosen_style == "hover_pop" {
+          @include hover_pop(-0.5rem, 0);
+      } @else if $chosen_style == "hover-custom-color" {
+          &:hover, &:focus {
+            color: $brand-primary-color;
+          }
+      } @else if $chosen_style == "opacity" {
+          opacity: 1;
+          &:hover, &:focus {
+            opacity: 0.5;
+          }
       }
 
       &.active {

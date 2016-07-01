@@ -98,9 +98,18 @@
           @include transition(all 0.3s ease-in-out);
 
           @if $courseware-link-hover == "expanding-underline" {
-            @include underline_expanding_hover($brand-primary-color, 0.2rem);
-          } @else if $courseware-link-hover == "hover-pop" {
-            @include hover_pop(0, 0, 0, 0.5rem);
+              @include underline_expanding_hover($brand-primary-color, 0.2rem);
+          } @else if $chosen_style == "hover_pop" {
+              @include hover_pop(0, -0.5rem);
+          } @else if $chosen_style == "hover-custom-color" {
+              &:hover, &:focus {
+                color: $brand-primary-color;
+              }
+          } @else if $chosen_style == "opacity" {
+              opacity: 1;
+              &:hover, &:focus {
+                opacity: 0.5;
+              }
           }
 
           .group-heading {
@@ -244,9 +253,18 @@
           @include flex-shrink(0);
 
           @if $courseware-link-hover == "expanding-underline" {
-            @include underline_expanding_hover($base-text-color, 0.2rem);
-          } @else if $courseware-link-hover == "hover-pop" {
-            @include hover_pop(-0.5rem, 0, 0, 0);
+              @include underline_expanding_hover($brand-primary-color, 0.2rem);
+          } @else if $chosen_style == "hover_pop" {
+              @include hover_pop(-0.5rem, 0);
+          } @else if $chosen_style == "hover-custom-color" {
+              &:hover, &:focus {
+                color: $brand-primary-color;
+              }
+          } @else if $chosen_style == "opacity" {
+              opacity: 1;
+              &:hover, &:focus {
+                opacity: 0.5;
+              }
           }
 
           &:hover, &:focus {
@@ -299,19 +317,20 @@
                 }
 
                 @if $courseware-link-hover == "expanding-underline" {
-                  @include underline_expanding_hover($brand-primary-color, 0.2rem);
-                } @else if $courseware-link-hover == "hover-pop" {
-                  .icon {
-                    position: relative;
-                    top: 0;
-                    @include transition(all 0.3s ease-in-out);
-                  }
-
-                  &:hover, &:focus {
+                    @include underline_expanding_hover($brand-primary-color, 0.2rem);
+                } @else if $chosen_style == "hover_pop" {
                     .icon {
-                      top: -0.5rem;
+                      @include hover_pop(-0.5rem, 0);
                     }
-                  }
+                } @else if $chosen_style == "hover-custom-color" {
+                    &:hover, &:focus {
+                      color: $brand-primary-color;
+                    }
+                } @else if $chosen_style == "opacity" {
+                    opacity: 1;
+                    &:hover, &:focus {
+                      opacity: 0.5;
+                    }
                 }
 
                 &.active {

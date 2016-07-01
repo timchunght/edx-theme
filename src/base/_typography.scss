@@ -1,64 +1,41 @@
 @mixin primary-font-light {
-	font-family: 'PT Sans', sans-serif;
+	font-family: $primary-font-name, sans-serif;
 	font-style: normal;
-	font-weight: 400;
+	font-weight: $primary-font-weight-light;
 }
 
 @mixin primary-font {
-	font-family: 'PT Sans', sans-serif;
+	font-family: $primary-font-name, sans-serif;
 	font-style: normal;
-	font-weight: 400;
+	font-weight: $primary-font-weight-regular;
 }
 
 @mixin primary-font-bold {
-	font-family: 'PT Sans', sans-serif;
+	font-family: $primary-font-name, sans-serif;
 	font-style: normal;
-	font-weight: 700;
+	font-weight: $primary-font-weight-bold;
 }
 
 @mixin primary-font-black {
-	font-family: 'PT Sans', sans-serif;
+	font-family: $primary-font-name, sans-serif;
 	font-style: normal;
-	font-weight: 700;
+	font-weight: $primary-font-weight-black;
 }
 
 @mixin primary-font-light-italic {
-	font-family: 'PT Sans', sans-serif;
+	font-family: $primary-font-name, sans-serif;
 	font-style: italic;
-	font-weight: 400;
+	font-weight: $primary-font-weight-light;
 }
 
 @mixin primary-font-italic {
-	font-family: 'PT Sans', sans-serif;
+	font-family: $primary-font-name, sans-serif;
 	font-style: italic;
-	font-weight: 400;
+	font-weight: $primary-font-weight-regular;
 }
 
 @mixin primary-font-bold-italic {
-	font-family: 'PT Sans', sans-serif;
+	font-family: $primary-font-name, sans-serif;
 	font-style: italic;
-	font-weight: 700;
-}
-
-@mixin habibi-serif {
-	font-family: 'Habibi', sans-serif;
-	font-weight: 400;
-}
-
-
-@mixin body-base-font {
-	@include primary-font;
-}
-
-
-@mixin large-cta-font {
-	@include primary-font-light;
-}
-
-@mixin big-headings-font {
-	@include habibi-serif;
-}
-
-@mixin small-headings-font {
-	@include primary-font-bold;
+	font-weight: $primary-font-weight-bold;
 }

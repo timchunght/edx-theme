@@ -121,3 +121,21 @@ span.a--underlined {
 	list-style-type: none;
 	display: inline-block;
 }
+
+.window-wrap {
+	@include display(flex);
+	@include flex-direction(column);
+	min-height: 100vh;
+
+	.a--site-nav {
+		@include flex-grow(0);
+	}
+
+	.content-wrapper {
+		@include flex-grow(1);
+	}
+
+	.a--footer {
+		@include flex-grow(0);
+	}
+}

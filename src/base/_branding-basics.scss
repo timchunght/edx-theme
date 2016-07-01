@@ -1,13 +1,36 @@
-$brand-primary-color: #0B55A8;
+$brand-primary-color: #34495e;
+$brand-accent-color: #7f8c8d;
 $navbar-style: "white";  // brand or white
-$base-text-color: #424242;
+$base-text-color: #2C2A2F;
 
-$cta-button-bg: #FFC23D;
-$cta-button-text-color: $brand-primary-color;
+$primary-font-name: "Open Sans";
+$primary-font-weight-light: 300;
+$primary-font-weight-regular: 400;
+$primary-font-weight-bold: 700;
+$primary-font-weight-black: 800;
+
+@mixin body-base-font {
+	@include primary-font;
+}
+
+@mixin large-cta-font {
+	@include primary-font;
+}
+
+@mixin big-headings-font {
+	@include primary-font-light;
+}
+
+@mixin small-headings-font {
+	@include primary-font-bold;
+}
+
+$cta-button-bg: $brand-accent-color;
+$cta-button-text-color: #fff;
 $cta-button-border: none;
 
 $header-bg-color: calcNavbarBg($navbar-style, $brand-primary-color);
-$header-logo-height: 6rem;
+$header-logo-height: 4.8rem;
 $header-padding-top: 1.5rem;
 $header-padding-bottom: $header-padding-top;
 $header-padding-sm-top: 1.5rem;
@@ -16,8 +39,9 @@ $header-group-separation: 4rem;
 $header-font-size: 1.6rem;
 $header-text-color: calcNavbarTextColor($navbar-style, $base-text-color);
 $navbar-button-border: calcNavbarButtonBorder($navbar-style);
-$navbar-button-bg: calcNavbarButtonBg($navbar-style, #FFC23D);
+$navbar-button-bg: calcNavbarButtonBg($navbar-style, $brand-accent-color);
 $navbar-anchor-underline-color: calcNavbarUnderlineColor($navbar-style, $brand-primary-color);
+$navbar-link-hover: "expanding-underline";  // can be "hover-pop", "expanding-underline", "brand-color" or "opacity"
 
 $display-navbar-logo-positive: calcDisplayLogoPositive($navbar-style);
 $display-navbar-logo-negative: calcDisplayLogoNegative($navbar-style);
@@ -84,7 +108,7 @@ $single-facet-padding: 0.75rem 0;
 $single-facet-selected-opacity: 0.6;
 $facet-font-size: 1.6rem;
 $facet-results-count-font-size: 1.2rem;
-$facet-results-count-bg-color: #FFC23D;
+$facet-results-count-bg-color: $brand-accent-color;
 $facet-results-count-text-color: #fff;
 $facet-results-count-padding: 0.3rem 0.8rem;
 $facet-results-count-border-radius: 1rem;
@@ -105,7 +129,7 @@ $login-register-input-border-bottom: $login-register-input-border;
 $login-register-input-border-top: none;
 $login-register-input-border-left: none;
 $login-register-input-border-right: none;
-$login-register-hover-border-color: #FFC23D;
+$login-register-hover-border-color: $brand-accent-color;
 $login-register-textarea-min-height: 10rem;
 $login-register-input-text-size: 1.4rem;
 $login-register-tip-text-color: rgba($base-text-color, 0.7);
@@ -124,6 +148,6 @@ $courseware-top-nav-bottom-margin: 2rem;
 $sequence-nav-bottom-padding: 1.6rem;
 $courseware-content-bottom-nav-width: 30%;
 
-$courseware-link-hover: "expanding-underline";  // can be "hover-pop" or "expanding-underline"
+$courseware-link-hover: "expanding-underline";  // can be "hover-pop", "expanding-underline", "brand-color" or "opacity"
 $courseware-content-font-size: 16px;
 $courseware-content-line-height: 20px;

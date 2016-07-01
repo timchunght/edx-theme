@@ -23,7 +23,12 @@
       margin-left: 3rem;
 
       &>ol {
-        padding: 0;
+        padding: 0 0 0 1.5rem;
+      }
+
+      .treeview-handoutsnav a {
+        @include primary-font-bold;
+        color: $brand-primary-color;
       }
 
       @media(max-width: $screen-sm-max) {
