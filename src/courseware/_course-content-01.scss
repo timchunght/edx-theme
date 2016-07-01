@@ -99,13 +99,13 @@
 
           @if $courseware-link-hover == "expanding-underline" {
               @include underline_expanding_hover($brand-primary-color, 0.2rem);
-          } @else if $chosen_style == "hover_pop" {
+          } @else if $courseware-link-hover == "hover-pop" {
               @include hover_pop(0, -0.5rem);
-          } @else if $chosen_style == "hover-custom-color" {
+          } @else if $courseware-link-hover == "hover-custom-color" {
               &:hover, &:focus {
                 color: $brand-primary-color;
               }
-          } @else if $chosen_style == "opacity" {
+          } @else if $courseware-link-hover == "opacity" {
               opacity: 1;
               &:hover, &:focus {
                 opacity: 0.5;
@@ -254,13 +254,13 @@
 
           @if $courseware-link-hover == "expanding-underline" {
               @include underline_expanding_hover($brand-primary-color, 0.2rem);
-          } @else if $chosen_style == "hover_pop" {
+          } @else if $courseware-link-hover == "hover-pop" {
               @include hover_pop(-0.5rem, 0);
-          } @else if $chosen_style == "hover-custom-color" {
+          } @else if $courseware-link-hover == "hover-custom-color" {
               &:hover, &:focus {
                 color: $brand-primary-color;
               }
-          } @else if $chosen_style == "opacity" {
+          } @else if $courseware-link-hover == "opacity" {
               opacity: 1;
               &:hover, &:focus {
                 opacity: 0.5;
@@ -318,15 +318,15 @@
 
                 @if $courseware-link-hover == "expanding-underline" {
                     @include underline_expanding_hover($brand-primary-color, 0.2rem);
-                } @else if $chosen_style == "hover_pop" {
+                } @else if $courseware-link-hover == "hover-pop" {
                     .icon {
                       @include hover_pop(-0.5rem, 0);
                     }
-                } @else if $chosen_style == "hover-custom-color" {
+                } @else if $courseware-link-hover == "hover-custom-color" {
                     &:hover, &:focus {
                       color: $brand-primary-color;
                     }
-                } @else if $chosen_style == "opacity" {
+                } @else if $courseware-link-hover == "opacity" {
                     opacity: 1;
                     &:hover, &:focus {
                       opacity: 0.5;
