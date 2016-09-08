@@ -9,21 +9,21 @@ $primary-font-weight-regular: 400;
 $primary-font-weight-bold: 700;
 $primary-font-weight-black: 800;
 
-@mixin body-base-font {
-	@include primary-font;
-}
-
-@mixin large-cta-font {
-	@include primary-font;
-}
-
-@mixin big-headings-font {
-	@include primary-font-light;
-}
-
-@mixin small-headings-font {
-	@include primary-font-bold;
-}
+//@mixin body-base-font {
+//	@include primary-font;
+//}
+//
+//@mixin large-cta-font {
+//	@include primary-font;
+//}
+//
+//@mixin big-headings-font {
+//	@include primary-font-light;
+//}
+//
+//@mixin small-headings-font {
+//	@include primary-font-bold;
+//}
 
 $cta-button-bg: $brand-accent-color;
 $cta-button-text-color: #fff;
