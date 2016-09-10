@@ -2,8 +2,8 @@
 
 <%namespace name='static' file='/static_content.html'/>
 <%namespace file='/theme-variables.html' import="get_global_settings" />
-<%! from microsite_configuration import microsite %>
-<% style_overrides_file = microsite.get_value('css_overrides_file') %>
+<%! from openedx.core.djangoapps.site_configuration.helpers import get_value %>
+<% style_overrides_file = get_value('css_overrides_file') %>
 % if style_overrides_file:
   <link rel="stylesheet" type="text/css" href="${static.url(style_overrides_file)}" />
 % else:
