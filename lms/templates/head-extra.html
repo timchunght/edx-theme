@@ -7,7 +7,7 @@
 % if style_overrides_file:
   <link rel="stylesheet" type="text/css" href="${static.url(style_overrides_file)}" />
 % else:
-  <link rel="stylesheet" type="text/css" href="${static.url('themes/' + settings.THEME_NAME + '/css/main.css')}">
+  <link rel="stylesheet" type="text/css" href="${static.url('themes/' + settings.THEME_NAME + 'lms/css/main.css')}">
 % endif
 <link rel="stylesheet" type="text/css" href="${static.url('themes/' + settings.THEME_NAME + '/css/font-awesome/css/font-awesome.min.css')}">
 <link href="${get_global_settings()['google_fonts_to_import']}" rel="stylesheet">
