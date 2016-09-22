@@ -8,7 +8,6 @@ from microsite_configuration import microsite
 
 <%namespace file='theme-variables.html' import="get_index_content" />
 
-
 % for section in get_index_content():
   % if 'courses-list' in section[0]:
     <%include file = 'design-templates/${section[1]}' args = "template_settings = section[2], courses = courses" />
