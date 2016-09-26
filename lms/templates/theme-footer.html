@@ -8,11 +8,11 @@
 
 <%
   theme_folder = settings.THEME_NAME
-  footer_logo = '/static/' + theme_folder + get_footer_settings()['footer_logo']
-  footer_copyright_text = get_footer_settings()['footer_copyright_text']
-  display_edx_disclaimer = get_footer_settings()['display_edx_disclaimer']
-  edx_disclaimer = get_footer_settings()['edx_disclaimer']
-  display_poweredby = get_footer_settings()['display_poweredby']
+  footer_logo = get_footer_settings().get('footer_logo')
+  footer_copyright_text = get_footer_settings().get('footer_copyright_text')
+  display_edx_disclaimer = get_footer_settings().get('display_edx_disclaimer')
+  edx_disclaimer = get_footer_settings().get('edx_disclaimer')
+  display_poweredby = get_footer_settings().get('display_poweredby')
 %>
 
 <%include file = "design-templates/${get_header_footer_templates()['footer_template']}" args="theme_folder = theme_folder, footer_links = get_footer_menu_items(), footer_logo = footer_logo, footer_copyright_text = footer_copyright_text, display_edx_disclaimer = display_edx_disclaimer, edx_disclaimer = edx_disclaimer, display_poweredby = display_poweredby" />
