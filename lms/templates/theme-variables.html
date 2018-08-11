@@ -52,9 +52,9 @@
   <%
   return {
     'header_template' : 'header/_header-appsembler-{}.html'.format(
-      get_current_site_configuration().page_elements.get('header_template_type', '01')), ## required
+      ({} if get_current_site_configuration() is None else get_current_site_configuration()).get('page_elements', {}).get('header_template_type', '01')), ## required
     'footer_template' : 'footer/_footer-appsembler-{}.html'.format(
-      get_current_site_configuration().page_elements.get('footer_template_type', '01')), ## required
+      ({} if get_current_site_configuration() is None else get_current_site_configuration()).get('page_elements', {}).get('footer_template_type', '01')), ## required
   }
   %>
 </%def>
@@ -64,7 +64,7 @@
 
 <%def name="get_header_menu_logged_out_extra_items()">
   <%
-    return get_current_site_configuration().page_elements.get('header', {}).get('logged_out_items', [])
+    return ({} if get_current_site_configuration() is None else get_current_site_configuration()).get('page_elements', {}).get('header', {}).get('logged_out_items', [])
   %>
 </%def>
 
@@ -73,7 +73,7 @@
 
 <%def name="get_header_menu_logged_in_extra_items()">
   <%
-    return get_current_site_configuration().page_elements.get('header', {}).get('logged_in_items', [])
+    return ({} if get_current_site_configuration() is None else get_current_site_configuration()).get('page_elements', {}).get('header', {}).get('logged_in_items', [])
   %>
 </%def>
 
@@ -82,7 +82,7 @@
 
 <%def name="get_footer_menu_items()">
   <%
-    return get_current_site_configuration().page_elements.get('footer', {}).get('items', [])
+    return ({} if get_current_site_configuration() is None else get_current_site_configuration()).get('page_elements', {}).get('footer', {}).get('items', [])
   %>
 </%def>
 
@@ -91,7 +91,7 @@
 
 <%def name="get_footer_settings()">
   <%
-    footer_settings = get_current_site_configuration().page_elements.get('footer', {}).get('settings', {})
+    footer_settings = ({} if get_current_site_configuration() is None else get_current_site_configuration()).get('page_elements', {}).get('footer', {}).get('settings', {})
     footer_settings['footer_logo'] = get_brand_logos()['icon_black']
     return footer_settings
   %>
@@ -110,7 +110,7 @@
     #     ...
     #   }
     #]
-    return get_current_site_configuration().page_elements.get('index', [])
+    return ({} if get_current_site_configuration() is None else get_current_site_configuration()).get('page_elements', {}).get('index', [])
   %>
 </%def>
 
