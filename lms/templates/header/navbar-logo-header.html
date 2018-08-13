@@ -16,9 +16,10 @@ from branding import api as branding_api
 <h1 class="header-logo">
   <a href="${branding_api.get_home_url()}">
     <%block name="navigation_logo">
-    <img  class="logo" src="/static/pdb-theme/images/RoyalFreeHeader.png" alt="${_("{platform_name} Home Page").format(platform_name=static.get_platform_name())}"/>
-    <img  class="logo" src="/static/pdb-theme/images/royal_free_banner_tag.png" alt="${_("{platform_name} Home Page").format(platform_name=static.get_platform_name())}"/>
+    <img  class="logo" style="height:40px;" src="/static/pdb-theme/images/royal_free_banner_tag.png" alt="${_("{platform_name} Home Page").format(platform_name=static.get_platform_name())}"/>
     </%block>
+    <img  class="logo" src="/static/pdb-theme/images/RoyalFreeHeader.png" alt="${_("{platform_name} Home Page").format(platform_name=static.get_platform_name())}"/>
+
   </a>
   % if course:
     <div class="course-header">
